@@ -1,8 +1,12 @@
 package com.LostFound.entity;
 
+import java.util.HashSet;
+import java.util.Set;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 
 
@@ -31,6 +35,8 @@ public class Item {
     @Column(name="keywords")
     private String keywords;
     
+    @ManyToMany(cascade = CascadeType.ALL)
+    private Set<Category> categories = new HashSet<Category>(); 
 
     public int getId() {
             return id;
