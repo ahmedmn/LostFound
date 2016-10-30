@@ -2,7 +2,7 @@ package com.LostFound.dao;
 
 import com.LostFound.entity.Category;
 import com.LostFound.entity.Post;
-import com.LostFound.entity.User;
+//import com.LostFound.entity.User;
 import com.LostFound.enums.PostState;
 
 import java.util.Date;
