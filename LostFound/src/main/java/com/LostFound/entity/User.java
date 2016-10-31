@@ -34,6 +34,7 @@ public class User {
     @NotNull
     private String email;
     @NotNull
+    @Column(nullable=false,unique=true)
     private String username;
 
     @Pattern(regexp="\\+?\\d+")
@@ -120,10 +121,10 @@ public class User {
         if (!(obj instanceof User))
             return false;
         User other = (User) obj;
-        if (email == null) {
+        if (username == null) {
             if (other.getEmail() != null)
                 return false;
-        } else if (!email.equals(other.getEmail()))
+        } else if (!username.equals(other.getEmail()))
             return false;
         return true;
     }

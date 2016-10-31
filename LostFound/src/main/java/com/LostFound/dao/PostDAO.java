@@ -41,7 +41,7 @@ public interface PostDAO {
     public void delete(Post post);
 
     /**
-     * Returns posts corresponding to given post id.
+     * Returns post corresponding to given post id.
      *
      * @param id id of post to be found
      * @return post with given id
