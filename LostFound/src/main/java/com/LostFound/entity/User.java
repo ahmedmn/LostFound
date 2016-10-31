@@ -13,6 +13,11 @@ import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
+/**
+ * @author Bokos
+ * User class is the base class storing and retrieving information about user
+ */
+
 @Entity
 //In Derby, its forbiden to 'USER' is reserved keyword, we need to rename table
 @Table(name="Users")
