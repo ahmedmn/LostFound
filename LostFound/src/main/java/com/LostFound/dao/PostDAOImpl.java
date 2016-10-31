@@ -1,15 +1,16 @@
 package com.LostFound.dao;
 
 import com.LostFound.entity.Post;
+import com.LostFound.entity.User;
 import com.LostFound.enums.PostState;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import java.util.Date;
 import java.util.List;
-import org.springframework.transaction.annotation.Transactional;
 
 /**
  * PostDAOImpl is implementation of PostDAO interface.
@@ -44,15 +45,14 @@ public class PostDAOImpl implements PostDAO {
         return em.find(Post.class, id);
     }
 
-//    TODO - !!! Uncomment when user class will be implemented !!!
-//    @Override
-//    public List<Post> findByUser(User user) {
-//        TypedQuery<Post> query = em.createQuery(
-//                "SELECT p FROM Post p WHERE p.user = :userid",
-//                Post.class);
-//        query.setParameter("userid", user);
-//        return query.getResultList();
-//    }
+    @Override
+    public List<Post> findByUser(User user) {
+        TypedQuery<Post> query = em.createQuery(
+                "SELECT p FROM Post p WHERE p.user = :user",
+                Post.class);
+        query.setParameter("user", user);
+        return query.getResultList();
+    }
 
     @Override
     public List<Post> findByLocation(String location) {

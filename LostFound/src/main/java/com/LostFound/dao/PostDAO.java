@@ -1,12 +1,13 @@
 package com.LostFound.dao;
 
-import com.LostFound.entity.Category;
 import com.LostFound.entity.Post;
-//import com.LostFound.entity.User;
+import com.LostFound.entity.User;
 import com.LostFound.enums.PostState;
 
 import java.util.Date;
 import java.util.List;
+
+//import com.LostFound.entity.User;
 
 /**
  * PostDAO declares some basic operations such as insert,
@@ -55,8 +56,7 @@ public interface PostDAO {
      * @param user user who owns posts
      * @return posts of user with given id
      */
-//    TODO - !!! Uncomment when user class will be implemented !!!
-//    public List<Post> findByUser(User user);
+    public List<Post> findByUser(User user);
 
     /**
      * Returns posts corresponding to given location.
