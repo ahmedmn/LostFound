@@ -9,6 +9,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import java.util.Date;
 import java.util.List;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * PostDAOImpl is implementation of PostDAO interface.
@@ -21,18 +22,21 @@ public class PostDAOImpl implements PostDAO {
     private EntityManager em;
 
     @Override
+    @Transactional
     public void create(Post post) {
         em.persist(post);
     }
 
     @Override
+    @Transactional
     public void update(Post post) {
         em.merge(post);
     }
 
     @Override
+    @Transactional
     public void delete(Post post) {
-        em.remove(post);
+        em.remove(findById(post.getId()));
     }
 
     @Override

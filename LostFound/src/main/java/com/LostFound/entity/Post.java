@@ -19,7 +19,7 @@ public class Post {
 //    @ManyToOne
 //    private User user;
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER)
     @NotNull
     private List<Item> postItems = new ArrayList<>();
 
@@ -104,8 +104,8 @@ public class Post {
 //    TODO - !!! Uncomment when user class will be implemented !!!
 //        int result = user != null ? user.hashCode() : 0;
         result = 31 * result + getPostItems().hashCode();
-        result = 31 * result + getCreationDate().hashCode();
-        result = 31 * result + getLocation().hashCode();
+        result = 31 * result + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
+        result = 31 * result + ((getLocation() == null) ? 0 : getLocation().hashCode());
         return result;
     }
 }
