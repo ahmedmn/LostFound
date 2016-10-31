@@ -66,13 +66,13 @@ public class PostDAOImpl implements PostDAO {
     }
 
     @Override
-    public List<Post> findCreatedBetween(Date start, Date end) {
+    public List<Post> findCreatedBetween(Date start, Date end, PostState state) {
         TypedQuery<Post> query = em
                 .createQuery(
                         "SELECT p FROM Post p WHERE p.state = :state AND " +
-                        "p.created BETWEEN :startDate AND :endDate",
+                        "p.creationDate BETWEEN :startDate AND :endDate",
                         Post.class);
-        query.setParameter("state", PostState.OPENED);
+        query.setParameter("state", state);
         query.setParameter("startDate", start);
         query.setParameter("endDate", end);
         return query.getResultList();

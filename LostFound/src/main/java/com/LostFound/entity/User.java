@@ -44,7 +44,7 @@ public class User {
     @Temporal(TemporalType.DATE)
     private Date joinedDate;
 
-    private boolean isAdmin;
+    private boolean admin;
 
     public Long getId() {
         return id;
@@ -96,12 +96,12 @@ public class User {
         this.joinedDate = joinedDate;
     }
 
-    public boolean isAdmin() {
-        return isAdmin;
+    public boolean getAdmin() {
+        return admin;
     }
 
     public void setAdmin(boolean admin) {
-        this.isAdmin = admin;
+        this.admin = admin;
     }
 
     @Override
@@ -138,7 +138,7 @@ public class User {
                 ", username='" + username + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", joinedDate=" + joinedDate +
-                ", isAdmin=" + isAdmin +
+                ", admin=" + admin +
                 '}';
     }
 }

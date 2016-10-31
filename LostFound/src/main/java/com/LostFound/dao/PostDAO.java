@@ -71,9 +71,10 @@ public interface PostDAO {
      *
      * @param fromDate starting date
      * @param toDate ending date
+     * @param state state
      * @return list of posts in given date range
      */
-    public List<Post> findCreatedBetween(Date fromDate, Date toDate);
+    public List<Post> findCreatedBetween(Date fromDate, Date toDate, PostState state);
 
     /**
      * Returns information about all posts.

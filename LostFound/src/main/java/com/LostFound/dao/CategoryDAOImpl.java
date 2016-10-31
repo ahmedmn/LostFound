@@ -9,7 +9,10 @@ import com.LostFound.entity.Category;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
+import javax.persistence.PersistenceContext;
+
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * Implementation of CategoryDao interface.
@@ -20,20 +23,24 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class CategoryDAOImpl implements CategoryDAO{
-    
+
+    @PersistenceContext
     EntityManager em;
 
     @Override
+    @Transactional
     public void create(Category category) {
             em.persist(category);
     } 
 
     @Override
+    @Transactional
     public void update(Category category) {
             em.merge(category);
     }
 
     @Override
+    @Transactional
     public void delete(Category category) throws IllegalArgumentException {
             em.remove(category);
     }
@@ -44,14 +51,10 @@ public class CategoryDAOImpl implements CategoryDAO{
     }
 
     @Override
-    public Category findByName(String name) {        
-        try {
+    public Category findByName(String name) {
             return em.createQuery("select c from Category c "
-                        + "where c.name like :name", Category.class).setParameter(":name", name)
+                        + "where c.name like :name", Category.class).setParameter("name", name)
                         .getSingleResult();
-        } catch (NoResultException nrf) {
-                return null;
-        }
     }
 
     @Override

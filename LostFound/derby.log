@@ -1,13 +1,13 @@
 ----------------------------------------------------------------
-Thu Oct 27 00:59:31 CEST 2016:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance a816c00e-0158-0338-4a93-000006c64508 
-on database directory memory:E:\Work\MasarykUni\EnterpriseApplicationsinJava\Project\LostFound1\testdb with class loader sun.misc.Launcher$AppClassLoader@351775bc 
-Loaded from file:/C:/Users/ahmed/.m2/repository/org/apache/derby/derby/10.10.2.0/derby-10.10.2.0.jar
+Mon Oct 31 19:03:34 CET 2016:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance a816c00e-0158-1be9-23ab-000005e0dfa0 
+on database directory memory:/Users/bokos/Documents/Workspace/Java/LostFound/LostFound/testdb with class loader sun.misc.Launcher$AppClassLoader@7852e922 
+Loaded from file:/Users/bokos/.m2/repository/org/apache/derby/derby/10.10.2.0/derby-10.10.2.0.jar
 java.vendor=Oracle Corporation
-java.runtime.version=1.7.0_80-b15
-user.dir=E:\Work\MasarykUni\EnterpriseApplicationsinJava\Project\LostFound1
-os.name=Windows 8.1
-os.arch=amd64
-os.version=6.3
+java.runtime.version=1.8.0_60-b27
+user.dir=/Users/bokos/Documents/Workspace/Java/LostFound/LostFound
+os.name=Mac OS X
+os.arch=x86_64
+os.version=10.12.1
 derby.system.home=null
 Database Class Loader started - derby.database.classpath=''

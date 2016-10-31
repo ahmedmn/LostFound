@@ -33,10 +33,8 @@ public class Category {
     
     @ManyToMany(mappedBy="categories")
     private Set<Item> items = new HashSet<Item>();
-    
-    // Constructor
-    public Category(Long categoryId) {
-        this.id = categoryId; 
+
+    public Category() {
     }
 
     

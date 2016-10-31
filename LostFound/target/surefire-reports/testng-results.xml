@@ -1,62 +1,1512 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="4" passed="4">
+<testng-results skipped="0" failed="0" total="27" passed="27">
   <reporter-output>
   </reporter-output>
-  <suite name="com.LostFound.dao.ItemDaoTest" duration-ms="3614" started-at="2016-10-26T22:59:29Z" finished-at="2016-10-26T22:59:33Z">
+  <suite name="Command line suite" duration-ms="4258" started-at="2016-10-31T17:33:18Z" finished-at="2016-10-31T17:33:22Z">
     <groups>
     </groups>
-    <test name="Command line test" duration-ms="3614" started-at="2016-10-26T22:59:29Z" finished-at="2016-10-26T22:59:33Z">
-      <class name="com.LostFound.dao.ItemDaoTest">
-        <test-method status="PASS" signature="springTestContextBeforeTestClass()[pri:0, instance:com.LostFound.dao.ItemDaoTest@29b4f422]" name="springTestContextBeforeTestClass" is-config="true" duration-ms="9" started-at="2016-10-27T00:59:29Z" finished-at="2016-10-27T00:59:29Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- springTestContextBeforeTestClass -->
-        <test-method status="PASS" signature="springTestContextPrepareTestInstance()[pri:0, instance:com.LostFound.dao.ItemDaoTest@29b4f422]" name="springTestContextPrepareTestInstance" is-config="true" duration-ms="3346" started-at="2016-10-27T00:59:29Z" depends-on-methods="org.springframework.test.context.testng.AbstractTestNGSpringContextTests.springTestContextBeforeTestClass" finished-at="2016-10-27T00:59:33Z">
+    <test name="Command line test" duration-ms="4258" started-at="2016-10-31T17:33:18Z" finished-at="2016-10-31T17:33:22Z">
+      <class name="com.LostFound.dao.PostDaoTest">
+        <test-method status="PASS" signature="springTestContextPrepareTestInstance()[pri:0, instance:com.LostFound.dao.PostDaoTest@149494d8]" name="springTestContextPrepareTestInstance" is-config="true" duration-ms="8" started-at="2016-10-31T18:33:22Z" depends-on-methods="org.springframework.test.context.testng.AbstractTestNGSpringContextTests.springTestContextBeforeTestClass" finished-at="2016-10-31T18:33:22Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- springTestContextPrepareTestInstance -->
-        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.ItemDaoTest@29b4f422]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="1" started-at="2016-10-27T00:59:33Z" finished-at="2016-10-27T00:59:33Z">
+        <test-method status="PASS" signature="springTestContextBeforeTestClass()[pri:0, instance:com.LostFound.dao.PostDaoTest@149494d8]" name="springTestContextBeforeTestClass" is-config="true" duration-ms="0" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestClass -->
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.PostDaoTest@149494d8]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="1" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.LostFound.dao.ItemDaoTest.create()]]>
+                <![CDATA[public void com.LostFound.dao.PostDaoTest.addItemToPost()]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- springTestContextBeforeTestMethod -->
-        <test-method status="PASS" signature="create()[pri:0, instance:com.LostFound.dao.ItemDaoTest@29b4f422]" name="create" duration-ms="182" started-at="2016-10-27T00:59:33Z" finished-at="2016-10-27T00:59:33Z">
+        <test-method status="PASS" signature="addItemToPost()[pri:0, instance:com.LostFound.dao.PostDaoTest@149494d8]" name="addItemToPost" duration-ms="66" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- create -->
-        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.ItemDaoTest@29b4f422]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="0" started-at="2016-10-27T00:59:33Z" finished-at="2016-10-27T00:59:33Z">
+        </test-method> <!-- addItemToPost -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.PostDaoTest@149494d8]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="0" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.LostFound.dao.ItemDaoTest.create()]]>
+                <![CDATA[public void com.LostFound.dao.PostDaoTest.addItemToPost()]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- springTestContextAfterTestMethod -->
-        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.ItemDaoTest@29b4f422]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="0" started-at="2016-10-27T00:59:33Z" finished-at="2016-10-27T00:59:33Z">
+        <test-method status="PASS" signature="createPostTest()[pri:0, instance:com.LostFound.dao.PostDaoTest@149494d8]" name="createPostTest" duration-ms="23" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createPostTest -->
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.PostDaoTest@149494d8]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="0" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.LostFound.dao.ItemDaoTest.delete()]]>
+                <![CDATA[public void com.LostFound.dao.PostDaoTest.createPostTest()]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- springTestContextBeforeTestMethod -->
-        <test-method status="PASS" signature="delete()[pri:0, instance:com.LostFound.dao.ItemDaoTest@29b4f422]" name="delete" duration-ms="29" started-at="2016-10-27T00:59:33Z" finished-at="2016-10-27T00:59:33Z">
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.PostDaoTest@149494d8]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="0" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.LostFound.dao.PostDaoTest.createPostTest()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.PostDaoTest@149494d8]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="0" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.LostFound.dao.PostDaoTest.createWithNullCreationDatePostTest()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="createWithNullCreationDatePostTest()[pri:0, instance:com.LostFound.dao.PostDaoTest@149494d8]" name="createWithNullCreationDatePostTest" duration-ms="18" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <exception class="javax.validation.ConstraintViolationException">
+            <message>
+              <![CDATA[Validation failed for classes [com.LostFound.entity.Post] during persist time for groups [javax.validation.groups.Default, ]
+List of constraint violations:[
+	ConstraintViolationImpl{interpolatedMessage='may not be null', propertyPath=creationDate, rootBeanClass=class com.LostFound.entity.Post, messageTemplate='{javax.validation.constraints.NotNull.message}'}
+]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[javax.validation.ConstraintViolationException: Validation failed for classes [com.LostFound.entity.Post] during persist time for groups [javax.validation.groups.Default, ]
+List of constraint violations:[
+	ConstraintViolationImpl{interpolatedMessage='may not be null', propertyPath=creationDate, rootBeanClass=class com.LostFound.entity.Post, messageTemplate='{javax.validation.constraints.NotNull.message}'}
+]
+	at org.hibernate.cfg.beanvalidation.BeanValidationEventListener.validate(BeanValidationEventListener.java:160)
+	at org.hibernate.cfg.beanvalidation.BeanValidationEventListener.onPreInsert(BeanValidationEventListener.java:95)
+	at org.hibernate.action.internal.EntityIdentityInsertAction.preInsert(EntityIdentityInsertAction.java:214)
+	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:92)
+	at org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:490)
+	at org.hibernate.engine.spi.ActionQueue.addResolvedEntityInsertAction(ActionQueue.java:195)
+	at org.hibernate.engine.spi.ActionQueue.addInsertAction(ActionQueue.java:179)
+	at org.hibernate.engine.spi.ActionQueue.addAction(ActionQueue.java:214)
+	at org.hibernate.event.internal.AbstractSaveEventListener.addInsertAction(AbstractSaveEventListener.java:324)
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSaveOrReplicate(AbstractSaveEventListener.java:288)
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:194)
+	at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:125)
+	at org.hibernate.jpa.event.internal.core.JpaPersistEventListener.saveWithGeneratedId(JpaPersistEventListener.java:84)
+	at org.hibernate.event.internal.DefaultPersistEventListener.entityIsTransient(DefaultPersistEventListener.java:206)
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:149)
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:75)
+	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:811)
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:784)
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:789)
+	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.persist(AbstractEntityManagerImpl.java:1181)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:298)
+	at com.sun.proxy.$Proxy38.persist(Unknown Source)
+	at com.LostFound.dao.PostDAOImpl.create(PostDAOImpl.java:27)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:333)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:281)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:213)
+	at com.sun.proxy.$Proxy40.create(Unknown Source)
+	at com.LostFound.dao.PostDaoTest.createWithNullCreationDatePostTest(PostDaoTest.java:94)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.MethodInvocationHelper$1.runTestMethod(MethodInvocationHelper.java:200)
+	at org.springframework.test.context.testng.AbstractTestNGSpringContextTests.run(AbstractTestNGSpringContextTests.java:175)
+	at org.testng.internal.MethodInvocationHelper.invokeHookable(MethodInvocationHelper.java:212)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:689)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:882)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1189)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+]]>
+            </full-stacktrace>
+          </exception> <!-- javax.validation.ConstraintViolationException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createWithNullCreationDatePostTest -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.PostDaoTest@149494d8]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="0" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.LostFound.dao.PostDaoTest.createWithNullCreationDatePostTest()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="PASS" signature="createWithNullLocationPostTest()[pri:0, instance:com.LostFound.dao.PostDaoTest@149494d8]" name="createWithNullLocationPostTest" duration-ms="3" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <exception class="javax.validation.ConstraintViolationException">
+            <message>
+              <![CDATA[Validation failed for classes [com.LostFound.entity.Post] during persist time for groups [javax.validation.groups.Default, ]
+List of constraint violations:[
+	ConstraintViolationImpl{interpolatedMessage='may not be null', propertyPath=location, rootBeanClass=class com.LostFound.entity.Post, messageTemplate='{javax.validation.constraints.NotNull.message}'}
+]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[javax.validation.ConstraintViolationException: Validation failed for classes [com.LostFound.entity.Post] during persist time for groups [javax.validation.groups.Default, ]
+List of constraint violations:[
+	ConstraintViolationImpl{interpolatedMessage='may not be null', propertyPath=location, rootBeanClass=class com.LostFound.entity.Post, messageTemplate='{javax.validation.constraints.NotNull.message}'}
+]
+	at org.hibernate.cfg.beanvalidation.BeanValidationEventListener.validate(BeanValidationEventListener.java:160)
+	at org.hibernate.cfg.beanvalidation.BeanValidationEventListener.onPreInsert(BeanValidationEventListener.java:95)
+	at org.hibernate.action.internal.EntityIdentityInsertAction.preInsert(EntityIdentityInsertAction.java:214)
+	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:92)
+	at org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:490)
+	at org.hibernate.engine.spi.ActionQueue.addResolvedEntityInsertAction(ActionQueue.java:195)
+	at org.hibernate.engine.spi.ActionQueue.addInsertAction(ActionQueue.java:179)
+	at org.hibernate.engine.spi.ActionQueue.addAction(ActionQueue.java:214)
+	at org.hibernate.event.internal.AbstractSaveEventListener.addInsertAction(AbstractSaveEventListener.java:324)
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSaveOrReplicate(AbstractSaveEventListener.java:288)
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:194)
+	at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:125)
+	at org.hibernate.jpa.event.internal.core.JpaPersistEventListener.saveWithGeneratedId(JpaPersistEventListener.java:84)
+	at org.hibernate.event.internal.DefaultPersistEventListener.entityIsTransient(DefaultPersistEventListener.java:206)
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:149)
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:75)
+	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:811)
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:784)
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:789)
+	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.persist(AbstractEntityManagerImpl.java:1181)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:298)
+	at com.sun.proxy.$Proxy38.persist(Unknown Source)
+	at com.LostFound.dao.PostDAOImpl.create(PostDAOImpl.java:27)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:333)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:281)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:213)
+	at com.sun.proxy.$Proxy40.create(Unknown Source)
+	at com.LostFound.dao.PostDaoTest.createWithNullLocationPostTest(PostDaoTest.java:82)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.MethodInvocationHelper$1.runTestMethod(MethodInvocationHelper.java:200)
+	at org.springframework.test.context.testng.AbstractTestNGSpringContextTests.run(AbstractTestNGSpringContextTests.java:175)
+	at org.testng.internal.MethodInvocationHelper.invokeHookable(MethodInvocationHelper.java:212)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:689)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:882)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1189)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+]]>
+            </full-stacktrace>
+          </exception> <!-- javax.validation.ConstraintViolationException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createWithNullLocationPostTest -->
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.PostDaoTest@149494d8]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="0" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.LostFound.dao.PostDaoTest.createWithNullLocationPostTest()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.PostDaoTest@149494d8]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="0" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.LostFound.dao.PostDaoTest.createWithNullLocationPostTest()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.PostDaoTest@149494d8]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="0" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.LostFound.dao.PostDaoTest.createWithNullStatePostTest()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="createWithNullStatePostTest()[pri:0, instance:com.LostFound.dao.PostDaoTest@149494d8]" name="createWithNullStatePostTest" duration-ms="3" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <exception class="javax.validation.ConstraintViolationException">
+            <message>
+              <![CDATA[Validation failed for classes [com.LostFound.entity.Post] during persist time for groups [javax.validation.groups.Default, ]
+List of constraint violations:[
+	ConstraintViolationImpl{interpolatedMessage='may not be null', propertyPath=state, rootBeanClass=class com.LostFound.entity.Post, messageTemplate='{javax.validation.constraints.NotNull.message}'}
+]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[javax.validation.ConstraintViolationException: Validation failed for classes [com.LostFound.entity.Post] during persist time for groups [javax.validation.groups.Default, ]
+List of constraint violations:[
+	ConstraintViolationImpl{interpolatedMessage='may not be null', propertyPath=state, rootBeanClass=class com.LostFound.entity.Post, messageTemplate='{javax.validation.constraints.NotNull.message}'}
+]
+	at org.hibernate.cfg.beanvalidation.BeanValidationEventListener.validate(BeanValidationEventListener.java:160)
+	at org.hibernate.cfg.beanvalidation.BeanValidationEventListener.onPreInsert(BeanValidationEventListener.java:95)
+	at org.hibernate.action.internal.EntityIdentityInsertAction.preInsert(EntityIdentityInsertAction.java:214)
+	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:92)
+	at org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:490)
+	at org.hibernate.engine.spi.ActionQueue.addResolvedEntityInsertAction(ActionQueue.java:195)
+	at org.hibernate.engine.spi.ActionQueue.addInsertAction(ActionQueue.java:179)
+	at org.hibernate.engine.spi.ActionQueue.addAction(ActionQueue.java:214)
+	at org.hibernate.event.internal.AbstractSaveEventListener.addInsertAction(AbstractSaveEventListener.java:324)
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSaveOrReplicate(AbstractSaveEventListener.java:288)
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:194)
+	at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:125)
+	at org.hibernate.jpa.event.internal.core.JpaPersistEventListener.saveWithGeneratedId(JpaPersistEventListener.java:84)
+	at org.hibernate.event.internal.DefaultPersistEventListener.entityIsTransient(DefaultPersistEventListener.java:206)
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:149)
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:75)
+	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:811)
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:784)
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:789)
+	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.persist(AbstractEntityManagerImpl.java:1181)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:298)
+	at com.sun.proxy.$Proxy38.persist(Unknown Source)
+	at com.LostFound.dao.PostDAOImpl.create(PostDAOImpl.java:27)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:333)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:281)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:213)
+	at com.sun.proxy.$Proxy40.create(Unknown Source)
+	at com.LostFound.dao.PostDaoTest.createWithNullStatePostTest(PostDaoTest.java:69)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.MethodInvocationHelper$1.runTestMethod(MethodInvocationHelper.java:200)
+	at org.springframework.test.context.testng.AbstractTestNGSpringContextTests.run(AbstractTestNGSpringContextTests.java:175)
+	at org.testng.internal.MethodInvocationHelper.invokeHookable(MethodInvocationHelper.java:212)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:689)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:882)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1189)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+]]>
+            </full-stacktrace>
+          </exception> <!-- javax.validation.ConstraintViolationException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createWithNullStatePostTest -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.PostDaoTest@149494d8]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="1" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.LostFound.dao.PostDaoTest.createWithNullStatePostTest()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.PostDaoTest@149494d8]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="0" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.LostFound.dao.PostDaoTest.deletePostTest()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="deletePostTest()[pri:0, instance:com.LostFound.dao.PostDaoTest@149494d8]" name="deletePostTest" duration-ms="189" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deletePostTest -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.PostDaoTest@149494d8]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="1" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.LostFound.dao.PostDaoTest.deletePostTest()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.PostDaoTest@149494d8]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="0" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.LostFound.dao.PostDaoTest.findByLocationTest()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="findByLocationTest()[pri:0, instance:com.LostFound.dao.PostDaoTest@149494d8]" name="findByLocationTest" duration-ms="35" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- findByLocationTest -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.PostDaoTest@149494d8]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="0" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.LostFound.dao.PostDaoTest.findByLocationTest()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.PostDaoTest@149494d8]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="1" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.LostFound.dao.PostDaoTest.findByStateTest()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="findByStateTest()[pri:0, instance:com.LostFound.dao.PostDaoTest@149494d8]" name="findByStateTest" duration-ms="24" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- findByStateTest -->
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.PostDaoTest@149494d8]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="1" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.LostFound.dao.PostDaoTest.findCreatedBetweenTest()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.PostDaoTest@149494d8]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="0" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.LostFound.dao.PostDaoTest.findByStateTest()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="PASS" signature="findCreatedBetweenTest()[pri:0, instance:com.LostFound.dao.PostDaoTest@149494d8]" name="findCreatedBetweenTest" duration-ms="27" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- findCreatedBetweenTest -->
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.PostDaoTest@149494d8]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="1" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.LostFound.dao.PostDaoTest.updatePostTest()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.PostDaoTest@149494d8]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="0" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.LostFound.dao.PostDaoTest.findCreatedBetweenTest()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="PASS" signature="updatePostTest()[pri:0, instance:com.LostFound.dao.PostDaoTest@149494d8]" name="updatePostTest" duration-ms="39" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updatePostTest -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.PostDaoTest@149494d8]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="1" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.LostFound.dao.PostDaoTest.updatePostTest()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="PASS" signature="springTestContextAfterTestClass()[pri:0, instance:com.LostFound.dao.PostDaoTest@149494d8]" name="springTestContextAfterTestClass" is-config="true" duration-ms="0" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestClass -->
+      </class> <!-- com.LostFound.dao.PostDaoTest -->
+      <class name="com.LostFound.dao.UserDaoTest">
+        <test-method status="PASS" signature="springTestContextBeforeTestClass()[pri:0, instance:com.LostFound.dao.UserDaoTest@78186a70]" name="springTestContextBeforeTestClass" is-config="true" duration-ms="0" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestClass -->
+        <test-method status="PASS" signature="springTestContextPrepareTestInstance()[pri:0, instance:com.LostFound.dao.UserDaoTest@78186a70]" name="springTestContextPrepareTestInstance" is-config="true" duration-ms="8" started-at="2016-10-31T18:33:22Z" depends-on-methods="org.springframework.test.context.testng.AbstractTestNGSpringContextTests.springTestContextBeforeTestClass" finished-at="2016-10-31T18:33:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextPrepareTestInstance -->
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.UserDaoTest@78186a70]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="12" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.LostFound.dao.UserDaoTest.delete()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="createUsers()[pri:0, instance:com.LostFound.dao.UserDaoTest@78186a70]" name="createUsers" is-config="true" duration-ms="15" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createUsers -->
+        <test-method status="PASS" signature="delete()[pri:0, instance:com.LostFound.dao.UserDaoTest@78186a70]" name="delete" duration-ms="26" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- delete -->
-        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.ItemDaoTest@29b4f422]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="0" started-at="2016-10-27T00:59:33Z" finished-at="2016-10-27T00:59:33Z">
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.UserDaoTest@78186a70]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="10" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.LostFound.dao.UserDaoTest.delete()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.UserDaoTest@78186a70]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="2" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.LostFound.dao.UserDaoTest.emailIsUnique()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="createUsers()[pri:0, instance:com.LostFound.dao.UserDaoTest@78186a70]" name="createUsers" is-config="true" duration-ms="6" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createUsers -->
+        <test-method status="PASS" signature="emailIsUnique()[pri:0, instance:com.LostFound.dao.UserDaoTest@78186a70]" name="emailIsUnique" duration-ms="2" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <exception class="javax.validation.ConstraintViolationException">
+            <message>
+              <![CDATA[Validation failed for classes [com.LostFound.entity.User] during persist time for groups [javax.validation.groups.Default, ]
+List of constraint violations:[
+	ConstraintViolationImpl{interpolatedMessage='may not be null', propertyPath=joinedDate, rootBeanClass=class com.LostFound.entity.User, messageTemplate='{javax.validation.constraints.NotNull.message}'}
+]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[javax.validation.ConstraintViolationException: Validation failed for classes [com.LostFound.entity.User] during persist time for groups [javax.validation.groups.Default, ]
+List of constraint violations:[
+	ConstraintViolationImpl{interpolatedMessage='may not be null', propertyPath=joinedDate, rootBeanClass=class com.LostFound.entity.User, messageTemplate='{javax.validation.constraints.NotNull.message}'}
+]
+	at org.hibernate.cfg.beanvalidation.BeanValidationEventListener.validate(BeanValidationEventListener.java:160)
+	at org.hibernate.cfg.beanvalidation.BeanValidationEventListener.onPreInsert(BeanValidationEventListener.java:95)
+	at org.hibernate.action.internal.EntityIdentityInsertAction.preInsert(EntityIdentityInsertAction.java:214)
+	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:92)
+	at org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:490)
+	at org.hibernate.engine.spi.ActionQueue.addResolvedEntityInsertAction(ActionQueue.java:195)
+	at org.hibernate.engine.spi.ActionQueue.addInsertAction(ActionQueue.java:179)
+	at org.hibernate.engine.spi.ActionQueue.addAction(ActionQueue.java:214)
+	at org.hibernate.event.internal.AbstractSaveEventListener.addInsertAction(AbstractSaveEventListener.java:324)
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSaveOrReplicate(AbstractSaveEventListener.java:288)
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:194)
+	at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:125)
+	at org.hibernate.jpa.event.internal.core.JpaPersistEventListener.saveWithGeneratedId(JpaPersistEventListener.java:84)
+	at org.hibernate.event.internal.DefaultPersistEventListener.entityIsTransient(DefaultPersistEventListener.java:206)
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:149)
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:75)
+	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:811)
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:784)
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:789)
+	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.persist(AbstractEntityManagerImpl.java:1181)
+	at sun.reflect.GeneratedMethodAccessor19.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:298)
+	at com.sun.proxy.$Proxy38.persist(Unknown Source)
+	at com.LostFound.dao.UserDAOImpl.create(UserDAOImpl.java:26)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:333)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:281)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:213)
+	at com.sun.proxy.$Proxy41.create(Unknown Source)
+	at com.LostFound.dao.UserDaoTest.emailIsUnique(UserDaoTest.java:111)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.MethodInvocationHelper$1.runTestMethod(MethodInvocationHelper.java:200)
+	at org.springframework.test.context.testng.AbstractTestNGSpringContextTests.run(AbstractTestNGSpringContextTests.java:175)
+	at org.testng.internal.MethodInvocationHelper.invokeHookable(MethodInvocationHelper.java:212)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:689)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:882)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1189)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+]]>
+            </full-stacktrace>
+          </exception> <!-- javax.validation.ConstraintViolationException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- emailIsUnique -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.UserDaoTest@78186a70]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="5" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.LostFound.dao.UserDaoTest.emailIsUnique()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.UserDaoTest@78186a70]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="4" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.LostFound.dao.UserDaoTest.findByEmail()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="createUsers()[pri:0, instance:com.LostFound.dao.UserDaoTest@78186a70]" name="createUsers" is-config="true" duration-ms="7" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createUsers -->
+        <test-method status="PASS" signature="findByEmail()[pri:0, instance:com.LostFound.dao.UserDaoTest@78186a70]" name="findByEmail" duration-ms="19" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- findByEmail -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.UserDaoTest@78186a70]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="7" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.LostFound.dao.UserDaoTest.findByEmail()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.UserDaoTest@78186a70]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="3" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.LostFound.dao.UserDaoTest.findByName()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="createUsers()[pri:0, instance:com.LostFound.dao.UserDaoTest@78186a70]" name="createUsers" is-config="true" duration-ms="5" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createUsers -->
+        <test-method status="PASS" signature="findByName()[pri:0, instance:com.LostFound.dao.UserDaoTest@78186a70]" name="findByName" duration-ms="8" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- findByName -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.UserDaoTest@78186a70]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="2" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.LostFound.dao.UserDaoTest.findByName()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.UserDaoTest@78186a70]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="1" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.LostFound.dao.UserDaoTest.findByNonExistentEmail()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="createUsers()[pri:0, instance:com.LostFound.dao.UserDaoTest@78186a70]" name="createUsers" is-config="true" duration-ms="8" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createUsers -->
+        <test-method status="PASS" signature="findByNonExistentEmail()[pri:0, instance:com.LostFound.dao.UserDaoTest@78186a70]" name="findByNonExistentEmail" duration-ms="4" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <exception class="javax.persistence.NoResultException">
+            <message>
+              <![CDATA[No entity found for query]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[javax.persistence.NoResultException: No entity found for query
+	at org.hibernate.jpa.internal.QueryImpl.getSingleResult(QueryImpl.java:498)
+	at com.LostFound.dao.UserDAOImpl.findByEmail(UserDAOImpl.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:333)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:207)
+	at com.sun.proxy.$Proxy41.findByEmail(Unknown Source)
+	at com.LostFound.dao.UserDaoTest.findByNonExistentEmail(UserDaoTest.java:98)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.MethodInvocationHelper$1.runTestMethod(MethodInvocationHelper.java:200)
+	at org.springframework.test.context.testng.AbstractTestNGSpringContextTests.run(AbstractTestNGSpringContextTests.java:175)
+	at org.testng.internal.MethodInvocationHelper.invokeHookable(MethodInvocationHelper.java:212)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:689)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:882)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1189)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+]]>
+            </full-stacktrace>
+          </exception> <!-- javax.persistence.NoResultException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- findByNonExistentEmail -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.UserDaoTest@78186a70]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="4" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.LostFound.dao.UserDaoTest.findByNonExistentEmail()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.UserDaoTest@78186a70]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="2" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.LostFound.dao.UserDaoTest.findByNonExistentId()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="createUsers()[pri:0, instance:com.LostFound.dao.UserDaoTest@78186a70]" name="createUsers" is-config="true" duration-ms="10" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createUsers -->
+        <test-method status="PASS" signature="findByNonExistentId()[pri:0, instance:com.LostFound.dao.UserDaoTest@78186a70]" name="findByNonExistentId" duration-ms="4" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- findByNonExistentId -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.UserDaoTest@78186a70]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="2" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.LostFound.dao.UserDaoTest.findByNonExistentId()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.UserDaoTest@78186a70]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="2" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.LostFound.dao.UserDaoTest.findByNonExistentName()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="createUsers()[pri:0, instance:com.LostFound.dao.UserDaoTest@78186a70]" name="createUsers" is-config="true" duration-ms="4" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createUsers -->
+        <test-method status="PASS" signature="findByNonExistentName()[pri:0, instance:com.LostFound.dao.UserDaoTest@78186a70]" name="findByNonExistentName" duration-ms="2" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <exception class="javax.persistence.NoResultException">
+            <message>
+              <![CDATA[No entity found for query]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[javax.persistence.NoResultException: No entity found for query
+	at org.hibernate.jpa.internal.QueryImpl.getSingleResult(QueryImpl.java:498)
+	at com.LostFound.dao.UserDAOImpl.findByName(UserDAOImpl.java:53)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:333)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:281)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:213)
+	at com.sun.proxy.$Proxy41.findByName(Unknown Source)
+	at com.LostFound.dao.UserDaoTest.findByNonExistentName(UserDaoTest.java:121)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.MethodInvocationHelper$1.runTestMethod(MethodInvocationHelper.java:200)
+	at org.springframework.test.context.testng.AbstractTestNGSpringContextTests.run(AbstractTestNGSpringContextTests.java:175)
+	at org.testng.internal.MethodInvocationHelper.invokeHookable(MethodInvocationHelper.java:212)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:689)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:882)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1189)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+]]>
+            </full-stacktrace>
+          </exception> <!-- javax.persistence.NoResultException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- findByNonExistentName -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.UserDaoTest@78186a70]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="2" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.LostFound.dao.UserDaoTest.findByNonExistentName()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.UserDaoTest@78186a70]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="3" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.LostFound.dao.UserDaoTest.findByNullEmail()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="createUsers()[pri:0, instance:com.LostFound.dao.UserDaoTest@78186a70]" name="createUsers" is-config="true" duration-ms="6" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createUsers -->
+        <test-method status="PASS" signature="findByNullEmail()[pri:0, instance:com.LostFound.dao.UserDaoTest@78186a70]" name="findByNullEmail" duration-ms="4" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <exception class="javax.persistence.NoResultException">
+            <message>
+              <![CDATA[No entity found for query]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[javax.persistence.NoResultException: No entity found for query
+	at org.hibernate.jpa.internal.QueryImpl.getSingleResult(QueryImpl.java:498)
+	at com.LostFound.dao.UserDAOImpl.findByEmail(UserDAOImpl.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:333)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:207)
+	at com.sun.proxy.$Proxy41.findByEmail(Unknown Source)
+	at com.LostFound.dao.UserDaoTest.findByNullEmail(UserDaoTest.java:103)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.MethodInvocationHelper$1.runTestMethod(MethodInvocationHelper.java:200)
+	at org.springframework.test.context.testng.AbstractTestNGSpringContextTests.run(AbstractTestNGSpringContextTests.java:175)
+	at org.testng.internal.MethodInvocationHelper.invokeHookable(MethodInvocationHelper.java:212)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:689)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:882)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1189)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+]]>
+            </full-stacktrace>
+          </exception> <!-- javax.persistence.NoResultException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- findByNullEmail -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.UserDaoTest@78186a70]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="6" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.LostFound.dao.UserDaoTest.findByNullEmail()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.UserDaoTest@78186a70]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="3" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.LostFound.dao.UserDaoTest.findByNullId()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="createUsers()[pri:0, instance:com.LostFound.dao.UserDaoTest@78186a70]" name="createUsers" is-config="true" duration-ms="12" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createUsers -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.UserDaoTest@78186a70]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="2" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.LostFound.dao.UserDaoTest.findByNullId()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="PASS" signature="findByNullId()[pri:0, instance:com.LostFound.dao.UserDaoTest@78186a70]" name="findByNullId" duration-ms="0" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <exception class="java.lang.IllegalArgumentException">
+            <message>
+              <![CDATA[id to load is required for loading]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.IllegalArgumentException: id to load is required for loading
+	at org.hibernate.event.spi.LoadEvent.<init>(LoadEvent.java:109)
+	at org.hibernate.event.spi.LoadEvent.<init>(LoadEvent.java:79)
+	at org.hibernate.internal.SessionImpl$IdentifierLoadAccessImpl.load(SessionImpl.java:2548)
+	at org.hibernate.internal.SessionImpl.get(SessionImpl.java:955)
+	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.find(AbstractEntityManagerImpl.java:1110)
+	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.find(AbstractEntityManagerImpl.java:1068)
+	at sun.reflect.GeneratedMethodAccessor11.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:298)
+	at com.sun.proxy.$Proxy38.find(Unknown Source)
+	at com.LostFound.dao.UserDAOImpl.findById(UserDAOImpl.java:44)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:333)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:281)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:213)
+	at com.sun.proxy.$Proxy41.findById(Unknown Source)
+	at com.LostFound.dao.UserDaoTest.findByNullId(UserDaoTest.java:88)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.MethodInvocationHelper$1.runTestMethod(MethodInvocationHelper.java:200)
+	at org.springframework.test.context.testng.AbstractTestNGSpringContextTests.run(AbstractTestNGSpringContextTests.java:175)
+	at org.testng.internal.MethodInvocationHelper.invokeHookable(MethodInvocationHelper.java:212)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:689)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:882)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1189)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.IllegalArgumentException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- findByNullId -->
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.UserDaoTest@78186a70]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="2" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.LostFound.dao.UserDaoTest.findByNullName()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="createUsers()[pri:0, instance:com.LostFound.dao.UserDaoTest@78186a70]" name="createUsers" is-config="true" duration-ms="4" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createUsers -->
+        <test-method status="PASS" signature="findByNullName()[pri:0, instance:com.LostFound.dao.UserDaoTest@78186a70]" name="findByNullName" duration-ms="2" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <exception class="javax.persistence.NoResultException">
+            <message>
+              <![CDATA[No entity found for query]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[javax.persistence.NoResultException: No entity found for query
+	at org.hibernate.jpa.internal.QueryImpl.getSingleResult(QueryImpl.java:498)
+	at com.LostFound.dao.UserDAOImpl.findByName(UserDAOImpl.java:53)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:333)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:281)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:213)
+	at com.sun.proxy.$Proxy41.findByName(Unknown Source)
+	at com.LostFound.dao.UserDaoTest.findByNullName(UserDaoTest.java:126)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.MethodInvocationHelper$1.runTestMethod(MethodInvocationHelper.java:200)
+	at org.springframework.test.context.testng.AbstractTestNGSpringContextTests.run(AbstractTestNGSpringContextTests.java:175)
+	at org.testng.internal.MethodInvocationHelper.invokeHookable(MethodInvocationHelper.java:212)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:689)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:882)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1189)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+]]>
+            </full-stacktrace>
+          </exception> <!-- javax.persistence.NoResultException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- findByNullName -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.UserDaoTest@78186a70]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="3" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.LostFound.dao.UserDaoTest.findByNullName()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.UserDaoTest@78186a70]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="2" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.LostFound.dao.UserDaoTest.findCreatedUsersById()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="createUsers()[pri:0, instance:com.LostFound.dao.UserDaoTest@78186a70]" name="createUsers" is-config="true" duration-ms="16" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createUsers -->
+        <test-method status="PASS" signature="findCreatedUsersById()[pri:0, instance:com.LostFound.dao.UserDaoTest@78186a70]" name="findCreatedUsersById" duration-ms="2" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- findCreatedUsersById -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.UserDaoTest@78186a70]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="3" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.LostFound.dao.UserDaoTest.findCreatedUsersById()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.UserDaoTest@78186a70]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="3" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.LostFound.dao.UserDaoTest.nameIsUnique()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="createUsers()[pri:0, instance:com.LostFound.dao.UserDaoTest@78186a70]" name="createUsers" is-config="true" duration-ms="9" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createUsers -->
+        <test-method status="PASS" signature="nameIsUnique()[pri:0, instance:com.LostFound.dao.UserDaoTest@78186a70]" name="nameIsUnique" duration-ms="2" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <exception class="javax.validation.ConstraintViolationException">
+            <message>
+              <![CDATA[Validation failed for classes [com.LostFound.entity.User] during persist time for groups [javax.validation.groups.Default, ]
+List of constraint violations:[
+	ConstraintViolationImpl{interpolatedMessage='may not be null', propertyPath=joinedDate, rootBeanClass=class com.LostFound.entity.User, messageTemplate='{javax.validation.constraints.NotNull.message}'}
+	ConstraintViolationImpl{interpolatedMessage='may not be null', propertyPath=email, rootBeanClass=class com.LostFound.entity.User, messageTemplate='{javax.validation.constraints.NotNull.message}'}
+]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[javax.validation.ConstraintViolationException: Validation failed for classes [com.LostFound.entity.User] during persist time for groups [javax.validation.groups.Default, ]
+List of constraint violations:[
+	ConstraintViolationImpl{interpolatedMessage='may not be null', propertyPath=joinedDate, rootBeanClass=class com.LostFound.entity.User, messageTemplate='{javax.validation.constraints.NotNull.message}'}
+	ConstraintViolationImpl{interpolatedMessage='may not be null', propertyPath=email, rootBeanClass=class com.LostFound.entity.User, messageTemplate='{javax.validation.constraints.NotNull.message}'}
+]
+	at org.hibernate.cfg.beanvalidation.BeanValidationEventListener.validate(BeanValidationEventListener.java:160)
+	at org.hibernate.cfg.beanvalidation.BeanValidationEventListener.onPreInsert(BeanValidationEventListener.java:95)
+	at org.hibernate.action.internal.EntityIdentityInsertAction.preInsert(EntityIdentityInsertAction.java:214)
+	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:92)
+	at org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:490)
+	at org.hibernate.engine.spi.ActionQueue.addResolvedEntityInsertAction(ActionQueue.java:195)
+	at org.hibernate.engine.spi.ActionQueue.addInsertAction(ActionQueue.java:179)
+	at org.hibernate.engine.spi.ActionQueue.addAction(ActionQueue.java:214)
+	at org.hibernate.event.internal.AbstractSaveEventListener.addInsertAction(AbstractSaveEventListener.java:324)
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSaveOrReplicate(AbstractSaveEventListener.java:288)
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:194)
+	at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:125)
+	at org.hibernate.jpa.event.internal.core.JpaPersistEventListener.saveWithGeneratedId(JpaPersistEventListener.java:84)
+	at org.hibernate.event.internal.DefaultPersistEventListener.entityIsTransient(DefaultPersistEventListener.java:206)
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:149)
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:75)
+	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:811)
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:784)
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:789)
+	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.persist(AbstractEntityManagerImpl.java:1181)
+	at sun.reflect.GeneratedMethodAccessor19.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:298)
+	at com.sun.proxy.$Proxy38.persist(Unknown Source)
+	at com.LostFound.dao.UserDAOImpl.create(UserDAOImpl.java:26)
+	at sun.reflect.GeneratedMethodAccessor31.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:333)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:281)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:213)
+	at com.sun.proxy.$Proxy41.create(Unknown Source)
+	at com.LostFound.dao.UserDaoTest.nameIsUnique(UserDaoTest.java:135)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.MethodInvocationHelper$1.runTestMethod(MethodInvocationHelper.java:200)
+	at org.springframework.test.context.testng.AbstractTestNGSpringContextTests.run(AbstractTestNGSpringContextTests.java:175)
+	at org.testng.internal.MethodInvocationHelper.invokeHookable(MethodInvocationHelper.java:212)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:689)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:882)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1189)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+]]>
+            </full-stacktrace>
+          </exception> <!-- javax.validation.ConstraintViolationException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- nameIsUnique -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.UserDaoTest@78186a70]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="3" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.LostFound.dao.UserDaoTest.nameIsUnique()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.UserDaoTest@78186a70]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="3" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.LostFound.dao.UserDaoTest.update()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="createUsers()[pri:0, instance:com.LostFound.dao.UserDaoTest@78186a70]" name="createUsers" is-config="true" duration-ms="5" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createUsers -->
+        <test-method status="PASS" signature="update()[pri:0, instance:com.LostFound.dao.UserDaoTest@78186a70]" name="update" duration-ms="1" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- update -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.UserDaoTest@78186a70]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="3" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.LostFound.dao.UserDaoTest.update()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="PASS" signature="springTestContextAfterTestClass()[pri:0, instance:com.LostFound.dao.UserDaoTest@78186a70]" name="springTestContextAfterTestClass" is-config="true" duration-ms="0" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestClass -->
+      </class> <!-- com.LostFound.dao.UserDaoTest -->
+      <class name="com.LostFound.dao.ItemDaoTest">
+        <test-method status="PASS" signature="springTestContextBeforeTestClass()[pri:0, instance:com.LostFound.dao.ItemDaoTest@1786f9d5]" name="springTestContextBeforeTestClass" is-config="true" duration-ms="7" started-at="2016-10-31T18:33:18Z" finished-at="2016-10-31T18:33:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestClass -->
+        <test-method status="PASS" signature="springTestContextPrepareTestInstance()[pri:0, instance:com.LostFound.dao.ItemDaoTest@1786f9d5]" name="springTestContextPrepareTestInstance" is-config="true" duration-ms="3238" started-at="2016-10-31T18:33:18Z" depends-on-methods="org.springframework.test.context.testng.AbstractTestNGSpringContextTests.springTestContextBeforeTestClass" finished-at="2016-10-31T18:33:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextPrepareTestInstance -->
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.ItemDaoTest@1786f9d5]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="1" started-at="2016-10-31T18:33:21Z" finished-at="2016-10-31T18:33:21Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.LostFound.dao.ItemDaoTest.create()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="create()[pri:0, instance:com.LostFound.dao.ItemDaoTest@1786f9d5]" name="create" duration-ms="152" started-at="2016-10-31T18:33:21Z" finished-at="2016-10-31T18:33:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- create -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.ItemDaoTest@1786f9d5]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="1" started-at="2016-10-31T18:33:21Z" finished-at="2016-10-31T18:33:21Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.LostFound.dao.ItemDaoTest.create()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="PASS" signature="delete()[pri:0, instance:com.LostFound.dao.ItemDaoTest@1786f9d5]" name="delete" duration-ms="51" started-at="2016-10-31T18:33:21Z" finished-at="2016-10-31T18:33:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- delete -->
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.ItemDaoTest@1786f9d5]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="0" started-at="2016-10-31T18:33:21Z" finished-at="2016-10-31T18:33:21Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.LostFound.dao.ItemDaoTest.delete()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.ItemDaoTest@1786f9d5]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="1" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
           <params>
             <param index="0">
               <value>
@@ -67,11 +1517,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- springTestContextAfterTestMethod -->
-        <test-method status="PASS" signature="findById()[pri:0, instance:com.LostFound.dao.ItemDaoTest@29b4f422]" name="findById" duration-ms="7" started-at="2016-10-27T00:59:33Z" finished-at="2016-10-27T00:59:33Z">
+        <test-method status="PASS" signature="findById()[pri:0, instance:com.LostFound.dao.ItemDaoTest@1786f9d5]" name="findById" duration-ms="8" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- findById -->
-        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.ItemDaoTest@29b4f422]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="0" started-at="2016-10-27T00:59:33Z" finished-at="2016-10-27T00:59:33Z">
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.ItemDaoTest@1786f9d5]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="0" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
           <params>
             <param index="0">
               <value>
@@ -82,7 +1532,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- springTestContextBeforeTestMethod -->
-        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.ItemDaoTest@29b4f422]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="0" started-at="2016-10-27T00:59:33Z" finished-at="2016-10-27T00:59:33Z">
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.ItemDaoTest@1786f9d5]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="0" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
           <params>
             <param index="0">
               <value>
@@ -93,7 +1543,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- springTestContextAfterTestMethod -->
-        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.ItemDaoTest@29b4f422]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="0" started-at="2016-10-27T00:59:33Z" finished-at="2016-10-27T00:59:33Z">
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.ItemDaoTest@1786f9d5]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="0" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
           <params>
             <param index="0">
               <value>
@@ -104,11 +1554,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- springTestContextBeforeTestMethod -->
-        <test-method status="PASS" signature="update()[pri:0, instance:com.LostFound.dao.ItemDaoTest@29b4f422]" name="update" duration-ms="22" started-at="2016-10-27T00:59:33Z" finished-at="2016-10-27T00:59:33Z">
+        <test-method status="PASS" signature="update()[pri:0, instance:com.LostFound.dao.ItemDaoTest@1786f9d5]" name="update" duration-ms="43" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- update -->
-        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.ItemDaoTest@29b4f422]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="0" started-at="2016-10-27T00:59:33Z" finished-at="2016-10-27T00:59:33Z">
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.LostFound.dao.ItemDaoTest@1786f9d5]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="0" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
           <params>
             <param index="0">
               <value>
@@ -119,11 +1569,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- springTestContextAfterTestMethod -->
-        <test-method status="PASS" signature="springTestContextAfterTestClass()[pri:0, instance:com.LostFound.dao.ItemDaoTest@29b4f422]" name="springTestContextAfterTestClass" is-config="true" duration-ms="0" started-at="2016-10-27T00:59:33Z" finished-at="2016-10-27T00:59:33Z">
+        <test-method status="PASS" signature="springTestContextAfterTestClass()[pri:0, instance:com.LostFound.dao.ItemDaoTest@1786f9d5]" name="springTestContextAfterTestClass" is-config="true" duration-ms="0" started-at="2016-10-31T18:33:22Z" finished-at="2016-10-31T18:33:22Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- springTestContextAfterTestClass -->
       </class> <!-- com.LostFound.dao.ItemDaoTest -->
     </test> <!-- Command line test -->
-  </suite> <!-- com.LostFound.dao.ItemDaoTest -->
+  </suite> <!-- Command line suite -->
 </testng-results>

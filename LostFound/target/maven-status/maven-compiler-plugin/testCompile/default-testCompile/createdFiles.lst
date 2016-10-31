@@ -1,1 +1,3 @@
-com\LostFound\dao\ItemDaoTest.class
+com/LostFound/dao/ItemDaoTest.class
+com/LostFound/dao/PostDaoTest.class
+com/LostFound/dao/UserDaoTest.class

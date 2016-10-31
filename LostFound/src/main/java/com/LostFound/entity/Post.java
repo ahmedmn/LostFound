@@ -15,9 +15,8 @@ public class Post {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
 
-//    TODO - !!! Uncomment when user class will be implemented !!!
-//    @ManyToOne
-//    private User user;
+    @ManyToOne
+    private User user;
 
     @OneToMany(fetch = FetchType.EAGER)
     @NotNull
@@ -42,14 +41,13 @@ public class Post {
         this.id = id;
     }
 
-//    TODO - !!! Uncomment when user class will be implemented !!!
-//    public User getUser() {
-//        return user;
-//    }
-//
-//    public void setUser(User user) {
-//        this.user = user;
-//    }
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     public List<Item> getPostItems() {
         return Collections.unmodifiableList(postItems);
@@ -90,8 +88,7 @@ public class Post {
 
         Post post = (Post) o;
 
-//    TODO - !!! Uncomment when user class will be implemented !!!
-//        if (getUser() != null ? !getUser().equals(post.getUser()) : post.getUser() != null) return false;
+        if (getUser() != null ? !getUser().equals(post.getUser()) : post.getUser() != null) return false;
         if (!getPostItems().equals(post.getPostItems())) return false;
         if (!getCreationDate().equals(post.getCreationDate())) return false;
         return getLocation().equals(post.getLocation());
@@ -100,9 +97,7 @@ public class Post {
 
     @Override
     public int hashCode() {
-        int result = 0;
-//    TODO - !!! Uncomment when user class will be implemented !!!
-//        int result = user != null ? user.hashCode() : 0;
+        int result = user != null ? user.hashCode() : 0;
         result = 31 * result + getPostItems().hashCode();
         result = 31 * result + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
         result = 31 * result + ((getLocation() == null) ? 0 : getLocation().hashCode());

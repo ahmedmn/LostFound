@@ -144,32 +144,6 @@ public class PostDaoTest extends AbstractTestNGSpringContextTests   {
         Assert.assertEquals(postDao.findById(post.getId()).getLocation(), "Bratislava");
         Assert.assertEquals(postDao.findById(post.getId()).getCreationDate(), cal.getTime());                  
     }
-    
-    /*
-    @Test(expectedExceptions=ConstraintViolationException.class) 
-    public void updateToNullStatePostTest() {
-
-        Post post = postDao.findAll().get(0);
-        
-        post.setState(null);
-        postDao.update(post);
-    }
-       
-    @Test(expectedExceptions=ConstraintViolationException.class) 
-    public void updateToNullCreationDatePostTest() {
-        Post post = postDao.findAll().get(0);
-        post.setCreationDate(null);
-        postDao.update(post);
-    }
-    
-    @Test(expectedExceptions=ConstraintViolationException.class) 
-    public void updateToNullLocationPostTest() {
-        Post post = postDao.findAll().get(0);
-        
-        post.setLocation(null);
-        postDao.update(post);
-    }
-    */
        
     @Test
     public void deletePostTest(){
@@ -207,12 +181,12 @@ public class PostDaoTest extends AbstractTestNGSpringContextTests   {
     public void findCreatedBetweenTest() {
         Calendar cal1 = Calendar.getInstance();
         Calendar cal2 = Calendar.getInstance();
-        cal1.add(Calendar.DAY_OF_YEAR, -1);
-        cal2.add(Calendar.DAY_OF_YEAR, 1);
+        cal1.add(Calendar.DAY_OF_YEAR, -2);
+        cal2.add(Calendar.DAY_OF_YEAR, 2);
         
         //all posts are created today
-        Assert.assertEquals(postDao.findCreatedBetween(cal1.getTime(), cal2.getTime()).size()
-                , postDao.findAll().size());
+        Assert.assertEquals(postDao.findCreatedBetween(cal1.getTime(), cal2.getTime(), PostState.OPENED).size()
+                , postDao.findByState(PostState.OPENED).size());
     }
 }
 
