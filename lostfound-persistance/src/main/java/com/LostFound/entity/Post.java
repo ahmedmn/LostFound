@@ -33,6 +33,13 @@ public class Post {
     @NotNull
     private PostState state;
 
+    public Post(Long postId) {
+        this.setId(postId);
+    }
+    
+    public Post() {
+    }
+
     public Long getId() {
         return id;
     }

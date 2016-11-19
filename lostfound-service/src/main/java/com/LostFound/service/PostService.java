@@ -32,7 +32,7 @@ public interface PostService {
     
     public void addItem(Post post, Item item);
       
-    void createPost(Post post);
+    public Post createPost(Post post);
     
     public void deletePost(Post post);
 	

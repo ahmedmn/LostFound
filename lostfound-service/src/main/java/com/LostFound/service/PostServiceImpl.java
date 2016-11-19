@@ -55,8 +55,9 @@ public class PostServiceImpl implements PostService{
         return postDao.findAll();
     }
 
-    public void createPost(Post post) {
+    public Post createPost(Post post) {
         postDao.create(post);
+        return post;
     }
 
     public void deletePost(Post post) {

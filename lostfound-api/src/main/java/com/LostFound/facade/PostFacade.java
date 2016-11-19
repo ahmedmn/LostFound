@@ -5,6 +5,7 @@
  */
 package com.LostFound.facade;
 
+import com.LostFound.dto.PostCreateDTO;
 import com.LostFound.dto.PostDTO;
 import com.LostFound.enums.PostState;
 import java.util.Date;
@@ -15,13 +16,13 @@ import java.util.List;
  * @author Michal
  */
 public interface PostFacade {
-    //public Long createPost(ProductCreateDTO p);
+    public Long createPost(PostCreateDTO p);
     
     public void addItem(Long productId, Long categoryId);
-    
-    public void removeItem(Long productId, Long categoryId);
-    
+        
     public void deletePost(Long productId);
+    
+    public PostDTO getPostById(Long id);
     
     public List<PostDTO> getAllPosts();
     

@@ -1,6 +1,6 @@
 ----------------------------------------------------------------
-Fri Nov 18 14:29:20 CET 2016:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance a816c00e-0158-77a0-8824-000007425c30 
+Sat Nov 19 17:02:56 CET 2016:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance a816c00e-0158-7d53-8578-000005656988 
 on database directory memory:/home/savco/Skola/Java/LostAndFound/LostFound/lostfound-persistance/testdb with class loader sun.misc.Launcher$AppClassLoader@135fbaa4 
 Loaded from file:/home/savco/.m2/repository/org/apache/derby/derby/10.10.2.0/derby-10.10.2.0.jar
 java.vendor=Oracle Corporation
