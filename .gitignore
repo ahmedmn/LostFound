@@ -90,7 +90,6 @@ local.properties
 # Code Recommenders
 .recommenders/
 
-/.gitignore
 ### Vim template
 # swap
 [._]*.s[a-w][a-z]
