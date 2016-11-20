@@ -13,22 +13,20 @@
   <name>lostfound-service</name>
   <url>http://maven.apache.org</url>
   <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
+    <!--DOZER framework-->
     <dependency>
       <groupId>org.apache.servicemix.bundles</groupId>
       <artifactId>org.apache.servicemix.bundles.dozer</artifactId>
       <version>5.4.0_1</version>
     </dependency>
+    <!--MOCKITO framework-->
     <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-context</artifactId>
-      <version>4.3.3.RELEASE</version>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-all</artifactId>
+      <version>1.10.19</version>
+      <scope>test</scope>
     </dependency>
+    <!--other modules dependencies-->
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>lostfound-persistance</artifactId>
