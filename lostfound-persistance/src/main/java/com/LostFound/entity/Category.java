@@ -13,7 +13,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 
 /**
@@ -31,7 +31,7 @@ public class Category {
     @Column(nullable=false,unique=true)
     private String name;
     
-    @ManyToMany(mappedBy="categories")
+    @OneToMany(mappedBy="category")
     private Set<Item> items = new HashSet<Item>();
 
     public Category() {
@@ -61,6 +61,10 @@ public class Category {
     
     public void addItem(Item item) {
         this.items.add(item);
+    }
+    
+    public void removeItem(Item item) {
+        this.items.remove(item);
     }
     
     // hashCode and equals

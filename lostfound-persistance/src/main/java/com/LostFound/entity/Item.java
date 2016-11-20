@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 
 
@@ -35,8 +36,8 @@ public class Item {
     @Column(name="keywords")
     private String keywords;
     
-    @ManyToMany(cascade = CascadeType.ALL)
-    private Set<Category> categories = new HashSet<Category>(); 
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Category category; 
 
     public int getId() {
             return id;
