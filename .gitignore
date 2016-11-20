@@ -37,6 +37,7 @@ dist/
 nbdist/
 nbactions.xml
 .nb-gradle/
+nb-configuration.xml
 ### Eclipse template
 
 .metadata
@@ -112,3 +113,6 @@ release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
+
+### Other
+derby.log
