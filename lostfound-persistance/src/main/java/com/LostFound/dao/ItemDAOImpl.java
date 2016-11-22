@@ -6,6 +6,7 @@ import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.LostFound.entity.Category;
 import com.LostFound.entity.Item;
 
 /**
@@ -37,11 +38,11 @@ public class ItemDAOImpl implements ItemDAO {
 		entityManager.remove(findById(t.getId()));
 	}
 
-	public Item findById(int id) {
+	public Item findById(Long id) {
 		return entityManager.find(Item.class, id);
 	}
 
-	public List<Item> findByAll() {
+	public List<Item> findAll() {
 		return entityManager.createQuery("select t from Item t", Item.class)
 				.getResultList();
 	}
@@ -50,6 +51,30 @@ public class ItemDAOImpl implements ItemDAO {
 		return entityManager
 				.createQuery("SELECT t FROM Item t WHERE t.name like :name ",
 						Item.class).setParameter("name", "%" + name + "%")
+				.getResultList();
+	}
+
+	@Override
+	public List<Item> findByKeywords(String keywords) {
+		return entityManager
+				.createQuery("SELECT t FROM Item t WHERE t.keywords like :keywords ",
+						Item.class).setParameter("keywords", "%" + keywords + "%")
+				.getResultList();
+	}
+
+	@Override
+	public List<Item> findByDescription(String description) {
+		return entityManager
+				.createQuery("SELECT t FROM Item t WHERE t.description like :description ",
+						Item.class).setParameter("description", "%" + description + "%")
+				.getResultList();
+	}
+
+	@Override
+	public List<Item> findByCategory(Category categories) {
+		return entityManager
+				.createQuery("SELECT t FROM Item t WHERE t.categories = :categories ",
+						Item.class).setParameter("categories", "%" + categories.getId() + "%")
 				.getResultList();
 	}
 
