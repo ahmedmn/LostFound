@@ -21,7 +21,7 @@ public interface ItemDAO {
 	 * @param item
 	 *            is the Item class.
 	 */
-	public void create(Item p);
+	public void create(Item item);
 
 	/**
 	 * update method is used for update information such as name, Description
@@ -30,7 +30,7 @@ public interface ItemDAO {
 	 * @param item
 	 *            is the Item class.
 	 */
-	public Item update(Item p);
+	public Item update(Item item);
 
 	/**
 	 * delete method is used for delete items according to item id in table item
@@ -40,7 +40,7 @@ public interface ItemDAO {
 	 * @throws IllegalArgumentException
 	 *             when there is null.
 	 */
-	public void delete(Item p) throws IllegalArgumentException;
+	public void delete(Item item) throws IllegalArgumentException;
 
 	/**
 	 * Returns information about a item corresponding to given item id. Result

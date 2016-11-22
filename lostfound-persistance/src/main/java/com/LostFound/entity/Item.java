@@ -1,16 +1,15 @@
 package com.LostFound.entity;
 
-import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.validation.constraints.NotNull;
+import javax.persistence.ManyToMany;
 
 /**
  * @author Ahmed Item class is the base class storing and retrieving information
@@ -22,7 +21,6 @@ public class Item {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id", nullable = false)
 	private Long id;
 
 	@Column(name = "name", nullable = false)
@@ -37,21 +35,22 @@ public class Item {
 	@Column(name = "keywords")
 	private String keywords;
 
-	@OneToMany(fetch = FetchType.EAGER)
-	@NotNull
-	private List<Category> categories = new ArrayList<>();
+	@ManyToMany
+	private Set<Category> categories = new HashSet<Category>();
 
-	public List<Category> getCategories() {
-		return Collections.unmodifiableList(categories);
+	public Set<Category> getCategories() {
+		return Collections.unmodifiableSet(categories);
+	}
+	
+	public void addCategory(Category c) {
+		categories.add(c);
+		c.addItem(this);
 	}
 
-	public void addCategory(Category category) {
-		categories.add(category);
+	public void deleteCategory(Category category)
+	{
+		this.categories.remove(category);
 	}
-
-	// public void setCategories(List<Category> categories) {
-	// this.categories = categories;
-	// }
 
 	public Long getId() {
 		return id;
@@ -158,7 +157,12 @@ public class Item {
 
 	@Override
 	public String toString() {
-		return "Item [id=" + id + ", name=" + name + ", description=" + description + ", keywords=" + keywords + "]";
+		return "Item [id=" + id + 
+				  ", name=" + name + 
+				  ", categories=" + categories +
+				  ", description=" + description + 
+				  ", keywords=" + keywords + 
+				  "]";
 	}
 
 }

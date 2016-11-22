@@ -23,8 +23,8 @@ public class ItemDAOImpl implements ItemDAO {
 	private EntityManager entityManager;
 
 	@Transactional
-	public void create(Item p) {
-		entityManager.persist(p);
+	public void create(Item item) {
+		entityManager.persist(item);
 	}
 
 	@Transactional

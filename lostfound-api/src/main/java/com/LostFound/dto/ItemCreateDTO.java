@@ -1,45 +1,24 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.LostFound.dto;
 
-import java.util.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
-/**
- *
- * @author Ahmed
- */
-public class ItemDTO {
+public class ItemCreateDTO {
 
-	private Long id;
-
+	@NotNull
+	@Size(min = 3, max = 50)
 	private String name;
 
+	@NotNull
+	@Size(min = 3, max = 500)
 	private String description;
 
 	private byte[] image;
 
 	private String keywords;
 
-	private Set<CategoryDTO> categories = new HashSet<>();
-
-	public Set<CategoryDTO> getCategories() {
-		return categories;
-	}
-
-	public void setCategories(Set<CategoryDTO> categories) {
-		this.categories = categories;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
+	@NotNull
+	private Long categoryId;
 
 	public String getName() {
 		return name;
@@ -79,11 +58,10 @@ public class ItemDTO {
 		int result = 1;
 
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((description == null) ? 0 : description.hashCode());
 		result = prime * result + ((image == null) ? 0 : image.hashCode());
 		result = prime * result + ((keywords == null) ? 0 : keywords.hashCode());
-		result = prime * result + ((categories == null) ? 0 : categories.hashCode());
+		result = prime * result + ((categoryId == null) ? 0 : categoryId.hashCode());
 		return result;
 	}
 
@@ -96,7 +74,7 @@ public class ItemDTO {
 		if (getClass() != obj.getClass())
 			return false;
 
-		ItemDTO other = (ItemDTO) obj;
+		ItemCreateDTO other = (ItemCreateDTO) obj;
 
 		if (name == null) {
 			if (other.name != null)
@@ -104,16 +82,11 @@ public class ItemDTO {
 		} else if (!name.equals(other.name))
 			return false;
 
-		if (id == null) {
-			if (other.id != null)
+		
+		if (categoryId == null) {
+			if (other.categoryId != null)
 				return false;
-		} else if (!id.equals(other.id))
-			return false;
-
-		if (categories == null) {
-			if (other.categories != null)
-				return false;
-		} else if (!categories.equals(other.categories))
+		} else if (!categoryId.equals(other.categoryId))
 			return false;
 
 		if (keywords == null) {
@@ -137,8 +110,16 @@ public class ItemDTO {
 		return true;
 	}
 
+	public Long getCategoryId() {
+		return categoryId;
+	}
+
+	public void setCategoryId(Long categoryId) {
+		this.categoryId = categoryId;
+	}
+
 	@Override
 	public String toString() {
-		return "Item [id=" + id + ", name=" + name + ", description=" + description + ", keywords=" + keywords + "]";
+		return "Item [name=" + name + ", description=" + description + ", keywords=" + keywords + "]";
 	}
 }
