@@ -23,7 +23,7 @@ public class ItemDTO {
 
 	private String keywords;
 
-	private Set<CategoryDTO> categories = new HashSet<>();
+	private Set<CategoryDTO> categories = new HashSet<CategoryDTO>();
 
 	public Set<CategoryDTO> getCategories() {
 		return categories;
