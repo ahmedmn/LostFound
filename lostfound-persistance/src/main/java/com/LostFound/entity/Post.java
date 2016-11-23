@@ -77,6 +77,7 @@ public class Post {
     }
 
     public void addPostItem(Item item) {
+        if (item == null) throw new IllegalArgumentException("Cannot add null item to Post");
         postItems.add(item);
     }
 

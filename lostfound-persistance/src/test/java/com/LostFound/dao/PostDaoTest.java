@@ -7,15 +7,21 @@ package com.LostFound.dao;
 
 import com.LostFound.entity.Item;
 import com.LostFound.entity.Post;
+import com.LostFound.entity.User;
 import com.LostFound.enums.PostState;
 import java.util.Calendar;
+import javax.persistence.NoResultException;
 import javax.persistence.RollbackException;
 import javax.validation.ConstraintViolationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.TestExecutionListeners;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
+import org.springframework.test.context.transaction.TransactionalTestExecutionListener;
+import org.springframework.transaction.annotation.Transactional;
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 /**
@@ -25,6 +31,8 @@ import org.testng.annotations.Test;
  *
  */
 @ContextConfiguration(locations = "file:src/main/resources/spring-config.xml")
+@TestExecutionListeners(TransactionalTestExecutionListener.class)
+@Transactional
 public class PostDaoTest extends AbstractTestNGSpringContextTests   {
     
     
@@ -32,15 +40,20 @@ public class PostDaoTest extends AbstractTestNGSpringContextTests   {
     private PostDAO postDao; 
     
     @Autowired
-    private ItemDAO itemDao; 
-                  
-    @Test
-    public void createPostTest() {
+    private ItemDAO itemDao;
+       
+    private Post post1;
+    private Post post2;
+    private Post post3;
         
-        Post post1 = new Post();
-        Post post2 = new Post();
-    
+    @BeforeMethod
+    public void createPosts(){      
         Calendar cal = Calendar.getInstance();
+        cal.set(2016,11,20);
+        
+        post1 = new Post();
+        post2 = new Post();
+        post3 = new Post();
         
         post1.setState(PostState.OPENED);
         post1.setLocation("Brno");
@@ -50,143 +63,146 @@ public class PostDaoTest extends AbstractTestNGSpringContextTests   {
         post2.setLocation("Bratislava");       
         post2.setCreationDate(cal.getTime());
         
+        post3.setState(PostState.OPENED);
+        post3.setLocation("Praha");
+        post3.setCreationDate(cal.getTime());
+        
         postDao.create(post1);
         postDao.create(post2);
-          
-        Assert.assertEquals(postDao.findById(post1.getId()).getLocation(), "Brno");       
-    }
-    
-    @Test(expectedExceptions=ConstraintViolationException.class)
-    public void createWithNullStatePostTest() {  
-        
-        Post post1 = new Post();         
-        Calendar cal = Calendar.getInstance();
-        
-        post1.setState(null);
-        post1.setLocation("Brno");
-        post1.setCreationDate(cal.getTime());
-                     
-        postDao.create(post1);         
-    }
-    
-    @Test(expectedExceptions=ConstraintViolationException.class)
-    public void createWithNullLocationPostTest() {
-        
-        Post post1 = new Post();           
-        Calendar cal = Calendar.getInstance();
-        
-        post1.setState(PostState.DONE);
-        post1.setLocation(null);
-        post1.setCreationDate(cal.getTime());
-              
-        postDao.create(post1);         
-    }
-    
-    @Test(expectedExceptions=ConstraintViolationException.class)
-    public void createWithNullCreationDatePostTest(){        
-        
-        Post post1 = new Post(); 
-              
-        post1.setState(PostState.DONE);
-        post1.setLocation("Brno");
-        post1.setCreationDate(null);
-
-        postDao.create(post1);         
     }
     
     
     @Test
-    public void addItemToPost(){
+    public void findByExistingIdPostTest() {                     
+        Assert.assertNotNull(postDao.findById(post1.getId()));
+        Assert.assertNotNull(postDao.findById(post2.getId()));
+    }
+    
+    @Test
+    public void findByNonExistingIdPostTest() {                     
+        Assert.assertNull(postDao.findById(post1.getId()+2l));
+    }
+    
+    @Test(expectedExceptions = IllegalArgumentException.class)
+    public void findByNullId() {
+        postDao.findById(null);
+    }
+    
+    @Test
+    public void findByLocationTest() {
+        Assert.assertNotNull(postDao.findByLocation("Brno"));       
+        Assert.assertEquals(postDao.findByLocation("Brno").size(), 1);
+    }
+    
+    @Test
+    public void findByNonExistentLocation() {
+        Assert.assertTrue(postDao.findByLocation("Kosice").isEmpty());
+    }
+    
+    @Test
+    public void findByNullLocationTest() {
+        Assert.assertTrue(postDao.findByLocation(null).isEmpty());
+    }
+    
+    @Test
+    public void findByStateTest() {
+        Assert.assertNotNull(postDao.findByState(PostState.OPENED));
+        Assert.assertTrue(postDao.findByState(PostState.DONE).isEmpty());
+    }
+    
+    @Test
+    public void findByNullStateTest() {
+        Assert.assertTrue(postDao.findByState(null).isEmpty());
+    }
+       
+    @Test
+    public void findCreatedBetweenTest() {
+        Calendar cal1 = Calendar.getInstance();
+        Calendar cal2 = Calendar.getInstance();
+        cal1.set(2016, 11, 19);
+        cal2.set(2016, 11, 21);
         
-        Post post1 = new Post();           
-        Calendar cal = Calendar.getInstance();
-        
-        post1.setState(PostState.DONE);
-        post1.setLocation("Brno");
-        post1.setCreationDate(cal.getTime());
-        
+        //all posts are created 20.11.2016
+        Assert.assertEquals(postDao.findCreatedBetween(cal1.getTime(), cal2.getTime(), PostState.OPENED).size()
+                , postDao.findByState(PostState.OPENED).size());
+    }
+    
+    @Test(expectedExceptions=ConstraintViolationException.class)
+    public void createWithNullStatePostTest() {  
+        post3.setState(null);                     
+        postDao.create(post3);         
+    }
+    
+    @Test(expectedExceptions=ConstraintViolationException.class)
+    public void createWithNullLocationPostTest() {       
+        post3.setLocation(null);
+        postDao.create(post3);         
+    }
+    
+    @Test(expectedExceptions=ConstraintViolationException.class)
+    public void createWithNullCreationDatePostTest(){        
+        post3.setCreationDate(null);
+        postDao.create(post3);         
+    }
+      
+    @Test
+    public void addItemToPost(){  
+        Assert.assertEquals(postDao.findById(post1.getId()).getPostItems().size(), 0);
         //creation of item to be added
         Item item = new Item();
         item.setName("ABC");
         itemDao.create(item);
         
         post1.addPostItem(item);       
-        postDao.create(post1);
+        postDao.update(post1);
                 
-        Assert.assertEquals(postDao.findById(post1.getId()).getPostItems().size(), 1);
-        Assert.assertEquals(postDao.findById(post1.getId()).getPostItems().get(0).getName(), "ABC");  
+        Assert.assertEquals(postDao.findById(post1.getId()).getPostItems().size(), 1);       
+    }
+    
+    @Test(expectedExceptions=IllegalArgumentException.class)
+    public void addNullItemToPost(){        
+        post1.addPostItem(null);       
+        postDao.update(post1);      
     }
     
     
     @Test
-    public void updatePostTest() {
-                 
-        Post post = new Post();
-        Calendar cal = Calendar.getInstance();
+    public void updatePostStateTest() {
+        post1.setState(PostState.DONE);
+        postDao.update(post1);
         
-        post.setState(PostState.OPENED);
-        post.setLocation("Brno");
-        post.setCreationDate(cal.getTime());
-        
-        postDao.create(post);
-        
-        Assert.assertEquals(postDao.findById(post.getId()).getState(), PostState.OPENED);
-        Assert.assertEquals(postDao.findById(post.getId()).getLocation(), "Brno");
-        Assert.assertEquals(postDao.findById(post.getId()).getCreationDate(), cal.getTime());
-        
-        post.setState(PostState.DONE);
-        post.setLocation("Bratislava");
-        cal.add(Calendar.DAY_OF_YEAR, 1);
-        post.setCreationDate(cal.getTime());
-        postDao.update(post);
-        
-        Assert.assertEquals(postDao.findById(post.getId()).getState(), PostState.DONE);      
-        Assert.assertEquals(postDao.findById(post.getId()).getLocation(), "Bratislava");
-        Assert.assertEquals(postDao.findById(post.getId()).getCreationDate(), cal.getTime());                  
+        Assert.assertEquals(postDao.findById(post1.getId()).getState(), PostState.DONE);
     }
        
     @Test
-    public void deletePostTest(){
-        Post postd = new Post();
+    public void updatePostLocationTest() {
+        post1.setLocation("Bratislava");
+        postDao.update(post1);
+        
+        Assert.assertEquals(postDao.findById(post1.getId()).getLocation(), "Bratislava");
+    }
+                  
+    @Test
+    public void updatePostCreationDateTest() {
         Calendar cal = Calendar.getInstance();
+        cal.set(2016, 11, 11);
         
-        postd.setState(PostState.OPENED);
-        postd.setLocation("Brno");
-        postd.setCreationDate(cal.getTime());
+        post1.setCreationDate(cal.getTime());
+        postDao.update(post1);
+        
+        Assert.assertEquals(postDao.findById(post1.getId()).getCreationDate(), cal.getTime());
+    }
+                           
+    @Test
+    public void deletePostTest(){
+        Assert.assertNotNull(postDao.findById(post1.getId()));
+        postDao.delete(post1);    
+        Assert.assertNull(postDao.findById(post1.getId()));
+    }
 
-        postDao.create(postd);
-        
-        int count = postDao.findAll().size();
-        Assert.assertNotNull(postDao.findById(postd.getId()));
-        postDao.delete(postd);
-        
-        //after deletion we should not find deleted post and number of post should be decreased by 1
-        Assert.assertNull(postDao.findById(postd.getId()));
-        Assert.assertEquals(postDao.findAll().size(), count-1);
-    }
-    
-    @Test
-    public void findByLocationTest() {
-        Assert.assertEquals(postDao.findByLocation("Brno").size(), 1);
-        Assert.assertEquals(postDao.findByLocation("Bratislava").size(), 1);
-    }
-    
-    @Test
-    public void findByStateTest() {
-        Assert.assertEquals(postDao.findByState(PostState.OPENED).size(), 2);
-        Assert.assertEquals(postDao.findByState(PostState.DONE).size(), 1);
-    }
-    
-    @Test
-    public void findCreatedBetweenTest() {
-        Calendar cal1 = Calendar.getInstance();
-        Calendar cal2 = Calendar.getInstance();
-        cal1.add(Calendar.DAY_OF_YEAR, -2);
-        cal2.add(Calendar.DAY_OF_YEAR, 2);
-        
-        //all posts are created today
-        Assert.assertEquals(postDao.findCreatedBetween(cal1.getTime(), cal2.getTime(), PostState.OPENED).size()
-                , postDao.findByState(PostState.OPENED).size());
-    }
+    @Test(expectedExceptions=NullPointerException.class)
+    public void deletePostNullTest(){
+        postDao.delete(null);            
+    }   
 }
 
