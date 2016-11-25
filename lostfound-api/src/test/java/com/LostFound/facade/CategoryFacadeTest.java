@@ -14,11 +14,7 @@ import com.LostFound.dto.CategoryDTO;
 public class CategoryFacadeTest extends AbstractTestNGSpringContextTests {
 	@Autowired
     private CategoryFacade categoryFacade;
-	
-	
-	
-	  // TEST DATA
-   
+	 
     private CategoryCreateDTO categoryCreateDTO;
     private CategoryDTO expectedCategoryDTO;
     private Long newCategoryId;
@@ -31,8 +27,7 @@ public class CategoryFacadeTest extends AbstractTestNGSpringContextTests {
     	categoryCreateDTO.setName("Technology");
     }
 
-    
-    
+        
     @Test
     void createCategory()    {
     	CategoryDTO actualCategoryDTO = categoryFacade.getCategoryById(newCategoryId);
@@ -55,5 +50,4 @@ public class CategoryFacadeTest extends AbstractTestNGSpringContextTests {
         Assert.assertEquals(categoryFacade.getCategoryById(newCategoryId), expectedCategoryDTO);
     }
     
-
 }
