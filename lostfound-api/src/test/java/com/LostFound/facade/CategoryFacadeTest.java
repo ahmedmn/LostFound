@@ -1,7 +1,5 @@
 package com.LostFound.facade;
 
-import java.util.Calendar;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
@@ -10,9 +8,7 @@ import org.testng.annotations.Test;
 
 import com.LostFound.dto.CategoryCreateDTO;
 import com.LostFound.dto.CategoryDTO;
-import com.LostFound.dto.PostCreateDTO;
-import com.LostFound.dto.PostDTO;
-import com.LostFound.enums.PostState;
+
 
 @ContextConfiguration(locations = "file:src/main/resources/spring-config.xml")
 public class CategoryFacadeTest extends AbstractTestNGSpringContextTests {
