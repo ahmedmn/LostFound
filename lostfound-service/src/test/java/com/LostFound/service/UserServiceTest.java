@@ -42,21 +42,22 @@ public class UserServiceTest extends AbstractTestNGSpringContextTests {
     @BeforeClass
     public void setup() throws ServiceException {
         MockitoAnnotations.initMocks(this);
+        
+        userService.registerUser(registeredUser, "123");
     }
     
     private User expectedUser;
     
+    private User registeredUser = new User();
+    
     private List<User> expectedUserList = new ArrayList<User>();
     
     @Test 
-    public void create(){
-        //call service method
-        userService.create(expectedUser);
-
+    public void register(){             
         //verify
-        verify(userDao, times(1)).create(expectedUser);
+        verify(userDao, times(1)).create(registeredUser);
     }
-    
+       
     @Test
     public void findById(){
         //setup
@@ -64,7 +65,7 @@ public class UserServiceTest extends AbstractTestNGSpringContextTests {
         //mock
         when(userDao.findById(any(Long.class))).thenReturn(expectedUser);
         //call service method
-        User actualUser = userService.findById(idToFind);
+        User actualUser = userService.findUserById(idToFind);
         //verify
         verify(userDao, times(1)).findById(idToFind);
         //check
@@ -78,7 +79,7 @@ public class UserServiceTest extends AbstractTestNGSpringContextTests {
         //mock
         when(userDao.findByName(any(String.class))).thenReturn(expectedUser);
         //call service method
-        User actualUser = userService.findByName(name);
+        User actualUser = userService.findUserByName(name);
         //verify
         verify(userDao, times(1)).findByName(name);
         //check
@@ -92,7 +93,7 @@ public class UserServiceTest extends AbstractTestNGSpringContextTests {
         //mock
         when(userDao.findByEmail(any(String.class))).thenReturn(expectedUser);
         //call service method
-        User actualUser = userService.findByEmail(email);
+        User actualUser = userService.findUserByEmail(email);
         //verify
         verify(userDao, times(1)).findByEmail(email);
         //check
@@ -104,7 +105,7 @@ public class UserServiceTest extends AbstractTestNGSpringContextTests {
         //mock
         when(userDao.findAll()).thenReturn(expectedUserList);
         //call service method
-        List<User> actualUserList = userService.findAll();
+        List<User> actualUserList = userService.getAllUsers();
         //verify
         verify(userDao, times(1)).findAll();
         //check
@@ -112,7 +113,28 @@ public class UserServiceTest extends AbstractTestNGSpringContextTests {
     }
     
     @Test
-    public void delete() {
-        
+    public void isAdmin() {
+        registeredUser.setAdmin(true);
+        //check
+        Assert.assertEquals(userService.isAdmin(registeredUser), true);
+    }
+    
+    @Test
+    public void isNotAdmin() {
+        registeredUser.setAdmin(false);
+        //check
+        Assert.assertEquals(userService.isAdmin(registeredUser), false);
+    }
+       
+    @Test
+    public void loginPassed() {
+        //check
+        Assert.assertTrue(userService.login(registeredUser, "123"));
+    }
+    
+    @Test
+    public void loginFailed() {
+        //check
+        Assert.assertFalse(userService.login(registeredUser, "1234"));
     }
 }
