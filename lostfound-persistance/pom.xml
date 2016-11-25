@@ -152,5 +152,12 @@
             <artifactId>derby</artifactId>
             <version>10.10.2.0</version>
         </dependency>
+
+        <!--dependency on api module-->
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>lostfound-api</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
     </dependencies>
 </project>

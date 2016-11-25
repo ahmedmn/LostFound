@@ -10,6 +10,7 @@
 	</parent>
 	<groupId>com.LostFound</groupId>
 	<artifactId>lostfound-api</artifactId>
+	<packaging>jar</packaging>
 	<version>1.0-SNAPSHOT</version>
 	<name>lostfound API Layer</name>
 
@@ -28,7 +29,7 @@
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
-			<scope>test</scope>
+			<version>6.8.21</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -41,5 +42,11 @@
 			<version>4.3.3.RELEASE</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.2</version>
+		</dependency>
+
 	</dependencies>
 </project>
