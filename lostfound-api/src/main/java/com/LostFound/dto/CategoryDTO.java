@@ -1,15 +1,15 @@
 package com.LostFound.dto;
 /**
-*
-* @author Ahmed
-*/
+ *
+ * @author Peter
+ */
 public class CategoryDTO
 {
     private Long id;
 
     private String name;
 
- 
+
     public String getName() {
         return name;
     }
@@ -18,15 +18,15 @@ public class CategoryDTO
         this.name = name;
     }
 
-    
+
     public Long getId() {
         return id;
     }
-    
+
     public void setId(Long id) {
         this.id = id;
     }
-    
+
     @Override
     public int hashCode() {
         final int prime = 31;
