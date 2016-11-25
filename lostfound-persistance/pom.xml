@@ -152,11 +152,5 @@
             <artifactId>derby</artifactId>
             <version>10.10.2.0</version>
         </dependency>
-
-        <dependency>
-            <groupId>cz.muni.fi.pa165</groupId>
-            <artifactId>eshop-api</artifactId>
-            <version>${project.parent.version}</version>
-        </dependency>
     </dependencies>
 </project>
