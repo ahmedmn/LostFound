@@ -19,6 +19,7 @@ public interface ItemService {
     public List<Item> findByName(String name);
     public List<Item> findByDescription(String description);
     public List<Item> findByKeywords(String keywords);
+	public List<Item> findByCategory(Category categories);
 	public List<Item> findAll();
 	public Item createItem(Item item);
 	public void addCategory(Item item, Category category);

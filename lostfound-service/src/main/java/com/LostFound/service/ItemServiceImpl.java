@@ -37,6 +37,10 @@ public class ItemServiceImpl implements ItemService {
 		return ItemDao.findByKeywords(keywords);
 	}
 
+	public List<Item> findByCategory(Category categories) {
+		return ItemDao.findByCategory(categories);
+	}
+
 	public List<Item> findAll() {
 		return ItemDao.findAll();
 	}
