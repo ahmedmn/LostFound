@@ -10,11 +10,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
 /**
- * Created by bokos on 25/11/2016.
+ * @author bokos
  */
 @Service
 @Transactional
@@ -26,7 +25,7 @@ public class UserFacadeImpl implements UserFacade {
     @Autowired
     private BeanMappingService beanMappingService;
 
-    public void registerUser(UserDTO user, String unencryptedPassword) throws NoSuchAlgorithmException {
+    public void registerUser(UserDTO user, String unencryptedPassword) {
         User userEntity = beanMappingService.mapTo(user, User.class);
         userService.registerUser(userEntity, unencryptedPassword);
         user.setId(userEntity.getId());

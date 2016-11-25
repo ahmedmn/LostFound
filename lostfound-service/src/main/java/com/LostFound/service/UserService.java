@@ -6,6 +6,9 @@ import org.springframework.stereotype.Service;
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
+/**
+ * @author Bokos
+ */
 @Service
 public interface UserService {
 

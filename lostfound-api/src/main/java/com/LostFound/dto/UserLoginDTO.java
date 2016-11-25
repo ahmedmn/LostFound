@@ -1,7 +1,7 @@
 package com.LostFound.dto;
 
 /**
- * Created by bokos on 23/11/2016.
+ * @author Bokos
  */
 public class UserLoginDTO
 {

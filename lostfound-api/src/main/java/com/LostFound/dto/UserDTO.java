@@ -8,8 +8,7 @@ package com.LostFound.dto;
 import java.util.Date;
 
 /**
- *
- * @author savco
+ * @author Bokos
  */
 public class UserDTO {
     private Long id;

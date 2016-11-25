@@ -7,11 +7,11 @@ import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
 /**
- * Created by bokos on 23/11/2016.
+ * @author Bokos
  */
 public interface UserFacade {
 
-    void registerUser(UserDTO user, String unencryptedPassword) throws NoSuchAlgorithmException;
+    void registerUser(UserDTO user, String unencryptedPassword);
 
     List<UserDTO> getAllUsers();
 
