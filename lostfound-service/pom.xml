@@ -1,41 +1,43 @@
 <?xml version="1.0"?>
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
+
   <parent>
     <groupId>com.LostFound</groupId>
     <artifactId>lostfound-parent</artifactId>
     <version>1.0-SNAPSHOT</version>
   </parent>
-  <groupId>com.LostFound</groupId>
+
   <artifactId>lostfound-service</artifactId>
+  <groupId>com.LostFound</groupId>
   <version>1.0-SNAPSHOT</version>
-  <name>lostfound-service</name>
-  <url>http://maven.apache.org</url>
+  <packaging>jar</packaging>
+  <name>lostfound Service Layer</name>
+
   <dependencies>
     <!--DOZER framework-->
     <dependency>
-      <groupId>org.apache.servicemix.bundles</groupId>
-      <artifactId>org.apache.servicemix.bundles.dozer</artifactId>
-      <version>5.4.0_1</version>
+      <groupId>net.sf.dozer</groupId>
+      <artifactId>dozer</artifactId>
     </dependency>
     <!--MOCKITO framework-->
     <dependency>
       <groupId>org.mockito</groupId>
       <artifactId>mockito-all</artifactId>
-      <version>1.10.19</version>
       <scope>test</scope>
     </dependency>
-    <!--other modules dependencies-->
+    <!--dependency on persistance module-->
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>lostfound-persistance</artifactId>
-      <version>1.0</version>
+      <version>${project.parent.version}</version>
     </dependency>
+    <!--dependency on api module-->
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>lostfound-api</artifactId>
-      <version>${project.version}</version>
+      <version>${project.parent.version}</version>
     </dependency>
   </dependencies>
 </project>

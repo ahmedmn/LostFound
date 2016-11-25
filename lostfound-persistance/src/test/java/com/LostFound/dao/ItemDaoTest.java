@@ -20,7 +20,7 @@ import com.LostFound.entity.Item;
  * @author Ahmed
  *
  */
-@ContextConfiguration(locations = "file:src/main/resources/spring-config.xml")
+@ContextConfiguration(locations = "file:src/main/resources/spring-persistance.xml")
 @TestExecutionListeners(TransactionalTestExecutionListener.class)
 @Transactional
 public class ItemDaoTest extends AbstractTestNGSpringContextTests {

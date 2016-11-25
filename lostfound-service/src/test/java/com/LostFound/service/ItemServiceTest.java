@@ -20,7 +20,7 @@ import static org.mockito.Mockito.when;
 /**
  * @author bokos
  */
-@ContextConfiguration(locations = "file:src/main/resources/spring-config.xml")
+@ContextConfiguration(locations = "file:src/main/resources/spring-service.xml")
 public class ItemServiceTest extends AbstractTestNGSpringContextTests {
 
     private Item testItem;

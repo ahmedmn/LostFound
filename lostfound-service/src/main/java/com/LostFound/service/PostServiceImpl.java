@@ -9,11 +9,13 @@ import com.LostFound.dao.ItemDAO;
 import com.LostFound.entity.Post;
 import com.LostFound.entity.User;
 import com.LostFound.dao.PostDAO;
-import com.LostFound.dao.UserDAO;
 import com.LostFound.entity.Item;
 import com.LostFound.enums.PostState;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,11 +25,9 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class PostServiceImpl implements PostService{
-    
+
     @Autowired
     private PostDAO postDao;
-    @Autowired
-    private UserDAO userDao;
     @Autowired
     private ItemDAO itemDao;
 
@@ -40,7 +40,7 @@ public class PostServiceImpl implements PostService{
     }
 
     public List<Post> findByLocation(String location) {
-        return postDao.findByLocation(location);    
+        return postDao.findByLocation(location);
     }
 
     public List<Post> findCreatedBetween(Date fromDate, Date toDate) {
@@ -48,7 +48,7 @@ public class PostServiceImpl implements PostService{
     }
 
     public List<Post> findByState(PostState state) {
-        return postDao.findByState(state);    
+        return postDao.findByState(state);
     }
 
     public List<Post> findAll() {
@@ -70,13 +70,34 @@ public class PostServiceImpl implements PostService{
 
     public void addItem(Post post, Item item) {
         if (post.getPostItems().contains(item)) {
-			throw new IllegalArgumentException(
-					"Post already contais this item. Post: "
-							+ post.getId() + ", item: "
-							+ item.getId());
-		}
+            throw new IllegalArgumentException(
+                    "Post already contais this item. Post: "
+                            + post.getId() + ", item: "
+                            + item.getId());
+        }
         post.addPostItem(item);
         postDao.update(post);
     }
-    
+
+    public Set<Post> findPostByKeywords(List<String> keywords) {
+        List<Set<Post>> postsByKeywords = new ArrayList<Set<Post>>();
+        List<Item> tmpItems;
+        Set<Post> tmpPosts;
+
+        for(String kw: keywords){
+            tmpItems = itemDao.findByKeywords(kw);
+            tmpPosts = new HashSet<Post>();
+            for(Item item:tmpItems){
+                tmpPosts.add(item.getPost());
+            }
+            postsByKeywords.add(tmpPosts);
+        }
+
+        Set<Post> intersectSet = postsByKeywords.get(0);
+        for (int i = 1; i < postsByKeywords.size(); i++) {
+            intersectSet.retainAll(postsByKeywords.get(i));
+        }
+        return intersectSet;
+    }
+
 }

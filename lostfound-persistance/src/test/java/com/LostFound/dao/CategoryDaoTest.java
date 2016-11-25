@@ -24,7 +24,7 @@ import javax.validation.ConstraintViolationException;
  *
  */
 
-@ContextConfiguration(locations = "file:src/main/resources/spring-config.xml")
+@ContextConfiguration(locations = "file:src/main/resources/spring-persistance.xml")
 @TestExecutionListeners(TransactionalTestExecutionListener.class)
 @Transactional
 public class CategoryDaoTest  extends AbstractTestNGSpringContextTests{

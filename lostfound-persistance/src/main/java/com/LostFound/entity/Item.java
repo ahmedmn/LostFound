@@ -6,10 +6,12 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 /**
  * @author Ahmed Item class is the base class storing and retrieving information
@@ -35,13 +37,16 @@ public class Item {
 	@Column(name = "keywords")
 	private String keywords;
 
+	@ManyToOne(fetch = FetchType.LAZY)
+	private Post post;
+
 	@ManyToMany
 	private Set<Category> categories = new HashSet<Category>();
 
 	public Set<Category> getCategories() {
 		return Collections.unmodifiableSet(categories);
 	}
-	
+
 	public void addCategory(Category c) {
 		categories.add(c);
 		c.addItem(this);
@@ -91,6 +96,16 @@ public class Item {
 	public void setKeywords(String keywords) {
 		this.keywords = keywords;
 	}
+
+	public Post getPost() {
+		return post;
+	}
+
+	public void setPost(Post post) {
+		this.post = post;
+	}
+
+
 
 	@Override
 	public int hashCode() {
@@ -157,12 +172,12 @@ public class Item {
 
 	@Override
 	public String toString() {
-		return "Item [id=" + id + 
-				  ", name=" + name + 
-				  ", categories=" + categories +
-				  ", description=" + description + 
-				  ", keywords=" + keywords + 
-				  "]";
+		return "Item [id=" + id +
+				", name=" + name +
+				", categories=" + categories +
+				", description=" + description +
+				", keywords=" + keywords +
+				"]";
 	}
 
 }
