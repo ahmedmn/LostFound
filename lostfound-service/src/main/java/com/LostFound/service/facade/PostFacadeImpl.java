@@ -67,7 +67,7 @@ public class PostFacadeImpl implements PostFacade{
     }
 
     public List<PostDTO> getPostsByUser(Long userId) {
-        User user = userService.findById(userId);
+        User user = userService.findUserById(userId);
         return beanMappingService.mapTo(postService.findByUser(user), PostDTO.class);
     }
 
