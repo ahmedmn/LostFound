@@ -1,6 +1,7 @@
 package com.LostFound.facade;
 
 import com.LostFound.dto.UserDTO;
+import com.LostFound.dto.UserLoginDTO;
 
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
@@ -14,7 +15,7 @@ public interface UserFacade {
 
     List<UserDTO> getAllUsers();
 
-    boolean login(UserDTO user, String password) throws NoSuchAlgorithmException;
+    boolean login(UserLoginDTO user);
 
     boolean isAdmin(UserDTO user);
 

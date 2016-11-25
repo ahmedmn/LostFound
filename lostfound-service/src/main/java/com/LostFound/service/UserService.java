@@ -9,11 +9,11 @@ import java.util.List;
 @Service
 public interface UserService {
 
-    void registerUser(User user, String unencryptedPassword) throws NoSuchAlgorithmException;
+    void registerUser(User user, String unencryptedPassword);
 
     List<User> getAllUsers();
 
-    boolean login(User user, String password) throws NoSuchAlgorithmException;
+    boolean login(User user, String password);
 
     boolean isAdmin(User user);
 
