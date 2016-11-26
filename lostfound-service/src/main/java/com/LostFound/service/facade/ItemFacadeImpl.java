@@ -40,12 +40,12 @@ public class ItemFacadeImpl implements ItemFacade {
         itemService.addCategory(itemService.findById(ItemId), categoryService.findById(categoryId));
     }
 
-    public void deleteCategory(Long productId, Long categoryId) {
-        itemService.deleteCategory(itemService.findById(productId), categoryService.findById(categoryId));
+    public void deleteCategory(Long itemId, Long categoryId) {
+        itemService.deleteCategory(itemService.findById(itemId), categoryService.findById(categoryId));
     }
 
-    public void deleteProduct(Long productId) {
-        itemService.deleteItem(itemService.findById(productId));
+    public void deleteItem(Long itemId) {
+        itemService.deleteItem(itemService.findById(itemId));
     }
 
     public List<ItemDTO> getAllItems() {

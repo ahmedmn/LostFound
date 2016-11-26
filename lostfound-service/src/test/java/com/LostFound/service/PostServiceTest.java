@@ -6,6 +6,7 @@ import com.LostFound.entity.Item;
 import com.LostFound.entity.Post;
 import com.LostFound.entity.User;
 import com.LostFound.enums.PostState;
+import com.LostFound.exceptions.LostFoundServiceException;
 import org.hibernate.service.spi.ServiceException;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -113,14 +114,14 @@ public class PostServiceTest extends AbstractTestNGSpringContextTests {
     }
 
 
-// TODO
-//    @Test(expectedExceptions=LostFoundServiceException.class)
-//    public void addItemToPostFailed() {
-//        //setup
-//        expectedPost.addPostItem(itemGuitar);
-//        //call service method and expect throwing exception
-//        postService.addItem(expectedPost, itemGuitar);
-//    }
+
+   @Test(expectedExceptions=LostFoundServiceException.class)
+   public void addItemToPostFailed() {
+        //setup
+       expectedPost.addPostItem(itemGuitar);
+       //call service method and expect throwing exception
+       postService.addItem(expectedPost, itemGuitar);
+   }
 
 
     @Test
@@ -293,11 +294,11 @@ public class PostServiceTest extends AbstractTestNGSpringContextTests {
         Assert.assertEquals(actualPosts, Collections.emptyList());
     }
 
-// TODO
-//    @Test(expectedExceptions=LostFoundServiceException.class)
-//    public void findnullKeyword() {
-//        postService.findPostByKeywords(null);
-//    }
+
+    @Test(expectedExceptions=IllegalArgumentException.class)
+    public void findnullKeyword() {
+        postService.findPostByKeywords(null);
+    }
 
 
     // private helper functions

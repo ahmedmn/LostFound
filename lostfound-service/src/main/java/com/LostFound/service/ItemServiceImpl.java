@@ -56,6 +56,7 @@ public class ItemServiceImpl implements ItemService {
 					"Item already contais this category. Item: " + item.getId() + ", category: " + category.getId());
 		}
 		item.addCategory(category);
+                ItemDao.update(item);
 
 	}
 

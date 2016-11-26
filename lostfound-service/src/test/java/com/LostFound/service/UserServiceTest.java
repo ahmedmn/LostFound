@@ -19,10 +19,12 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.*;
+import org.testng.annotations.BeforeMethod;
 
 /**
  *
@@ -42,8 +44,7 @@ public class UserServiceTest extends AbstractTestNGSpringContextTests {
     @BeforeClass
     public void setup() throws ServiceException {
         MockitoAnnotations.initMocks(this);
-        
-        userService.registerUser(registeredUser, "123");
+        userService.registerUser(registeredUser, "123");        
     }
     
     private User expectedUser;
@@ -137,4 +138,5 @@ public class UserServiceTest extends AbstractTestNGSpringContextTests {
         //check
         Assert.assertFalse(userService.login(registeredUser, "1234"));
     }
+   
 }

@@ -8,9 +8,9 @@ import com.LostFound.dto.ItemDTO;
 
 public interface ItemFacade {
 	public Long createItem(ItemCreateDTO p);
-	public void addCategory(Long ItemId, Long categoryId);
-	public void deleteCategory(Long productId, Long categoryId);
-	public void deleteProduct(Long productId);
+	public void addCategory(Long itemId, Long categoryId);
+	public void deleteCategory(Long itemId, Long categoryId);
+	public void deleteItem(Long itemId);
 	public List<ItemDTO> getAllItems();
 	public List<ItemDTO> getItemsByCategory(String categoryName);
 	public List<ItemDTO> getItemsByKeywords(String Keywords);

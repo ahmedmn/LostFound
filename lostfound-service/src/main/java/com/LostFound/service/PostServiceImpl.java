@@ -11,6 +11,7 @@ import com.LostFound.entity.User;
 import com.LostFound.dao.PostDAO;
 import com.LostFound.entity.Item;
 import com.LostFound.enums.PostState;
+import com.LostFound.exceptions.LostFoundServiceException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
@@ -70,7 +71,7 @@ public class PostServiceImpl implements PostService{
 
     public void addItem(Post post, Item item) {
         if (post.getPostItems().contains(item)) {
-            throw new IllegalArgumentException(
+            throw new LostFoundServiceException(
                     "Post already contais this item. Post: "
                             + post.getId() + ", item: "
                             + item.getId());
@@ -80,6 +81,9 @@ public class PostServiceImpl implements PostService{
     }
 
     public Set<Post> findPostByKeywords(List<String> keywords) {
+        if (keywords == null) throw new IllegalArgumentException(
+                    "Argument keywords is null");
+   
         List<Set<Post>> postsByKeywords = new ArrayList<Set<Post>>();
         List<Item> tmpItems;
         Set<Post> tmpPosts;
