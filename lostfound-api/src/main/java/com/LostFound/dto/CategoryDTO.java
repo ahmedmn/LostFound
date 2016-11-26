@@ -1,4 +1,5 @@
 package com.LostFound.dto;
+
 /**
  *
  * @author Peter

@@ -10,13 +10,4 @@
     <context:annotation-config />
     <context:component-scan base-package="com.LostFound"/>
 
-    <bean id="mapper" class="org.dozer.DozerBeanMapper">
-        <property name="mappingFiles">
-            <list>
-                <value>dozer-global-configuration.xml</value>
-                <value>dozer-bean-mappings.xml</value>
-                <value>more-dozer-bean-mappings.xml</value>
-            </list>
-        </property>
-    </bean>
 </beans>

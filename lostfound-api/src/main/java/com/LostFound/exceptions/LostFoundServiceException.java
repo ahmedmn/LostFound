@@ -4,8 +4,6 @@ package com.LostFound.exceptions;
 *
 * @author Ahmed
 */
-
-
 public class LostFoundServiceException extends RuntimeException {
 
 	public LostFoundServiceException() {

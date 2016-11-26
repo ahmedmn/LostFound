@@ -5,7 +5,9 @@ import java.util.List;
 import com.LostFound.dto.ItemCreateDTO;
 import com.LostFound.dto.ItemDTO;
 
-
+/**
+ * @author Ahmed
+ */
 public interface ItemFacade {
 	public Long createItem(ItemCreateDTO p);
 	public void addCategory(Long itemId, Long categoryId);

@@ -12,7 +12,7 @@ public class UserDTO {
 
     private String email;
 
-    private String givenName;
+    private String username;
 
     private String surname;
 
@@ -51,13 +51,13 @@ public class UserDTO {
     }
 
 
-    public String getGivenName() {
-        return givenName;
+    public String getUsername() {
+        return username;
     }
 
 
-    public void setGivenName(String givenName) {
-        this.givenName = givenName;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
 
@@ -126,7 +126,7 @@ public class UserDTO {
                 "id=" + id +
                 ", passwordHash='" + passwordHash + '\'' +
                 ", email='" + email + '\'' +
-                ", givenName='" + givenName + '\'' +
+                ", username='" + username + '\'' +
                 ", surname='" + surname + '\'' +
                 ", phone='" + phone + '\'' +
                 ", address='" + address + '\'' +

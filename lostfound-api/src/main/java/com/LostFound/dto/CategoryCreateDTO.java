@@ -3,6 +3,10 @@ package com.LostFound.dto;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+/**
+ *
+ * @author Peter
+ */
 public class CategoryCreateDTO {
 
     @NotNull
