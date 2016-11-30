@@ -58,5 +58,8 @@
     <module>lostfound-persistance</module>
     <module>lostfound-api</module>
     <module>lostfound-service</module>
+    <module>lostfound-spring-mvc</module>
+    <module>lostfound-rest</module>
+    <module>lostfound-sample-data</module>
   </modules>
 </project>
