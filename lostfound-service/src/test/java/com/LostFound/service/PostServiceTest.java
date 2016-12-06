@@ -6,6 +6,7 @@ import com.LostFound.entity.Item;
 import com.LostFound.entity.Post;
 import com.LostFound.entity.User;
 import com.LostFound.enums.PostState;
+import com.LostFound.enums.PostType;
 import com.LostFound.exceptions.LostFoundServiceException;
 import org.hibernate.service.spi.ServiceException;
 import org.mockito.InjectMocks;
@@ -201,6 +202,19 @@ public class PostServiceTest extends AbstractTestNGSpringContextTests {
         List<Post> actualPosts = postService.findByState(PostState.OPENED);
         //verify
         verify(postDao, times(1)).findByState(PostState.OPENED);
+        //check
+        Assert.assertEquals(actualPosts, expectedPostCollection);
+    }
+
+
+    @Test
+    public void findByOpenedType() {
+        //mock
+        when(postDao.findByType(PostType.LOST)).thenReturn(expectedPostCollection);
+        //call service method
+        List<Post> actualPosts = postService.findByType(PostType.LOST);
+        //verify
+        verify(postDao, times(1)).findByType(PostType.LOST);
         //check
         Assert.assertEquals(actualPosts, expectedPostCollection);
     }

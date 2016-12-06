@@ -3,6 +3,7 @@ package com.LostFound.dao;
 import com.LostFound.entity.Post;
 import com.LostFound.entity.User;
 import com.LostFound.enums.PostState;
+import com.LostFound.enums.PostType;
 
 import java.util.Date;
 import java.util.List;
@@ -89,5 +90,12 @@ public interface PostDAO {
      * @return list of posts with given state
      */
     public List<Post> findByState(PostState state);
+
+    /**
+     * Returns list of all posts corresponding to given type.
+     *
+     * @return list of posts with given type
+     */
+    public List<Post> findByType(PostType type);
 
 }

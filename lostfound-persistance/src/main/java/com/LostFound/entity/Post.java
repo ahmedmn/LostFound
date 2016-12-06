@@ -1,6 +1,7 @@
 package com.LostFound.entity;
 
 import com.LostFound.enums.PostState;
+import com.LostFound.enums.PostType;
 
 
 import javax.persistence.Entity;
@@ -48,6 +49,10 @@ public class Post {
     @Enumerated
     @NotNull
     private PostState state;
+
+    @Enumerated
+    @NotNull
+    private PostType type;
 
     public Post(Long postId) {
         this.setId(postId);
@@ -103,6 +108,14 @@ public class Post {
 
     public void setState(PostState state) {
         this.state = state;
+    }
+
+    public PostType getType() {
+        return type;
+    }
+
+    public void setType(PostType type) {
+        this.type = type;
     }
 
     @Override

@@ -6,6 +6,8 @@
 package com.LostFound.dto;
 
 import com.LostFound.enums.PostState;
+import com.LostFound.enums.PostType;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
@@ -34,6 +36,8 @@ public class PostCreateDTO {
     private String location;
 
     private PostState state;
+
+    private PostType type;
 
     public UserDTO getUser() {
         return user;
@@ -73,6 +77,14 @@ public class PostCreateDTO {
 
     public void setState(PostState state) {
         this.state = state;
+    }
+
+    public PostType getType() {
+        return type;
+    }
+
+    public void setType(PostType type) {
+        this.type = type;
     }
 
     @Override

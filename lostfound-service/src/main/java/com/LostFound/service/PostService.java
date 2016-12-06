@@ -9,6 +9,8 @@ import com.LostFound.entity.Item;
 import com.LostFound.entity.Post;
 import com.LostFound.entity.User;
 import com.LostFound.enums.PostState;
+import com.LostFound.enums.PostType;
+
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
@@ -60,6 +62,14 @@ public interface PostService {
      * @return list of all Posts with specified state
      */
     public List<Post> findByState(PostState state);
+
+    /**
+     * FindByType method is used to find Posts by specific type
+     *
+     * @param type is Post type
+     * @return list of all Posts with specified state
+     */
+    public List<Post> findByType(PostType type);
 
     /**
      * findPostByKeywords method is used to find Posts by item´s keywords

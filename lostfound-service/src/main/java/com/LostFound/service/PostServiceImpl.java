@@ -11,6 +11,7 @@ import com.LostFound.entity.User;
 import com.LostFound.dao.PostDAO;
 import com.LostFound.entity.Item;
 import com.LostFound.enums.PostState;
+import com.LostFound.enums.PostType;
 import com.LostFound.exceptions.LostFoundServiceException;
 import java.util.ArrayList;
 import java.util.Date;
@@ -50,6 +51,10 @@ public class PostServiceImpl implements PostService{
 
     public List<Post> findByState(PostState state) {
         return postDao.findByState(state);
+    }
+
+    public List<Post> findByType(PostType type) {
+        return postDao.findByType(type);
     }
 
     public List<Post> findAll() {

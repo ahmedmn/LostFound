@@ -10,6 +10,7 @@ import com.LostFound.dto.PostDTO;
 import com.LostFound.entity.Post;
 import com.LostFound.entity.User;
 import com.LostFound.enums.PostState;
+import com.LostFound.enums.PostType;
 import com.LostFound.facade.PostFacade;
 import com.LostFound.service.BeanMappingService;
 import com.LostFound.service.ItemService;
@@ -73,6 +74,10 @@ public class PostFacadeImpl implements PostFacade{
 
     public List<PostDTO> getPostsByState(PostState state) {
         return beanMappingService.mapTo(postService.findByState(state), PostDTO.class);
+    }
+
+    public List<PostDTO> getPostsByType(PostType type)  {
+        return beanMappingService.mapTo(postService.findByType(type), PostDTO.class);
     }
 
     public List<PostDTO> getPostsByLocation(String location) {

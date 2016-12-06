@@ -13,6 +13,8 @@ import java.util.Calendar;
 import javax.persistence.NoResultException;
 import javax.persistence.RollbackException;
 import javax.validation.ConstraintViolationException;
+
+import com.LostFound.enums.PostType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
@@ -56,13 +58,15 @@ public class PostDaoTest extends AbstractTestNGSpringContextTests   {
         post3 = new Post();
         
         post1.setState(PostState.OPENED);
+        post1.setType(PostType.LOST);
         post1.setLocation("Brno");
         post1.setCreationDate(cal.getTime());
         
         post2.setState(PostState.OPENED);
+        post2.setType(PostType.FOUND);
         post2.setLocation("Bratislava");       
         post2.setCreationDate(cal.getTime());
-        
+
         post3.setState(PostState.OPENED);
         post3.setLocation("Praha");
         post3.setCreationDate(cal.getTime());
@@ -113,6 +117,12 @@ public class PostDaoTest extends AbstractTestNGSpringContextTests   {
     @Test
     public void findByNullStateTest() {
         Assert.assertTrue(postDao.findByState(null).isEmpty());
+    }
+
+    @Test
+    public void findByTypeTest() {
+        Assert.assertEquals(postDao.findByType(PostType.LOST).size(), 1);
+        Assert.assertEquals(postDao.findByType(PostType.FOUND).size(), 1);
     }
        
     @Test

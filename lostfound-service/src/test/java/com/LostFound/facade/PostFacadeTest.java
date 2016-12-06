@@ -3,6 +3,7 @@ package com.LostFound.facade;
 
 import com.LostFound.dto.*;
 import com.LostFound.enums.PostState;
+import com.LostFound.enums.PostType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ContextConfiguration;
@@ -59,6 +60,7 @@ public class PostFacadeTest extends AbstractTestNGSpringContextTests {
         postCreateDTO.setCreationDate(cal.getTime());
         postCreateDTO.setUser(userDTO);
         postCreateDTO.setState(PostState.OPENED);
+        postCreateDTO.setType(PostType.LOST);
 
         //expected expectedPostDTO object which is retrieved from DB
         expectedPostDTO = new PostDTO();
@@ -111,6 +113,12 @@ public class PostFacadeTest extends AbstractTestNGSpringContextTests {
     public void getPostsByState()
     {
         Assert.assertEquals(postFacade.getPostsByState(PostState.OPENED), Collections.singletonList(expectedPostDTO));
+    }
+
+    @Test
+    public void getPostsByType()
+    {
+        Assert.assertEquals(postFacade.getPostsByType(PostType.LOST), Collections.singletonList(expectedPostDTO));
     }
 
     @Test

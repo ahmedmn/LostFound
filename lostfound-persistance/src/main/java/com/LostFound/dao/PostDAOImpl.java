@@ -3,6 +3,7 @@ package com.LostFound.dao;
 import com.LostFound.entity.Post;
 import com.LostFound.entity.User;
 import com.LostFound.enums.PostState;
+import com.LostFound.enums.PostType;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -90,6 +91,15 @@ public class PostDAOImpl implements PostDAO {
         TypedQuery<Post> query = em.createQuery(
                 "SELECT p FROM Post p WHERE p.state = :state", Post.class);
         query.setParameter("state", state);
+        return query.getResultList();
+    }
+
+    @Override
+    public List<Post> findByType(PostType type)
+    {
+        TypedQuery<Post> query = em.createQuery(
+                "SELECT p FROM Post p WHERE p.type = :type", Post.class);
+        query.setParameter("type", type);
         return query.getResultList();
     }
 
