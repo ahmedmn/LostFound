@@ -8,10 +8,9 @@
 		<artifactId>lostfound-parent</artifactId>
 		<version>1.0-SNAPSHOT</version>
 	</parent>
-	<groupId>com.LostFound</groupId>
+
 	<artifactId>lostfound-api</artifactId>
 	<packaging>jar</packaging>
-	<version>1.0-SNAPSHOT</version>
 	<name>lostfound API Layer</name>
 
 	<dependencies>

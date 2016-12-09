@@ -6,6 +6,8 @@ import com.LostFound.entity.Category;
 import java.util.ArrayList;
 
 import java.util.List;
+
+import com.LostFound.service.config.ServiceConfiguration;
 import org.hibernate.service.spi.ServiceException;
 import org.mockito.InjectMocks;
 import static org.mockito.Matchers.any;
@@ -27,7 +29,7 @@ import org.testng.annotations.Test;
  * CategoryServiceTest class is used to test functionalities of Category Service
  */
 
-@ContextConfiguration(locations = "file:src/main/resources/spring-service.xml")
+@ContextConfiguration(classes = ServiceConfiguration.class)
 public class CategoryServiceTest extends AbstractTestNGSpringContextTests {
 
 	@Mock

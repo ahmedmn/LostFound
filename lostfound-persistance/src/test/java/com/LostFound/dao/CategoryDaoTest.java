@@ -1,20 +1,20 @@
 package com.LostFound.dao;
 
-import java.util.List;
-
+import com.LostFound.PersistanceApplicationContext;
 import com.LostFound.entity.Category;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.orm.jpa.JpaSystemException;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestExecutionListeners;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.springframework.test.context.transaction.TransactionalTestExecutionListener;
-import org.testng.annotations.Test;
-import org.testng.Assert;
 import org.springframework.transaction.annotation.Transactional;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
-import javax.persistence.NoResultException;
-import javax.persistence.PersistenceException;
 import javax.validation.ConstraintViolationException;
+import java.util.List;
 
 
 /**
@@ -24,7 +24,7 @@ import javax.validation.ConstraintViolationException;
  *
  */
 
-@ContextConfiguration(locations = "file:src/main/resources/spring-persistance.xml")
+@ContextConfiguration(classes = PersistanceApplicationContext.class)
 @TestExecutionListeners(TransactionalTestExecutionListener.class)
 @Transactional
 public class CategoryDaoTest  extends AbstractTestNGSpringContextTests{
@@ -62,7 +62,7 @@ public class CategoryDaoTest  extends AbstractTestNGSpringContextTests{
         categoryDao.create(cat);
     }
 
-    @Test(expectedExceptions = PersistenceException.class)
+    @Test(expectedExceptions = JpaSystemException.class)
     public void nameIsUnique(){
         Category cat = new Category();
         cat.setName("Cars");
@@ -110,12 +110,12 @@ public class CategoryDaoTest  extends AbstractTestNGSpringContextTests{
         Assert.assertNotNull(categoryDao.findByName("category3"));
     }
 
-    @Test(expectedExceptions = NoResultException.class)
+    @Test(expectedExceptions = EmptyResultDataAccessException.class)
     public void findByNonExistentName() {
         categoryDao.findByName("Lala");
     }
 
-    @Test(expectedExceptions = NoResultException.class)
+    @Test(expectedExceptions = EmptyResultDataAccessException.class)
     public void findByNullName() {
         categoryDao.findByName(null);
     }

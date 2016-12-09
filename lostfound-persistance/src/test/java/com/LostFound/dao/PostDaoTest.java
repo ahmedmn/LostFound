@@ -5,18 +5,13 @@
  */
 package com.LostFound.dao;
 
+import com.LostFound.PersistanceApplicationContext;
 import com.LostFound.entity.Item;
 import com.LostFound.entity.Post;
-import com.LostFound.entity.User;
 import com.LostFound.enums.PostState;
-import java.util.Calendar;
-import javax.persistence.NoResultException;
-import javax.persistence.RollbackException;
-import javax.validation.ConstraintViolationException;
-
 import com.LostFound.enums.PostType;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.annotation.Rollback;
+import org.springframework.dao.InvalidDataAccessApiUsageException;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestExecutionListeners;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
@@ -26,13 +21,16 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import javax.validation.ConstraintViolationException;
+import java.util.Calendar;
+
 /**
  * PostDaoTest class is used to test functionalities of each Post.
  *
  * @author Michal
  *
  */
-@ContextConfiguration(locations = "file:src/main/resources/spring-persistance.xml")
+@ContextConfiguration(classes = PersistanceApplicationContext.class)
 @TestExecutionListeners(TransactionalTestExecutionListener.class)
 @Transactional
 public class PostDaoTest extends AbstractTestNGSpringContextTests   {
@@ -87,7 +85,7 @@ public class PostDaoTest extends AbstractTestNGSpringContextTests   {
         Assert.assertNull(postDao.findById(post1.getId()+2l));
     }
     
-    @Test(expectedExceptions = IllegalArgumentException.class)
+    @Test(expectedExceptions = InvalidDataAccessApiUsageException.class)
     public void findByNullId() {
         postDao.findById(null);
     }

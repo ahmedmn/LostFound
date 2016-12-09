@@ -21,7 +21,6 @@
     <version>Athens-RELEASE</version>
     <relativePath/>
   </parent>
-
   <!-- specifies versions not defined by the Spring platform-bom -->
   <dependencyManagement>
     <dependencies>
@@ -56,10 +55,10 @@
 
   <modules>
     <module>lostfound-persistance</module>
-    <module>lostfound-api</module>
     <module>lostfound-service</module>
+    <module>lostfound-api</module>
+    <module>lostfound-sample-data</module>
     <module>lostfound-spring-mvc</module>
     <module>lostfound-rest</module>
-    <module>lostfound-sample-data</module>
   </modules>
 </project>

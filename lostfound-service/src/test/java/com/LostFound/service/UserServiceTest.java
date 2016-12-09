@@ -7,6 +7,7 @@ package com.LostFound.service;
 
 import com.LostFound.dao.UserDAO;
 import com.LostFound.entity.User;
+import com.LostFound.service.config.ServiceConfiguration;
 import org.hibernate.service.spi.ServiceException;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -31,7 +32,7 @@ import org.testng.annotations.BeforeMethod;
  * @author Michal
  * UserServiceTest class is used to test functionalities of User Service
  */
-@ContextConfiguration(locations = "file:src/main/resources/spring-service.xml")
+@ContextConfiguration(classes = ServiceConfiguration.class)
 public class UserServiceTest extends AbstractTestNGSpringContextTests {
 
     @Mock

@@ -1,7 +1,10 @@
 package com.LostFound.dao;
 
+import com.LostFound.PersistanceApplicationContext;
 import com.LostFound.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.dao.InvalidDataAccessApiUsageException;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestExecutionListeners;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
@@ -11,7 +14,6 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import javax.persistence.NoResultException;
 import javax.validation.ConstraintViolationException;
 import java.util.Calendar;
 
@@ -21,7 +23,7 @@ import java.util.Calendar;
  * @author Peter
  *
  */
-@ContextConfiguration(locations = "file:src/main/resources/spring-persistance.xml")
+@ContextConfiguration(classes = PersistanceApplicationContext.class)
 @TestExecutionListeners(TransactionalTestExecutionListener.class)
 @Transactional
 public class UserDaoTest extends AbstractTestNGSpringContextTests {
@@ -81,7 +83,7 @@ public class UserDaoTest extends AbstractTestNGSpringContextTests {
         Assert.assertNull(userDao.findById(nonExistentId));
     }
 
-    @Test(expectedExceptions = IllegalArgumentException.class)
+    @Test(expectedExceptions = InvalidDataAccessApiUsageException.class)
     public void findByNullId() {
         userDao.findById(null);
     }
@@ -91,12 +93,12 @@ public class UserDaoTest extends AbstractTestNGSpringContextTests {
         Assert.assertNotNull(userDao.findByEmail("peter@gmail.com"));
     }
 
-    @Test(expectedExceptions = NoResultException.class)
+    @Test(expectedExceptions = EmptyResultDataAccessException.class)
     public void findByNonExistentEmail() {
         userDao.findByEmail("lala@gmail.com");
     }
 
-    @Test(expectedExceptions = NoResultException.class)
+    @Test(expectedExceptions = EmptyResultDataAccessException.class)
     public void findByNullEmail() {
         userDao.findByEmail(null);
     }
@@ -114,12 +116,12 @@ public class UserDaoTest extends AbstractTestNGSpringContextTests {
         Assert.assertNotNull(userDao.findByName("Peter"));
     }
 
-    @Test(expectedExceptions = NoResultException.class)
+    @Test(expectedExceptions = EmptyResultDataAccessException.class)
     public void findByNonExistentName() {
         userDao.findByName("Lala");
     }
 
-    @Test(expectedExceptions = NoResultException.class)
+    @Test(expectedExceptions = EmptyResultDataAccessException.class)
     public void findByNullName() {
         userDao.findByName(null);
     }

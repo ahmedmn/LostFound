@@ -8,6 +8,7 @@ import com.LostFound.entity.User;
 import com.LostFound.enums.PostState;
 import com.LostFound.enums.PostType;
 import com.LostFound.exceptions.LostFoundServiceException;
+import com.LostFound.service.config.ServiceConfiguration;
 import org.hibernate.service.spi.ServiceException;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -28,7 +29,7 @@ import static org.mockito.Mockito.*;
  * @author Peter
  * PostServiceTest class is used to test functionalities of Post Service
  */
-@ContextConfiguration(locations = "file:src/main/resources/spring-service.xml")
+@ContextConfiguration(classes = ServiceConfiguration.class)
 public class PostServiceTest extends AbstractTestNGSpringContextTests {
 
     @Mock

@@ -1,6 +1,6 @@
-//
-//package com.LostFound.facade;
-//
+
+package com.LostFound.facade;
+
 //
 //import com.LostFound.dto.*;
 //import com.LostFound.enums.PostState;

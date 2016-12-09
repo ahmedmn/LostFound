@@ -73,7 +73,7 @@ public class SampleDataLoadingFacadeImpl implements SampleDataLoadingFacade {
         post(petr, "Brno", toDate(2016, 1, 13), PostState.OPENED, PostType.LOST, walletItem, isicCardItem);
         post(bokofak, "New York", toDate(2016, 5, 5), PostState.OPENED, PostType.LOST, mobileItem);
         post(savco, "Brno", toDate(2016, 6, 20), PostState.OPENED, PostType.LOST, dogItem);
-        post(petr, "Dubai", toDate(2016, 7, 10), PostState.OPENED, PostType.LOST, walletItem, keysItem);
+        post(petr, "Dubai", toDate(2016, 7, 10), PostState.OPENED, PostType.LOST, keysItem);
 
 //      FOUND POSTS
         post(petr, "Brno", toDate(2016, 8, 25), PostState.OPENED, PostType.FOUND, watchItem);
@@ -104,7 +104,7 @@ public class SampleDataLoadingFacadeImpl implements SampleDataLoadingFacade {
         item.setName(name);
         item.setDescription(description);
         item.setKeywords(keyWords);
-        item.setImage(readImage(imageName));
+        //item.setImage(readImage(imageName));
         for (Category category : categoryList) {
             item.addCategory(category);
         }

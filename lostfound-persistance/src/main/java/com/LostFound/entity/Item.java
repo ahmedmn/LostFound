@@ -4,14 +4,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 /**
  * @author Ahmed Item class is the base class storing and retrieving information
@@ -32,13 +25,14 @@ public class Item {
 	private String description;
 
 	@Column(name = "image")
+	@Lob
 	private byte[] image;
 
 	@Column(name = "keywords")
 	private String keywords;
         
-        @ManyToOne(fetch = FetchType.LAZY)      
-        private Post post;
+	@ManyToOne(fetch = FetchType.LAZY)
+	private Post post;
 
 	@ManyToMany
 	private Set<Category> categories = new HashSet<Category>();

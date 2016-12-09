@@ -1,5 +1,6 @@
 package com.LostFound.dao;
 
+import com.LostFound.PersistanceApplicationContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestExecutionListeners;
@@ -20,7 +21,7 @@ import com.LostFound.entity.Item;
  * @author Ahmed
  *
  */
-@ContextConfiguration(locations = "file:src/main/resources/spring-persistance.xml")
+@ContextConfiguration(classes = PersistanceApplicationContext.class)
 @TestExecutionListeners(TransactionalTestExecutionListener.class)
 @Transactional
 public class ItemDaoTest extends AbstractTestNGSpringContextTests {
