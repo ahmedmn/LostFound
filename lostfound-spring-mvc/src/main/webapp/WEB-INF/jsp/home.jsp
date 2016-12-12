@@ -60,7 +60,7 @@
 			<div class="col-xs-12">
 				<div class="box">
 					<div class="box-header">
-						<h3 class="box-title">Responsive Hover Table</h3>
+						<h3 class="box-title">Posts</h3>
 					</div>
 					<!-- /.box-header -->
 					<div class="box-body table-responsive no-padding">

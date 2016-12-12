@@ -34,12 +34,12 @@
 
     <jsp:invoke fragment="head"/>
 </head>
-<body class="hold-transition register-page">
+<body class="hold-transition login-page">
 <div class="wrapper">
 
     <body class="hold-transition register-page">
-    <div class="register-box">
-        <div class="register-logo">
+    <div class="login-box">
+        <div class="login-logo">
             <a href="#">${title}</a>
         </div>
         <jsp:invoke fragment="body" />
