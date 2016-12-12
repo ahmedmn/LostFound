@@ -101,7 +101,6 @@ Session.vim
 .netrwhist
 *~
 # auto-generated tag files
-tags
 
 ### Maven template
 target/
