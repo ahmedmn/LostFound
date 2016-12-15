@@ -30,7 +30,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.util.UriComponentsBuilder;
 
 @Controller
-@RequestMapping("/new-post")
+@RequestMapping("/post")
 public class PostController {
     final static Logger log = LoggerFactory.getLogger(LoginController.class);
 
@@ -40,6 +40,18 @@ public class PostController {
     @RequestMapping(method = RequestMethod.GET)
     public String render() {
         return "newPost";
+    }
+
+    @RequestMapping(value = "/new", method = RequestMethod.GET)
+    public String create(Model model) {
+
+        return "newPost";
+    }
+
+    @RequestMapping(value = "/detail", method = RequestMethod.GET)
+    public String detail(Model model) {
+
+        return "postDetail";
     }
 
 }

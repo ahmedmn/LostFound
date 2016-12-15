@@ -65,7 +65,7 @@
             <!-- Sidebar user panel (optional) -->
             <div class="user-panel">
                 <div class="pull-left image">
-                    <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                    <img src="${pageContext.request.contextPath}/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
                     <p>Alexander Pierce</p>
@@ -90,7 +90,7 @@
             <ul class="sidebar-menu">
                 <li class="header">Menu</li>
                 <li><a href="${pageContext.request.contextPath}/"><i class="fa fa-link"></i> <span>Lost &amp; Found</span></a></li> <!--for active: li class="active" -->
-                <li><a href="${pageContext.request.contextPath}/new-post"><i class="fa fa-link"></i> <span>New Post</span></a></li>
+                <li><a href="${pageContext.request.contextPath}/post/new"><i class="fa fa-link"></i> <span>New Post</span></a></li>
                 <li><a href="${pageContext.request.contextPath}/register"><i class="fa fa-link"></i> <span>Register</span></a></li>
                 <li><a href="${pageContext.request.contextPath}/login"><i class="fa fa-link"></i> <span>Login</span></a></li>
 
