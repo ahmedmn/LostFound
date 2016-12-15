@@ -8,7 +8,7 @@ import com.LostFound.dto.ItemCreateDTO;
 
 /**
  * The place for validation checks. Useful for checks involving multiple properties at once.
- * This SpringMVC validation is <b>additional</b> to the JSR-303 validation specified by annotations in ProductCreateDTO.
+ * This SpringMVC validation is <b>additional</b> to the JSR-303 validation specified by annotations in ItemCreateDTO.
  *
  * @author ahmed
  */

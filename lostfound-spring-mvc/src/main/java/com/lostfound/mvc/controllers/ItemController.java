@@ -42,7 +42,7 @@ public class ItemController {
 	private CategoryFacade categoryFacade;
 
 	/**
-	 * Shows a list of products with the ability to add, delete or edit.
+	 * Shows a list of items with the ability to add, delete or edit.
 	 *
 	 * @param model
 	 *            data to display
@@ -113,7 +113,7 @@ public class ItemController {
 			}
 			return "item/new";
 		}
-		// create product
+		// create item
 		Long id = itemFacade.createItem(formBean);
 		// report success
 		redirectAttributes.addFlashAttribute("alert_success", "Item " + id + " was created");
