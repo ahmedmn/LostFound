@@ -6,7 +6,7 @@
 <%@ taglib prefix="s" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
-<my:pagetemplate title="Lost & Found">
+<my:pagetemplate title="Create new post">
 
 	<jsp:attribute name="head">
 		<!-- Select2 -->
@@ -15,56 +15,56 @@
 
 	<jsp:attribute name="body">
 
-            <!-- Your Page Content Here -->
+      <!-- Your Page Content Here -->
 
-            <div class="row">
-                <div class="col-md-12">
-                    <!-- form start -->
-                    <form role="form">
-                        <!-- general form elements -->
-                        <div class="box box-primary" id="info-about-item">
-                            <div class="box-header with-border">
-                                <h3 class="box-title">Info about item</h3>
-                            </div>
-
-                            <div class="box-body">
-                                <div class="form-group">
-                                    <label>Location</label>
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="fa fa-location-arrow"></i></span>
-                                        <input type="text" class="form-control" value="Brno" placeholder="">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label>Type</label>
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="fa fa-chevron-circle-down"></i></span>
-                                        <select class="form-control select2" style="width: 100%;">
-                                            <option selected="selected" value="0">Lost</option>
-                                            <option value="1">Found</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /.box-body -->
-                        </div>
-                        <!-- /.box -->
-
-                        <div class="box box-success" id="info-actions">
-                            <div class="box-header with-border">
-                                <h3 class="box-title">Actions</h3>
-                            </div>
-                            <div class="box-body">
-                                <button type="submit" id="add-item" class="btn btn-default">Add Item</button>
-                                <button type="submit" class="btn btn-info">Submit</button>
-                            </div>
+        <div class="row">
+            <div class="col-md-12">
+                <!-- form start -->
+                <form role="form">
+                    <!-- general form elements -->
+                    <div class="box box-primary" id="info-about-item">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Info about item</h3>
                         </div>
 
-                    </form>
-                </div>
+                        <div class="box-body">
+                            <div class="form-group">
+                                <label>Location</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-location-arrow"></i></span>
+                                    <input type="text" class="form-control" value="Brno" placeholder="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Type</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-chevron-circle-down"></i></span>
+                                    <select class="form-control select2" style="width: 100%;">
+                                        <option selected="selected" value="0">Lost</option>
+                                        <option value="1">Found</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                    <!-- /.box -->
+
+                    <div class="box box-success" id="info-actions">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Actions</h3>
+                        </div>
+                        <div class="box-body">
+                            <button type="submit" id="add-item" class="btn btn-default">Add Item</button>
+                            <button type="submit" class="btn btn-info">Submit</button>
+                        </div>
+                    </div>
+
+                </form>
             </div>
+        </div>
 
-            <!-- /.box -->
+                  <!-- /.box -->
           <div class="box box-success" id="item-info" style="display:none;">
               <div class="box-header with-border">
                   <h3 class="box-title">Item Info - #index#</h3>
@@ -94,8 +94,15 @@
                   <div class="form-group">
                       <label>Keywords</label>
                       <div class="input-group">
+                          <span class="input-group-addon"><i class="fa fa-file-text-o"></i></span>
+                          <textarea class="form-control" rows="3" name="item-info-keywords[#index#][]" value="" placeholder="Keyword per line"></textarea>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label>Categories</label>
+                      <div class="input-group">
                           <span class="input-group-addon"><i class="fa fa-cog"></i></span>
-                          <select class="form-control keywords" multiple="multiple" name="item-info-keywords[#index#][]" data-placeholder="Select a keywords" style="width: 100%;">
+                          <select class="form-control categories" multiple="multiple" name="item-info-categories[#index#][]" data-placeholder="Select a categories" style="width: 100%;">
                               <option>Antiques</option>
                               <option>Antiquities</option>
                               <option>Architectural & Garden</option>
@@ -590,6 +597,7 @@
               <input type="text" class="form-control" name="item-info-image[#index#][]" value="" placeholder="Set URL">
           </div>
 
+
 	</jsp:attribute>
 
     	<jsp:attribute name="footer">
@@ -615,9 +623,9 @@
                     var copy = itemCopy.clone();
 
                     infoActions.before(copy);
-                    copy.attr('id', 'keywords-' + iterate);
+                    copy.attr('id', 'categories-' + iterate);
                     copy.show();
-                    $("#keywords-" + iterate + " select.keywords").select2();
+                    $("#categories-" + iterate + " select.categories").select2();
                     replaceIndex(copy, iterate);
                     iterate++;
                 }
@@ -639,7 +647,7 @@
 
                 function setValueOptions()
                 {
-                    $("select.keywords option").each(function()
+                    $("select.categories option").each(function()
                     {
                         var el = $(this);
                         el.val(el.text());
