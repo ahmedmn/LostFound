@@ -55,6 +55,12 @@
                   </li>
 
                   <!-- ITEM 0 -->
+                  <li class="time-label">
+                    <span class="bg-red">
+                      Item 1
+                    </span>
+                  </li>
+
                   <li>
                       <i class="fa fa-folder-o bg-yellow"></i>
 
@@ -95,6 +101,12 @@
                   </li>
                   <!-- End ITEM 0 -->
                   <!-- ITEM 1-->
+                  <li class="time-label">
+                    <span class="bg-red">
+                      Item 2
+                    </span>
+                  </li>
+
                   <li>
                       <i class="fa fa-folder-o bg-yellow"></i>
 
