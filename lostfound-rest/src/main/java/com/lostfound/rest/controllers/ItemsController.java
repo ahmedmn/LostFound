@@ -40,7 +40,7 @@ public class ItemsController {
 
     /**
      * Get list of Items curl -i -X GET
-     * http://localhost:8080/lostfound-rest/items
+     * http://localhost:8080/pa165/rest/items
      *
      * @return ItemDTO
      */
@@ -53,7 +53,7 @@ public class ItemsController {
     /**
      *
      * Get Item by identifier id curl -i -X GET
-     * http://localhost:8080/lostfound-rest/items/1
+     * http://localhost:8080/pa165/rest/items/1
      *
      * @param id identifier for a item
      * @return ItemDTO
@@ -73,7 +73,7 @@ public class ItemsController {
 
     /**
      * Delete one item by id curl -i -X DELETE
-     * http://localhost:8080/lostfound-rest/items/1
+     * http://localhost:8080/pa165/rest/items/1
      *
      * @param id identifier for item
      * @throws ResourceNotFoundException
@@ -93,7 +93,7 @@ public class ItemsController {
      * curl -X POST -i -H "Content-Type: application/json" --data 
      * '{"name":"test","description":"test","color":"UNDEFINED","price":"200",
      * "currency":"CZK", "categoryId":"1"}' 
-     * http://localhost:8080/lostfound-rest/items/create
+     * http://localhost:8080/pa165/rest/items/create
      * 
      * @param item ItemCreateDTO with required fields for creation
      * @return the created item ItemDTO
