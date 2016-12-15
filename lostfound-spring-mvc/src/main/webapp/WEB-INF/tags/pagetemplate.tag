@@ -89,7 +89,7 @@
             <!-- Sidebar Menu -->
             <ul class="sidebar-menu">
                 <li class="header">Menu</li>
-                <li class="active"><a href="${pageContext.request.contextPath}/"><i class="fa fa-link"></i> <span>Lost &amp; Found</span></a></li>
+                <li><a href="${pageContext.request.contextPath}/"><i class="fa fa-link"></i> <span>Lost &amp; Found</span></a></li> <!--for active: li class="active" -->
                 <li><a href="${pageContext.request.contextPath}/new-post"><i class="fa fa-link"></i> <span>New Post</span></a></li>
                 <li><a href="${pageContext.request.contextPath}/register"><i class="fa fa-link"></i> <span>Register</span></a></li>
                 <li><a href="${pageContext.request.contextPath}/login"><i class="fa fa-link"></i> <span>Login</span></a></li>
