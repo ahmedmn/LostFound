@@ -10,7 +10,7 @@
 
 	<jsp:attribute name="head">
 		<!-- Select2 -->
-  		<link rel="stylesheet" href="/lostfound/plugins/select2/select2.min.css" />
+  		<link rel="stylesheet" href="${pageContext.request.contextPath}/plugins/select2/select2.min.css" />
 	</jsp:attribute>
 
 	<jsp:attribute name="body">
@@ -602,7 +602,7 @@
 
     	<jsp:attribute name="footer">
 		<!-- Select2 -->
-		<script src="/lostfound/plugins/select2/select2.full.min.js"></script>
+		<script src="${pageContext.request.contextPath}/plugins/select2/select2.full.min.js"></script>
 		<script type="text/javascript">
             $(function()
             {
