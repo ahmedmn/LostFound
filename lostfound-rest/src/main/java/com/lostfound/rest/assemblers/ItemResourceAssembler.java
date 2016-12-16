@@ -23,7 +23,6 @@ public class ItemResourceAssembler implements ResourceAssembler<ItemDTO, Resourc
 
     @Override
     public Resource<ItemDTO> toResource(ItemDTO itemDTO) {
-        long id = itemDTO.getId();
         Resource<ItemDTO> itemResource = new Resource<ItemDTO>(itemDTO);
 
         try {

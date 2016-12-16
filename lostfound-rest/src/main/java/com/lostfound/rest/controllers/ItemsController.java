@@ -118,7 +118,6 @@ public class ItemsController {
      *
      * @param id the identifier of the Item to have the Category added
      * @param category the category to be added
-     * @return the updated item as defined by ItemDTO
      * @throws InvalidParameterException
      */
     @RequestMapping(value = "/{id}/categories", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE,
