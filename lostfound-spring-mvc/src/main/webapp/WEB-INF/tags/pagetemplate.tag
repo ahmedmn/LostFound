@@ -91,8 +91,8 @@
                 <li class="header">Menu</li>
                 <li><a href="${pageContext.request.contextPath}/"><i class="fa fa-link"></i> <span>Lost &amp; Found</span></a></li> <!--for active: li class="active" -->
                 <li><a href="${pageContext.request.contextPath}/post/new"><i class="fa fa-link"></i> <span>New Post</span></a></li>
-                <li><a href="${pageContext.request.contextPath}/register"><i class="fa fa-link"></i> <span>Register</span></a></li>
-                <li><a href="${pageContext.request.contextPath}/login"><i class="fa fa-link"></i> <span>Login</span></a></li>
+                <li><a href="${pageContext.request.contextPath}/user/register"><i class="fa fa-link"></i> <span>Register</span></a></li>
+                <li><a href="${pageContext.request.contextPath}/user/login"><i class="fa fa-link"></i> <span>Login</span></a></li>
 
                 <li class="header">Administration</li>
                 <li><a href="#"><i class="fa fa-link"></i> <span>Posts</span></a></li>

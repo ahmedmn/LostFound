@@ -2,10 +2,12 @@ package com.LostFound.service.facade;
 
 import com.LostFound.dto.UserDTO;
 import com.LostFound.dto.UserLoginDTO;
+import com.LostFound.dto.UserRegisterDTO;
 import com.LostFound.entity.User;
 import com.LostFound.facade.UserFacade;
 import com.LostFound.service.BeanMappingService;
 import com.LostFound.service.UserService;
+import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -25,10 +27,10 @@ public class UserFacadeImpl implements UserFacade {
     @Autowired
     private BeanMappingService beanMappingService;
 
-    public void registerUser(UserDTO user, String unencryptedPassword) {
+    public void registerUser(UserRegisterDTO user, String unencryptedPassword) {
         User userEntity = beanMappingService.mapTo(user, User.class);
+        userEntity.setJoinedDate(new Date());
         userService.registerUser(userEntity, unencryptedPassword);
-        user.setId(userEntity.getId());
     }
 
     public List<UserDTO> getAllUsers() {
@@ -37,9 +39,8 @@ public class UserFacadeImpl implements UserFacade {
 
     public boolean login(UserLoginDTO user) {
         return userService.login(
-                userService.findUserById(user.getUserId()), user.getPassword());
+                userService.findUserByName(user.getName()), user.getPassword());
     }
-
 
     public boolean isAdmin(UserDTO user) {
         return userService.isAdmin(beanMappingService.mapTo(user, User.class));
@@ -59,6 +60,5 @@ public class UserFacadeImpl implements UserFacade {
         User user = userService.findUserByName(name);
         return (user == null) ? null : beanMappingService.mapTo(user, UserDTO.class);
     }
-
 
 }

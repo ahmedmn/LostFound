@@ -31,13 +31,13 @@
     <div class="login-box-body">
     <p class="login-box-msg">Sign in to start your session</p>
 
-    <form action="${pageContext.request.contextPath}/" method="post">
+    <form:form action="${pageContext.request.contextPath}" method="post" modelAttribute="userLogin">
         <div class="form-group has-feedback">
-            <input type="email" class="form-control" placeholder="Email">
+            <form:input type="text" path="name" class="form-control" placeholder="username"/>
             <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
         </div>
         <div class="form-group has-feedback">
-            <input type="password" class="form-control" placeholder="Password">
+            <form:input type="password" path="password" class="form-control" placeholder="password"/>
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
         </div>
         <div class="row">
@@ -54,8 +54,8 @@
             </div>
             <!-- /.col -->
         </div>
-    </form>
+    </form:form>
 
-    <a href="${pageContext.request.contextPath}/register" class="text-center">Register a new membership</a>
+    <a href="${pageContext.request.contextPath}/user/register" class="text-center">Register a new membership</a>
     </jsp:attribute>
 </my:login>

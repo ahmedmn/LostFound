@@ -10,7 +10,7 @@ import com.LostFound.service.CategoryService;
 import com.LostFound.service.ItemService;
 import com.LostFound.service.PostService;
 import com.LostFound.service.UserService;
-import javafx.geometry.Pos;
+//import javafx.geometry.Pos;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -46,6 +46,9 @@ public class PostFacadeImpl implements PostFacade{
     public Long createPost(PostCreateDTO p) {
         Post mappedPost = beanMappingService.mapTo(p, Post.class);
         Post newPost = postService.createPost(mappedPost);
+        newPost.setCreationDate(new Date());
+        newPost.setState(PostState.OPENED);
+        newPost.setUser(new User());
         return newPost.getId();
     }
 

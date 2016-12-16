@@ -5,19 +5,18 @@ package com.LostFound.dto;
  */
 public class UserLoginDTO
 {
-    private Long userId;
+    private String name;
     private String password;
 
-    public Long getUserId()
-    {
-        return userId;
+    public String getName() {
+        return name;
     }
 
-    public void setUserId(Long userId)
-    {
-        this.userId = userId;
+    public void setName(String name) {
+        this.name = name;
     }
 
+    
     public String getPassword()
     {
         return password;

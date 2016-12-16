@@ -2,6 +2,7 @@ package com.LostFound.facade;
 
 import com.LostFound.dto.UserDTO;
 import com.LostFound.dto.UserLoginDTO;
+import com.LostFound.dto.UserRegisterDTO;
 
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
@@ -11,7 +12,7 @@ import java.util.List;
  */
 public interface UserFacade {
 
-    void registerUser(UserDTO user, String unencryptedPassword);
+    void registerUser(UserRegisterDTO user, String unencryptedPassword);
 
     List<UserDTO> getAllUsers();
 
