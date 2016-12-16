@@ -1,7 +1,6 @@
 package com.lostfound.rest.controllers;
 
 import com.LostFound.dto.ItemDTO;
-import  com.LostFound.dto.UserDTO;
 import  com.LostFound.facade.ItemFacade;
 import com.lostfound.rest.assemblers.ItemResourceAssembler;
 import com.lostfound.rest.exceptions.ResourceNotFoundException;
@@ -12,7 +11,6 @@ import java.util.Collection;
 import javax.inject.Inject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.hateoas.ExposesResourceFor;
 import org.springframework.hateoas.Resource;
 import org.springframework.hateoas.Resources;
 import org.springframework.http.HttpEntity;
