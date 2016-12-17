@@ -55,7 +55,7 @@ public class PostController {
     * @return JSP page name
     */
     @RequestMapping(value = {"/{filterType}/{value}",""}, method = RequestMethod.GET)
-    public String listFound(@PathVariable String filterType,@PathVariable String value , Model model) {
+    public String list(@PathVariable String filterType,@PathVariable String value , Model model) {
         List<PostDTO> posts = null;
         switch (filterType){
             case "all":

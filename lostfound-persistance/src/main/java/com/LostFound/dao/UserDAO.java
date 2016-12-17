@@ -1,6 +1,8 @@
 package com.LostFound.dao;
 
 import com.LostFound.entity.User;
+import com.LostFound.exceptions.LostFoundServiceException;
+
 import java.util.List;
 
 /**
@@ -16,7 +18,7 @@ public interface UserDAO {
      *
      * @param user object to be created
      */
-    public void create(User user);
+    public void create(User user) throws LostFoundServiceException;
 
     /**
      * Update method is used for update information of user

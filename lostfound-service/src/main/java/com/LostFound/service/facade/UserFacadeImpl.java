@@ -4,10 +4,14 @@ import com.LostFound.dto.UserDTO;
 import com.LostFound.dto.UserLoginDTO;
 import com.LostFound.dto.UserRegisterDTO;
 import com.LostFound.entity.User;
+import com.LostFound.exceptions.LostFoundServiceException;
 import com.LostFound.facade.UserFacade;
 import com.LostFound.service.BeanMappingService;
 import com.LostFound.service.UserService;
 import java.util.Date;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -21,16 +25,19 @@ import java.util.List;
 @Transactional
 public class UserFacadeImpl implements UserFacade {
 
+    private static final Logger log = LoggerFactory.getLogger(UserFacadeImpl.class);
+
     @Autowired
     private UserService userService;
 
     @Autowired
     private BeanMappingService beanMappingService;
 
-    public void registerUser(UserRegisterDTO user, String unencryptedPassword) {
+    public boolean registerUser(UserRegisterDTO user, String unencryptedPassword) {
+
         User userEntity = beanMappingService.mapTo(user, User.class);
         userEntity.setJoinedDate(new Date());
-        userService.registerUser(userEntity, unencryptedPassword);
+        return userService.registerUser(userEntity, unencryptedPassword);
     }
 
     public List<UserDTO> getAllUsers() {
@@ -38,8 +45,14 @@ public class UserFacadeImpl implements UserFacade {
     }
 
     public boolean login(UserLoginDTO user) {
-        return userService.login(
-                userService.findUserByName(user.getName()), user.getPassword());
+        try {
+            return userService.login(
+                    userService.findUserByName(user.getUsername()), user.getPassword());
+        } catch (LostFoundServiceException e)
+        {
+            log.error("User " + user + " does not exist.");
+            return false;
+        }
     }
 
     public boolean isAdmin(UserDTO user) {

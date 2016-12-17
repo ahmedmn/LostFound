@@ -1,6 +1,7 @@
 package com.LostFound.service;
 
 import com.LostFound.entity.User;
+import com.LostFound.exceptions.LostFoundServiceException;
 import org.springframework.stereotype.Service;
 
 import java.security.NoSuchAlgorithmException;
@@ -12,7 +13,7 @@ import java.util.List;
 @Service
 public interface UserService {
 
-    void registerUser(User user, String unencryptedPassword);
+    boolean registerUser(User user, String unencryptedPassword);
 
     List<User> getAllUsers();
 

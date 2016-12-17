@@ -12,7 +12,7 @@ import java.util.List;
  */
 public interface UserFacade {
 
-    void registerUser(UserRegisterDTO user, String unencryptedPassword);
+    boolean registerUser(UserRegisterDTO user, String unencryptedPassword);
 
     List<UserDTO> getAllUsers();
 

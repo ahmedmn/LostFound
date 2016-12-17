@@ -3,7 +3,7 @@
 <%@ attribute name="head" fragment="true" %>
 <%@ attribute name="body" fragment="true" required="true" %>
 <%@ attribute name="footer" fragment="true" %>
-<%@ taglib tagdir="/WEB-INF/tags" prefix="my" %>
+<%@ taglib tagdir="/WEB-INF/tags" prefix="lostfound" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="f" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
@@ -43,9 +43,9 @@
         <!-- Logo -->
         <a href="index2.html" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
-            <span class="logo-mini"><b>A</b>LT</span>
+            <span class="logo-mini"><b>L&F</b></span>
             <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg"><b>Admin</b>LTE</span>
+            <span class="logo-lg"><b>Lost & Found</b></span>
         </a>
 
         <!-- Header Navbar -->
@@ -68,9 +68,20 @@
                     <img src="${pageContext.request.contextPath}/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
-                    <p>Alexander Pierce</p>
-                    <!-- Status -->
-                    <a href="#">Member</a>
+                    <c:choose>
+                        <c:when test="${not empty authenticatedUser && !authenticatedUser.admin}">
+                            <p>${authenticatedUser.username}</p>
+                            <p>Member</p>
+                        </c:when>
+                        <c:when test="${not empty authenticatedUser && authenticatedUser.admin}">
+                            <p>${authenticatedUser.username}</p>
+                            <p>Admin</p>
+                        </c:when>
+                        <c:otherwise>
+                            <p>Guest</p>
+                        </c:otherwise>
+                    </c:choose>
+
                 </div>
             </div>
 
@@ -89,16 +100,25 @@
             <!-- Sidebar Menu -->
             <ul class="sidebar-menu">
                 <li class="header">Menu</li>
-                <li><a href="${pageContext.request.contextPath}/"><i class="fa fa-link"></i> <span>Lost &amp; Found</span></a></li> <!--for active: li class="active" -->
-                <li><a href="${pageContext.request.contextPath}/post/new"><i class="fa fa-link"></i> <span>New Post</span></a></li>
-                <li><a href="${pageContext.request.contextPath}/user/register"><i class="fa fa-link"></i> <span>Register</span></a></li>
-                <li><a href="${pageContext.request.contextPath}/user/login"><i class="fa fa-link"></i> <span>Login</span></a></li>
+                <li><lostfound:a href="/"><i class="fa fa-link"></i> <span>Lost &amp; Found</span></lostfound:a></li> <!--for active: li class="active" -->
+                <c:choose>
+                    <c:when test="${not empty authenticatedUser}">
+                        <li><lostfound:a href="/post/new"><i class="fa fa-link"></i> <span>New Post</span></lostfound:a></li>
+                        <li><lostfound:a href="/user/logout"><i class="fa fa-link"></i> <span>Logout</span></lostfound:a></li>
+                    </c:when>
+                    <c:otherwise>
+                        <li><lostfound:a href="/user/register"><i class="fa fa-link"></i> <span>Register</span></lostfound:a></li>
+                        <li><lostfound:a href="/user/login"><i class="fa fa-link"></i> <span>Login</span></lostfound:a></li>
+                    </c:otherwise>
+                </c:choose>
 
-                <li class="header">Administration</li>
-                <li><a href="#"><i class="fa fa-link"></i> <span>Posts</span></a></li>
-                <li><a href="${pageContext.request.contextPath}/user/list"><i class="fa fa-link"></i> <span>Users  </span></a></li>
-                <li><a href="${pageContext.request.contextPath}/category/list"><i class="fa fa-link"></i> <span>Categories</span></a></li>
-                <li><a href="${pageContext.request.contextPath}/item/list"><i class="fa fa-link"></i> <span>Items</span></a></li>
+                <c:if test="${not empty authenticatedUser && authenticatedUser.admin}">
+                        <li class="header">Administration</li>
+                        <li><lostfound:a href="/post/list"><i class="fa fa-link"></i> <span>Posts</span></lostfound:a></li>
+                        <li><lostfound:a href="/user/list"><i class="fa fa-link"></i> <span>Users</span></lostfound:a></li>
+                        <li><lostfound:a href="/category/list"><i class="fa fa-link"></i> <span>Categories</span></lostfound:a></li>
+                        <li><lostfound:a href="/item/list"><i class="fa fa-link"></i> <span>Items</span></lostfound:a></li>
+                </c:if>
             </ul>
             <!-- /.sidebar-menu -->
         </section>
@@ -117,6 +137,23 @@
 
         <!-- Main content -->
         <section class="content">
+
+            <!-- alerts -->
+            <c:if test="${not empty alert_danger}">
+                <div class="alert alert-danger" role="alert">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    <c:out value="${alert_danger}"/></div>
+            </c:if>
+            <c:if test="${not empty alert_info}">
+                <div class="alert alert-info" role="alert"><c:out value="${alert_info}"/></div>
+            </c:if>
+            <c:if test="${not empty alert_success}">
+                <div class="alert alert-success" role="alert"><c:out value="${alert_success}"/></div>
+            </c:if>
+            <c:if test="${not empty alert_warning}">
+                <div class="alert alert-warning" role="alert"><c:out value="${alert_warning}"/></div>
+            </c:if>
+
 
             <!-- Your Page Content Here -->
             <jsp:invoke fragment="body"/>

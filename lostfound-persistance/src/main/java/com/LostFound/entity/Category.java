@@ -8,12 +8,7 @@ package com.LostFound.entity;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 /**
@@ -31,7 +26,7 @@ public class Category {
     @Column(nullable=false,unique=true)
     private String name;
     
-    @ManyToMany(mappedBy="categories")
+    @ManyToMany(mappedBy="categories", cascade = CascadeType.REMOVE)
     private Set<Item> items = new HashSet<Item>();
 
     public Category() {

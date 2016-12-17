@@ -8,23 +8,18 @@ import java.util.Date;
 public class UserDTO {
     private Long id;
 
-    private String passwordHash;
-
     private String email;
 
     private String username;
 
-    private String surname;
-
-    private String phone;
+    private String phoneNumber;
 
     private String address;
 
     private Date joinedDate;
 
-    public UserDTO(){
+    private boolean admin;
 
-    }
 
     public Long getId() {
         return id;
@@ -32,14 +27,6 @@ public class UserDTO {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getPasswordHash() {
-        return passwordHash;
-    }
-
-    public void setPasswordHash(String passwordHash) {
-        this.passwordHash = passwordHash;
     }
 
     public String getEmail() {
@@ -50,33 +37,20 @@ public class UserDTO {
         this.email = email;
     }
 
-
     public String getUsername() {
         return username;
     }
-
 
     public void setUsername(String username) {
         this.username = username;
     }
 
-
-    public String getSurname() {
-        return surname;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     public String getAddress() {
@@ -93,6 +67,14 @@ public class UserDTO {
 
     public void setJoinedDate(Date joinedDate) {
         this.joinedDate = joinedDate;
+    }
+
+    public boolean isAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(boolean admin) {
+        this.admin = admin;
     }
 
     @Override
@@ -124,13 +106,12 @@ public class UserDTO {
     public String toString() {
         return "UserDTO{" +
                 "id=" + id +
-                ", passwordHash='" + passwordHash + '\'' +
                 ", email='" + email + '\'' +
                 ", username='" + username + '\'' +
-                ", surname='" + surname + '\'' +
-                ", phone='" + phone + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
                 ", address='" + address + '\'' +
                 ", joinedDate=" + joinedDate +
+                ", admin=" + admin +
                 '}';
     }
 }

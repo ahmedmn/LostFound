@@ -135,7 +135,7 @@ public class ItemDaoTest extends AbstractTestNGSpringContextTests {
 //	public void findByCategory() {
 //		Item t1 = new Item();
 //		Category cat = new Category();
-//		t1.setName("Labtop");
+//		t1.setUsername("Labtop");
 //		t1.setDescription("Labtop");
 //		t1.setKeywords("Wallet, money, currency, salary, ID card, coins");
 //		t1.addCategory(cat);

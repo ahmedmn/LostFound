@@ -31,31 +31,35 @@
     <div class="login-box-body">
     <p class="login-box-msg">Sign in to start your session</p>
 
-    <form:form action="${pageContext.request.contextPath}" method="post" modelAttribute="userLogin">
-        <div class="form-group has-feedback">
-            <form:input type="text" path="name" class="form-control" placeholder="username"/>
-            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+    <form:form action="${pageContext.request.contextPath}/user/login" method="post" modelAttribute="userLogin">
+
+        <div class="form-group ${username_error?'has-error':''}">
+            <div class="form-group has-feedback">
+                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                <form:input type="text" path="username" class="form-control" placeholder="Username"/>
+                <form:errors path="username" cssClass="help-block"/>
+            </div>
         </div>
-        <div class="form-group has-feedback">
-            <form:input type="password" path="password" class="form-control" placeholder="password"/>
-            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+
+        <div class="form-group ${password_error?'has-error':''}">
+            <div class="form-group has-feedback">
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                <form:input type="password" path="password" class="form-control" placeholder="Password"/>
+                <form:errors path="password" cssClass="help-block"/>
+            </div>
         </div>
+
         <div class="row">
             <div class="col-xs-8">
-                <div class="checkbox icheck">
-                    <label>
-                        <input type="checkbox"> Remember Me
-                    </label>
-                </div>
+                <a href="${pageContext.request.contextPath}/user/register" class="text-center">Register a new membership</a>
             </div>
             <!-- /.col -->
             <div class="col-xs-4">
                 <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
             </div>
-            <!-- /.col -->
         </div>
     </form:form>
 
-    <a href="${pageContext.request.contextPath}/user/register" class="text-center">Register a new membership</a>
+
     </jsp:attribute>
 </my:login>

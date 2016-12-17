@@ -24,7 +24,7 @@ package com.LostFound.facade;//package com.LostFound.facade;
 //        //initialize calendar instance
 //        // according to postCreateDTO values new post in DB is created
 //    	categoryCreateDTO = new CategoryCreateDTO();
-//    	categoryCreateDTO.setName("Technology");
+//    	categoryCreateDTO.setUsername("Technology");
 //    }
 //
 //

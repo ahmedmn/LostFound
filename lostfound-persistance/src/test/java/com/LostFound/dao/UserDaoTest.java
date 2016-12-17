@@ -2,6 +2,7 @@ package com.LostFound.dao;
 
 import com.LostFound.PersistanceApplicationContext;
 import com.LostFound.entity.User;
+import com.LostFound.exceptions.LostFoundServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.dao.InvalidDataAccessApiUsageException;

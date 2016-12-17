@@ -38,6 +38,7 @@ public class User {
     private String username;
 
     @Pattern(regexp="\\+?\\d+")
+    @Column(nullable=true)
     private String phoneNumber;
 
     @NotNull
@@ -96,7 +97,7 @@ public class User {
         this.joinedDate = joinedDate;
     }
 
-    public boolean getAdmin() {
+    public boolean isAdmin() {
         return admin;
     }
 

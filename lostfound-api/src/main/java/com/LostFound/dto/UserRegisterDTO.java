@@ -11,7 +11,7 @@ import javax.validation.constraints.Size;
 public class UserRegisterDTO {
 
     @NotNull
-    @Size(min = 6, max = 20)
+    @Size(min = 4, max = 30)
     private String password;
 
     @Pattern(regexp=".+@.+\\....?")
@@ -22,12 +22,9 @@ public class UserRegisterDTO {
     @Size(min = 4, max = 30)
     private String username;
 
-    @NotNull
+    @Pattern(regexp="(^$|[0-9]{10})")
     private String phoneNumber;
 
-    public UserRegisterDTO(){
-
-    }
 
     public String getPassword() {
         return password;
@@ -45,11 +42,9 @@ public class UserRegisterDTO {
         this.email = email;
     }
 
-
     public String getUsername() {
         return username;
     }
-
 
     public void setUsername(String username) {
         this.username = username;

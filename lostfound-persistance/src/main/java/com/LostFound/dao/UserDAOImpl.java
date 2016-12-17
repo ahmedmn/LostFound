@@ -1,12 +1,15 @@
 package com.LostFound.dao;
 
 import com.LostFound.entity.User;
+import com.LostFound.exceptions.LostFoundServiceException;
+import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
+import javax.validation.ConstraintViolationException;
 import java.util.List;
 
 /**
@@ -21,31 +24,26 @@ public class UserDAOImpl implements UserDAO {
     private EntityManager em;
 
     @Override
-    @Transactional
     public void create(User user) {
-        em.persist(user);
+            em.persist(user);
     }
 
     @Override
-    @Transactional
     public void update(User user) {
         em.merge(user);
     }
 
     @Override
-    @Transactional
     public void delete(User user) {
         em.remove(findById(user.getId()));
     }
     
     @Override
-    @Transactional
     public User findById(Long id) {
         return em.find(User.class, id);
     }
 
     @Override
-    @Transactional
     public User findByName(String name) {
         TypedQuery<User> query = em.createQuery(
                 "SELECT u FROM User u WHERE u.username = :name", User.class);

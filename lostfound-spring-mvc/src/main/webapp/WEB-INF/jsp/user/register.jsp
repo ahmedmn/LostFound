@@ -32,7 +32,7 @@
             <p class="login-box-msg">Register a new membership</p>
 
             <form:form method="post" action="${pageContext.request.contextPath}/user/register" 
-                       modelAttribute="userCreate">
+                       modelAttribute="userRegister">
 
                 <div class="form-group ${username_error?'has-error':''}">
                     <div class="form-group has-feedback">

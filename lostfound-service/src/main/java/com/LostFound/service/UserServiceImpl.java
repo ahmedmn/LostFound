@@ -2,6 +2,9 @@ package com.LostFound.service;
 
 import com.LostFound.dao.UserDAO;
 import com.LostFound.entity.User;
+import com.LostFound.exceptions.LostFoundServiceException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import javax.crypto.SecretKeyFactory;
@@ -16,13 +19,22 @@ import java.util.List;
  */
 @Service
 public class UserServiceImpl implements UserService {
+
+    private static final Logger log = LoggerFactory.getLogger(UserServiceImpl.class);
+
     @Inject
     private UserDAO userDao;
 
 
-    public void registerUser(User user, String unencryptedPassword) {
-        user.setPasswordHash(createHash(unencryptedPassword));
-        userDao.create(user);
+    public boolean registerUser(User user, String unencryptedPassword) {
+        try {
+            user.setPasswordHash(createHash(unencryptedPassword));
+            userDao.create(user);
+        } catch (Exception e) {
+            log.error("Error while creating user -> " + user, e);
+            return false;
+        }
+        return true;
     }
 
     public List<User> getAllUsers() {
@@ -34,7 +46,7 @@ public class UserServiceImpl implements UserService {
     }
 
     public boolean isAdmin(User user) {
-        return user.getAdmin();
+        return user.isAdmin();
     }
 
     public User findUserById(Long userId) {
@@ -46,7 +58,13 @@ public class UserServiceImpl implements UserService {
     }
 
     public User findUserByName(String name) {
-        return userDao.findByName(name);
+        try {
+            return userDao.findByName(name);
+        } catch (Exception e)
+        {
+            log.error("user does not exist.");
+            throw new LostFoundServiceException("user does not exist.");
+        }
     }
 
     //see  https://crackstation.net/hashing-security.htm#javasourcecode

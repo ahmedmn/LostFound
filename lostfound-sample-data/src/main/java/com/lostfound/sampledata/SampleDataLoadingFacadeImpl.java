@@ -53,10 +53,10 @@ public class SampleDataLoadingFacadeImpl implements SampleDataLoadingFacade {
         Category petsCategory = category("Pets");
         Category toysCategory = category("Toys");
 
-        User petr = user("petr123", "heslo", "pepa@novak.cz", "603123456", toDate(2015, 5, 12), false);
-        User savco = user("savco", "heslo", "jiri@dvorak.cz", "603789123", toDate(2015, 3, 5), false);
-        User bokofak = user("bokofak", "heslo", "eva@adamova.cz", "603457890", toDate(2015, 6, 5), false);
-        User admin = user("pedro1", "admin", "admin@eshop.com", "9999999999", toDate(2014, 12, 31), true);
+        User petr = user("petr123", "heslo", "petr123@azet.sk", "0917231231", toDate(2015, 5, 12), false);
+        User savco = user("savco", "heslo", "savco@gmail.com", "0908213312", toDate(2015, 3, 5), false);
+        User bokos = user("bokos", "heslo", "bokos@gmail.com", "0918123412", toDate(2015, 6, 5), false);
+        User admin = user("admin", "admin", "admin@gmail.com", "0917123321", toDate(2014, 12, 31), true);
 
 //      LOST items
         Item walletItem = postItem("wallet", "Wallet contains credit card, ISIC card and 20 crowns.", "wallet.jpg", "wallet", accessoriesCategory);
@@ -71,7 +71,7 @@ public class SampleDataLoadingFacadeImpl implements SampleDataLoadingFacade {
 
 //      LOST POSTS
         post(petr, "Brno", toDate(2016, 1, 13), PostState.OPENED, PostType.LOST, walletItem, isicCardItem);
-        post(bokofak, "New York", toDate(2016, 5, 5), PostState.OPENED, PostType.LOST, mobileItem);
+        post(bokos, "New York", toDate(2016, 5, 5), PostState.OPENED, PostType.LOST, mobileItem);
         post(savco, "Brno", toDate(2016, 6, 20), PostState.OPENED, PostType.LOST, dogItem);
         post(petr, "Dubai", toDate(2016, 7, 10), PostState.OPENED, PostType.LOST, keysItem);
 
@@ -118,6 +118,7 @@ public class SampleDataLoadingFacadeImpl implements SampleDataLoadingFacade {
         user.setEmail(email);
         user.setPhoneNumber(phoneNumber);
         user.setJoinedDate(joinedDate);
+        user.setAdmin(admin);
         userService.registerUser(user, password);
         return user;
     }

@@ -22,9 +22,9 @@ import java.util.List;
 
 
 /**
+ * @author Peter
  *
  * Post class is the base class representing reported lost or finding of some items
- *
  */
 @Entity
 public class Post {
