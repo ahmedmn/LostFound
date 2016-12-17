@@ -48,8 +48,12 @@ public class PostDTO {
         this.user = user;
     }
 
+    public void setPostItems(List<ItemDTO> postItems) {
+        this.postItems = postItems;
+    }
+    
     public List<ItemDTO> getPostItems() {
-        return Collections.unmodifiableList(postItems);
+        return postItems;
     }
 
     public void addPostItem(ItemDTO item) {

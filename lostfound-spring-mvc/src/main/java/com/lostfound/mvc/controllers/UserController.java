@@ -33,6 +33,13 @@ public class UserController {
     @Autowired
     private UserFacade userFacade;
     
+             @RequestMapping(value="/list", method = RequestMethod.GET)
+	    public String list(Model model) {
+
+	           model.addAttribute("users", userFacade.getAllUsers());
+                    return "user/list";
+	    }
+    
     	    @RequestMapping(value="/register", method = RequestMethod.GET)
 	    public String registerForm(Model model) {
 

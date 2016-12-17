@@ -77,6 +77,10 @@ public class Post {
         this.user = user;
     }
 
+    public void setPostItems(List<Item> postItems) {
+        this.postItems = postItems;
+    }
+    
     public List<Item> getPostItems() {
         return Collections.unmodifiableList(postItems);
     }

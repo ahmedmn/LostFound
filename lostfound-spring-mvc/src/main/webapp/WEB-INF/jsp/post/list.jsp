@@ -175,6 +175,11 @@
                                                             <th><c:out value="${post.user.username}"/></th> 
                                                             <th><c:out value="${post.location}"/></th>
                                                             <th><c:out value="${post.state}"/></th>
+                                                            <th>
+                                                                <form method="post" action="${pageContext.request.contextPath}/post/postDetail/${post.id}" style="display: inline-block;">
+                                                                    <button type="submit" class="btn btn-danger">Detail</button>                                                              
+                                                                </form>
+                                                            </th>
                                                             </tr>
                                                         </c:forEach>
 

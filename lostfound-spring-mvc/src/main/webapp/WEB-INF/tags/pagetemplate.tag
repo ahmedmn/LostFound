@@ -96,7 +96,7 @@
 
                 <li class="header">Administration</li>
                 <li><a href="#"><i class="fa fa-link"></i> <span>Posts</span></a></li>
-                <li><a href="#"><i class="fa fa-link"></i> <span>Users  </span></a></li>
+                <li><a href="${pageContext.request.contextPath}/user/list"><i class="fa fa-link"></i> <span>Users  </span></a></li>
                 <li><a href="${pageContext.request.contextPath}/category/list"><i class="fa fa-link"></i> <span>Categories</span></a></li>
                 <li><a href="${pageContext.request.contextPath}/item/list"><i class="fa fa-link"></i> <span>Items</span></a></li>
             </ul>

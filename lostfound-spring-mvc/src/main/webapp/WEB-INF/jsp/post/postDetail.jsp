@@ -4,11 +4,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="s" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
-<my:pagetemplate title="Item | Lost & Found">
 
-	<jsp:attribute name="body">
+<my:pagetemplate title="PostDetail">
+    
+    <jsp:attribute name="body">
 
       <!-- Your Page Content Here -->
 
@@ -23,6 +25,11 @@
                       Information
                     </span>
                   </li>
+                  <li class="time-label">
+                    <span class="bg-blue">
+                        <c:out value="${post.type}"/>
+                    </span>
+                  </li>
 
                   <!-- /.timeline-label -->
                   <!-- timeline item -->
@@ -30,9 +37,7 @@
                       <i class="fa fa-info-circle bg-blue"></i>
 
                       <div class="timeline-item">
-                          <span class="time"><i class="fa fa-clock-o"></i> 12:05</span>
-
-                          <h3 class="timeline-header"><a href="#">Peter Kovac</a> <strong>lost item</strong></h3>
+                          <h3 class="timeline-header">${post.user.username}<strong><c:out value="${post.type}"/></strong></h3>
                       </div>
                   </li>
                   <li>
@@ -40,7 +45,7 @@
 
                       <div class="timeline-item">
 
-                          <h3 class="timeline-header">Location: <strong>Brno</strong></h3>
+                          <h3 class="timeline-header">Location: <strong><c:out value="${post.location}"/></strong></h3>
 
                           <div class="timeline-body">
                               <iframe
@@ -54,36 +59,37 @@
                       </div>
                   </li>
 
-                  <!-- ITEM 0 -->
+
+                  <!-- ITEMS -->                     
                   <li class="time-label">
                     <span class="bg-red">
-                      Item 1
+                      Items
                     </span>
                   </li>
 
-                  <li>
+                  <c:forEach items="${post.postItems}" var="postItem">
+                  <li>                     
                       <i class="fa fa-folder-o bg-yellow"></i>
 
                       <div class="timeline-item">
 
-                          <h3 class="timeline-header">Basic information about <strong>NAME OF ITEM</strong></h3>
+                          <h3 class="timeline-header">Basic information about <strong><c:out value="${postItem.name}"/></strong></h3>
 
                           <div class="timeline-body">
                               <b>Description: </b>
-                              Take me to your leader!
-                              Switzerland is small and neutral!
-                              We are more like Germany, ambitious and misunderstood!
+                                   <c:out value="${postItem.description}"/>
                               <br />
                               <b>Keywords: </b>
-                              Take me to your leader!
-                              Switzerland is small and neutral!
-                              We are more like Germany, ambitious and misunderstood!
+                                   <c:out value="${postItem.keywords}"/>
                               <br />
                               <b>Categories: </b>
-                              Electronics, Children, Cars, Tech
+                                   <c:forEach items="${postItem.categories}" var="cat">
+                                        <c:out value="${cat.name}"/>
+                                   </c:forEach>
                           </div>
-                      </div>
+                      </div>                  
                   </li>
+                   </c:forEach>
                   <li>
                       <i class="fa fa-camera bg-purple"></i>
 
@@ -99,60 +105,9 @@
                           </div>
                       </div>
                   </li>
-                  <!-- End ITEM 0 -->
-                  <!-- ITEM 1-->
-                  <li class="time-label">
-                    <span class="bg-red">
-                      Item 2
-                    </span>
-                  </li>
-
-                  <li>
-                      <i class="fa fa-folder-o bg-yellow"></i>
-
-                      <div class="timeline-item">
-
-                          <h3 class="timeline-header">Basic information about <strong>NAME OF ITEM</strong></h3>
-
-                          <div class="timeline-body">
-                              <b>Description: </b>
-                              Take me to your leader!
-                              Switzerland is small and neutral!
-                              We are more like Germany, ambitious and misunderstood!
-                              <br />
-                              <b>Keywords: </b>
-                              Take me to your leader!
-                              Switzerland is small and neutral!
-                              We are more like Germany, ambitious and misunderstood!
-                              <br />
-                              <b>Categories: </b>
-                              Electronics, Children, Cars, Tech
-                          </div>
-                      </div>
-                  </li>
-                  <li>
-                      <i class="fa fa-camera bg-purple"></i>
-
-                      <div class="timeline-item">
-
-                          <h3 class="timeline-header">Photos</h3>
-
-                          <div class="timeline-body">
-                              <img src="http://placehold.it/150x100" alt="..." class="margin">
-                              <img src="http://placehold.it/150x100" alt="..." class="margin">
-                              <img src="http://placehold.it/150x100" alt="..." class="margin">
-                              <img src="http://placehold.it/150x100" alt="..." class="margin">
-                          </div>
-                      </div>
-                  </li>
-                  <!-- End ITEM 1 -->
-                  <li>
-                      <i class="fa fa-clock-o bg-gray"></i>
-                  </li>
+                  <!-- End ITEM 0 -->                 
               </ul>
-
           </div>
       </div>
-
-	</jsp:attribute>
+    </jsp:attribute>
 </my:pagetemplate>

@@ -19,7 +19,7 @@ import java.io.IOException;
  *
  * @author Michal
  */
-@WebFilter(urlPatterns = {"/post/new", "/user/*", "/category/*"})
+@WebFilter(urlPatterns = {"/post/new", "/user/all", "/category/*"})
 public class ProtectFilter implements Filter {
 
     final static Logger log = LoggerFactory.getLogger(ProtectFilter.class);

@@ -89,11 +89,11 @@ public class PostController {
     * @param model data to display
     * @return JSP page name
     */
-    @RequestMapping(value = "/view/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/postDetail/{id}", method = RequestMethod.POST)
     public String view(@PathVariable long id, Model model) {
         log.debug("view({})", id);
-        model.addAttribute("product", postFacade.getPostById(id));
-        return "post/view";
+        model.addAttribute("post", postFacade.getPostById(id));
+        return "post/postDetail";
     }
     
     @RequestMapping(value = "/new", method = RequestMethod.GET)
