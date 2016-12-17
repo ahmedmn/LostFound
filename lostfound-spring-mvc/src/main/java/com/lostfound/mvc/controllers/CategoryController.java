@@ -24,6 +24,8 @@ import javax.validation.Valid;
 
 /**
  * @author Peter
+ * 
+ * Controller for category
  */
 @Controller
 @RequestMapping("/category")
@@ -34,14 +36,23 @@ public class CategoryController {
     @Autowired
     private CategoryFacade categoryFacade;
 
-
+    /**
+     *
+     * @param model data to display
+     * @return      diplayed JSP page with category list
+     */
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public String list(Model model) {
         model.addAttribute("categories", categoryFacade.getAllCategories());
         return "category/list";
     }
 
-
+     /**
+     * Function for new post form.
+     *
+     * @param model data to fill
+     * @return      JSP page for creating new item
+     */
     @RequestMapping(value = "/new", method = RequestMethod.GET)
     public String newCategory(Model model) {
         log.debug("new()");
@@ -74,6 +85,7 @@ public class CategoryController {
     }
 
 
+    
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.POST)
     public String delete(@PathVariable long id, Model model, UriComponentsBuilder uriBuilder,
                          RedirectAttributes redirectAttributes) {

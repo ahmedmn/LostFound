@@ -37,7 +37,7 @@
                       <i class="fa fa-info-circle bg-blue"></i>
 
                       <div class="timeline-item">
-                          <h3 class="timeline-header">${post.user.username}<strong><c:out value="${post.type}"/></strong></h3>
+                          <h3 class="timeline-header">${post.user.username}</h3>
                       </div>
                   </li>
                   <li>

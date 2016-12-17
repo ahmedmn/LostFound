@@ -30,6 +30,8 @@ import org.springframework.web.util.UriComponentsBuilder;
 /**
  *
  * @author Michal
+ * 
+ * Controller for post.
  */
 @Controller
 @RequestMapping("/post")
@@ -40,12 +42,6 @@ public class PostController {
     @Autowired
     private PostFacade postFacade;
     
-    @Autowired
-    private UserFacade userFacade;
-
-    @Autowired
-    private MessageSource messageSource;
-   
     /**
     * Shows a list of posts, filtered by specified filterType
     *
@@ -78,7 +74,6 @@ public class PostController {
         }
        
         model.addAttribute("posts", posts);
-        //model.addAttribute("users", userFacade.getAllUsers());
         return "post/list";
     }
     
@@ -87,7 +82,7 @@ public class PostController {
     *
     * @param id id of selected post
     * @param model data to display
-    * @return JSP page name
+    * @return JSP page post detail
     */
     @RequestMapping(value = "/postDetail/{id}", method = RequestMethod.POST)
     public String view(@PathVariable long id, Model model) {
@@ -96,6 +91,12 @@ public class PostController {
         return "post/postDetail";
     }
     
+      /**
+     * Function for new post form.
+     *
+     * @param model data to fill
+     * @return      JSP page for creating new post
+     */
     @RequestMapping(value = "/new", method = RequestMethod.GET)
     public String newPost(Model model) {
         log.debug("new()");
@@ -103,17 +104,19 @@ public class PostController {
         return "post/new";
     }
 
-    
     /**
-    * Shows specific post details
-    *
-    * @param post form of post to be created 
-    * @param id id of selected post
-    * @return JSP page name
-    */
+     * Function for creating post.
+     *
+     * @param formBean              DTO containing filled post information
+     * @param bindingResult         form validation
+     * @param model                 data to display
+     * @param redirectAttributes    redirect attributes
+     * @param uriBuilder            uri builder
+     * @return                      diplayed JSP page name
+     */
     @RequestMapping(value = "/new", method = RequestMethod.POST)
     public String create(@Valid @ModelAttribute("postCreate") PostCreateDTO formBean, BindingResult bindingResult,
-                         Model model, RedirectAttributes redirectAttributes, UriComponentsBuilder uriBuilde){
+                         Model model, RedirectAttributes redirectAttributes, UriComponentsBuilder uriBuilder){
         
         log.debug("postCreate(formBean={})", formBean);
         //in case of validation error forward back to the the form
