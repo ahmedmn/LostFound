@@ -43,18 +43,11 @@
         							<tbody><tr>
                                             <th>ID</th>
                                             <th>Name</th>
-                                            <th></th>
         							    </tr>
                                         <c:forEach items="${categories}" var="category">
                                             <tr>
                                                 <td>${category.id}</td>
                                                 <td><c:out value="${category.name}"/></td>
-                                                <td>
-                                                    <form method="post"
-                                                        action="${pageContext.request.contextPath}/category/delete/${category.id}">
-                                                        <button type="submit" class="btn btn-primary">Delete</button>
-                                                    </form>
-                                                </td>
                                             </tr>
                                         </c:forEach>
         							</tbody></table>

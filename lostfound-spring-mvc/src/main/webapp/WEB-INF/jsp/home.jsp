@@ -5,4 +5,6 @@
           <script type="text/javascript">
                 window.location.href = "${pageContext.request.contextPath}/post/all/0"
            </script>
+
+
 </head>>

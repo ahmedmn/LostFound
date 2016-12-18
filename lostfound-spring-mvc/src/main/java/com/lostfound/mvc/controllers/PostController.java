@@ -57,7 +57,13 @@ public class PostController {
             case "all":
                 posts = postFacade.getAllPosts();
                 break;
-            case "postType": 
+            case "user":
+                posts = postFacade.getPostsByUser(Long.valueOf(value));
+                break;
+            case "location":
+                posts = postFacade.getPostsByLocation(value);
+                break;
+            case "postType":
                 if (value.equals("lost")) posts = postFacade.getPostsByType(PostType.LOST);
                 if (value.equals("found")) posts = postFacade.getPostsByType(PostType.FOUND);
                 break;
@@ -65,12 +71,7 @@ public class PostController {
                 if (value.equals("opened")) posts = postFacade.getPostsByState(PostState.OPENED);
                 if (value.equals("done")) posts = postFacade.getPostsByState(PostState.DONE);
                 break;
-            case "user":
-                posts = postFacade.getPostsByUser(Long.valueOf(value));
-                break;
-            case "location":
-                posts = postFacade.getPostsByLocation(value);
-                break;
+
         }
        
         model.addAttribute("posts", posts);
@@ -111,12 +112,11 @@ public class PostController {
      * @param bindingResult         form validation
      * @param model                 data to display
      * @param redirectAttributes    redirect attributes
-     * @param uriBuilder            uri builder
      * @return                      diplayed JSP page name
      */
     @RequestMapping(value = "/new", method = RequestMethod.POST)
     public String create(@Valid @ModelAttribute("postCreate") PostCreateDTO formBean, BindingResult bindingResult,
-                         Model model, RedirectAttributes redirectAttributes, UriComponentsBuilder uriBuilder){
+                         Model model, RedirectAttributes redirectAttributes){
         
         log.debug("postCreate(formBean={})", formBean);
         //in case of validation error forward back to the the form
@@ -134,6 +134,13 @@ public class PostController {
         Long id = postFacade.createPost(formBean);
         redirectAttributes.addFlashAttribute("alert_success", "Post was successfully created");
         return "post/list";
+    }
+
+
+    @ModelAttribute("postTypes")
+    public PostType[] postTypes() {
+        log.debug("postType()");
+        return PostType.values();
     }
 
 }
