@@ -25,7 +25,7 @@ import java.time.ZoneId;
 import java.util.Date;
 
 /**
- * Created by pedro1 on 6.12.2016.
+ * @author Peter
  */
 @Component
 @Transactional //transactions are handled on facade layer

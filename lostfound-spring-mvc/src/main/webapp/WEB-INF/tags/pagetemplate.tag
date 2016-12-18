@@ -85,17 +85,6 @@
                 </div>
             </div>
 
-            <!-- search form (Optional) -->
-            <form action="#" method="get" class="sidebar-form">
-                <div class="input-group">
-                    <input type="text" name="q" class="form-control" placeholder="Search post...">
-              <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-                </button>
-              </span>
-                </div>
-            </form>
-            <!-- /.search form -->
 
             <!-- Sidebar Menu -->
             <ul class="sidebar-menu">
@@ -114,7 +103,6 @@
 
                 <c:if test="${not empty authenticatedUser && authenticatedUser.admin}">
                         <li class="header">Administration</li>
-                        <li><lostfound:a href="/post/list"><i class="fa fa-link"></i> <span>Posts</span></lostfound:a></li>
                         <li><lostfound:a href="/user/list"><i class="fa fa-link"></i> <span>Users</span></lostfound:a></li>
                         <li><lostfound:a href="/category/list"><i class="fa fa-link"></i> <span>Categories</span></lostfound:a></li>
                         <li><lostfound:a href="/item/list"><i class="fa fa-link"></i> <span>Items</span></lostfound:a></li>

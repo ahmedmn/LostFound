@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="utf-8"
-	trimDirectiveWhitespaces="true" session="false"%>
+	trimDirectiveWhitespaces="true" %>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="my"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
@@ -50,10 +50,11 @@
                                                 <td>${category.id}</td>
                                                 <td><c:out value="${category.name}"/></td>
                                                 <td>
-                                                            <form method="post"
-                                                    			action="${pageContext.request.contextPath}/category/delete/${category.id}">
-                                                    			<button type="submit" class="btn btn-primary">Delete</button>
-                                                    		</form></td>
+                                                    <form method="post"
+                                                        action="${pageContext.request.contextPath}/category/delete/${category.id}">
+                                                        <button type="submit" class="btn btn-primary">Delete</button>
+                                                    </form>
+                                                </td>
                                             </tr>
                                         </c:forEach>
         							</tbody></table>
