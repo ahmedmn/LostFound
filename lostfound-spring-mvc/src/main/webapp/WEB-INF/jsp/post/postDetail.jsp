@@ -41,6 +41,12 @@
                       </div>
                   </li>
                   <li>
+                      <i class="fa fa-calendar" aria-hidden="true"></i>
+                      <div class="timeline-item">
+                          <h3 class="timeline-header">${post.creationDate}</h3>
+                      </div>
+                  </li>
+                  <li>
                       <i class="fa fa-location-arrow bg-red"></i>
 
                       <div class="timeline-item">

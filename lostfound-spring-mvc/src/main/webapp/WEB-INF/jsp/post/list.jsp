@@ -31,7 +31,10 @@
 			{
 				var select = $(".select2");
 				var itemSelect = $('.item-select');
-				$('#dateRange').daterangepicker({ "opens": "right"});
+				$('#dateRange').daterangepicker({ "opens": "right",
+                                                                                locale: {
+                                                                                format: 'DD/MM/YYYY'
+                                                                                }});
 				select.select2();
 				showRightInput();
 
@@ -154,7 +157,7 @@
 								<div class="input-group-addon">
 									<i class="fa fa-calendar"></i>
 								</div>
-								<input type="text" name="value"  class="form-control pull-right" id="dateRange" disabled>
+								<input type="text" name="dateRange"  class="form-control pull-right" id="dateRange">
 							</div>
 						</div>
 					</div>

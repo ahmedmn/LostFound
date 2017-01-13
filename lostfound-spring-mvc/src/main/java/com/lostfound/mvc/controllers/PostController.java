@@ -9,6 +9,8 @@ import com.LostFound.enums.PostType;
 import com.LostFound.facade.PostFacade;
 import com.LostFound.facade.UserFacade;
 import static com.lostfound.mvc.controllers.UserController.log;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -68,7 +70,7 @@ public class PostController {
     */
     @RequestMapping(value = "/find", method = RequestMethod.GET)
     public String list(@RequestParam String filterType, @RequestParam String location, @RequestParam String userName, 
-            @RequestParam String postType, @RequestParam String keywordList, Model model) {
+            @RequestParam String postType, @RequestParam String keywordList, @RequestParam String dateRange, Model model) {
         List<PostDTO> posts = null;
                
         switch (filterType){
@@ -90,10 +92,30 @@ public class PostController {
                     posts = postFacade.getAllPosts();
                 }
                 break;
+            case "3":               
+                String[] date= dateRange.split("-");
+                if (date.length != 2) {
+                    model.addAttribute("alert_info", "Wrong date format. Please use datepicker.");
+                    posts = postFacade.getAllPosts();
+                }
+                else {
+                    SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+                    try {
+                        posts = postFacade.getPostsCreatedBetween(formatter.parse(date[0]), formatter.parse(date[1])) ; 
+                    } catch (ParseException e) {
+                        model.addAttribute("alert_warning", "Wrong date format. Please use datepicker.");
+                        posts = postFacade.getAllPosts();
+                    }
+                    if (posts.isEmpty()){
+                        model.addAttribute("alert_info", "There is not post in specified date range");
+                        posts = postFacade.getAllPosts();
+                    }
+                }
+                break;
             case "2":
                 UserDTO user = userFacade.findUserByName(userName);
                 if (user == null) {
-                    model.addAttribute("alert_warning", "There is not user with specified name");
+                    model.addAttribute("alert_info", "There is not user with specified name");
                     posts = postFacade.getAllPosts();
                 }
                 else posts = postFacade.getPostsByUser(user.getId());
@@ -101,7 +123,7 @@ public class PostController {
             case "1":
                 posts = postFacade.getPostsByLocation(location);
                 if (posts.isEmpty()) {                  
-                    model.addAttribute("alert_warning", "There is not post with specified location");
+                    model.addAttribute("alert_info", "There is not post with specified location");
                     posts = postFacade.getAllPosts();
                 }
                 break;

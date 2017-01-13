@@ -255,7 +255,7 @@ public class PostServiceTest extends AbstractTestNGSpringContextTests {
     }
 
 
-    /*
+    
     @Test
     public void findBySingleKeyword() {
         //setup
@@ -266,7 +266,7 @@ public class PostServiceTest extends AbstractTestNGSpringContextTests {
         //mock
         when(itemDao.findByKeywords("keys")).thenReturn(Collections.singletonList(itemKey1));
         //mock
-        when(itemDao.findByKeywords("keys")).thenReturn(Collections.singletonList(itemKey1));
+        when(postDao.findByItem(itemKey1)).thenReturn(post1);
         //call service method
         List<Post> actualPosts = postService.findPostByKeywords(singleKeywordList);
         //verify
@@ -293,6 +293,10 @@ public class PostServiceTest extends AbstractTestNGSpringContextTests {
         walletItems.add(itemWallet2);
         when(itemDao.findByKeywords("keys")).thenReturn(keysItems);
         when(itemDao.findByKeywords("wallet")).thenReturn(walletItems);
+        when(postDao.findByItem(itemKey1)).thenReturn(post1);
+        when(postDao.findByItem(itemKey2)).thenReturn(post2);
+        when(postDao.findByItem(itemWallet1)).thenReturn(post2);
+        when(postDao.findByItem(itemWallet2)).thenReturn(post3);
         //call service method
         List<Post> actualPosts = postService.findPostByKeywords(multipleKeywordList);
         //verify
@@ -301,7 +305,6 @@ public class PostServiceTest extends AbstractTestNGSpringContextTests {
         //check
         Assert.assertEquals(actualPosts, expectPosts);
     }
-*/
 
 
     @Test
