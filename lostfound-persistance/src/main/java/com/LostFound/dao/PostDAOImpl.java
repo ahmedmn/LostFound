@@ -1,5 +1,6 @@
 package com.LostFound.dao;
 
+import com.LostFound.entity.Item;
 import com.LostFound.entity.Post;
 import com.LostFound.entity.User;
 import com.LostFound.enums.PostState;
@@ -64,6 +65,15 @@ public class PostDAOImpl implements PostDAO {
         query.setParameter("state", PostState.OPENED);
         query.setParameter("location", location);
         return query.getResultList();
+    }
+    
+    @Override
+    public Post findByItem(Item item) {
+        TypedQuery<Post> query = em.createQuery(
+                "SELECT p FROM Post p WHERE :item in elements(p.postItems)",
+                Post.class);
+        query.setParameter("item", item);
+        return query.getSingleResult();
     }
 
     @Override

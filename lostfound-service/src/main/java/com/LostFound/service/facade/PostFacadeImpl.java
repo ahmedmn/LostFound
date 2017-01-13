@@ -18,7 +18,10 @@ import com.LostFound.service.PostService;
 import com.LostFound.service.UserService;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 import javax.inject.Inject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,6 +33,8 @@ import org.springframework.stereotype.Service;
 @Transactional
 @Service
 public class PostFacadeImpl implements PostFacade{
+    
+    final static Logger log = LoggerFactory.getLogger(PostFacadeImpl.class);
 
     @Inject
     private PostService postService;
@@ -72,7 +77,7 @@ public class PostFacadeImpl implements PostFacade{
 
     public List<PostDTO> getPostsByUser(Long userId) {
         User user = userService.findUserById(userId);
-        return beanMappingService.mapTo(postService.findByUser(user), PostDTO.class);
+        return (user == null) ? null : beanMappingService.mapTo(postService.findByUser(user), PostDTO.class);
     }
 
     public List<PostDTO> getPostsByState(PostState state) {
@@ -90,4 +95,10 @@ public class PostFacadeImpl implements PostFacade{
     public List<PostDTO> getPostsCreatedBetween(Date fromDate, Date toDate) {
         return beanMappingService.mapTo(postService.findCreatedBetween(fromDate, toDate), PostDTO.class);
     }    
+
+    @Override
+    public List<PostDTO> getPostsByKeywords(List<String> keywords) {
+        log.error(postService.findPostByKeywords(keywords).toString());
+        return beanMappingService.mapTo(postService.findPostByKeywords(keywords), PostDTO.class);
+    }
 }

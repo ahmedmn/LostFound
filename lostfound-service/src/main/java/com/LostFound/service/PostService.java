@@ -70,14 +70,14 @@ public interface PostService {
      * @return list of all Posts with specified state
      */
     public List<Post> findByType(PostType type);
-
+    
     /**
      * findPostByKeywords method is used to find Posts by item´s keywords
      *
      * @param keywords is List of keywords
      * @return list of all Posts which contain items with all specified keywords
      */
-    public Set<Post> findPostByKeywords(List<String> keywords);
+    public List<Post> findPostByKeywords(List<String> keywords);
     /**
      * FindAll method is used to find all Posts
      *

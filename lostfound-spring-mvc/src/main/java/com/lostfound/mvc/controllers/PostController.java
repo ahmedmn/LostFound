@@ -2,14 +2,19 @@ package com.lostfound.mvc.controllers;
 
 import com.LostFound.dto.PostCreateDTO;
 import com.LostFound.dto.PostDTO;
+import com.LostFound.dto.UserDTO;
 import com.LostFound.dto.UserRegisterDTO;
 import com.LostFound.enums.PostState;
 import com.LostFound.enums.PostType;
 import com.LostFound.facade.PostFacade;
 import com.LostFound.facade.UserFacade;
 import static com.lostfound.mvc.controllers.UserController.log;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
+import java.util.Optional;
 import javax.validation.Valid;
+import static org.apache.taglibs.standard.resources.Resources.getMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +29,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -42,6 +48,16 @@ public class PostController {
     @Autowired
     private PostFacade postFacade;
     
+    @Autowired
+    private UserFacade userFacade;
+    
+    
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
+    public String list(Model model) {       
+        model.addAttribute("posts", postFacade.getAllPosts());
+        return "post/list";
+    }
+    
     /**
     * Shows a list of posts, filtered by specified filterType
     *
@@ -50,34 +66,56 @@ public class PostController {
     * @param model data to display
     * @return JSP page name
     */
-    @RequestMapping(value = {"/{filterType}/{value}",""}, method = RequestMethod.GET)
-    public String list(@PathVariable String filterType,@PathVariable String value , Model model) {
+    @RequestMapping(value = "/find", method = RequestMethod.GET)
+    public String list(@RequestParam String filterType, @RequestParam String location, @RequestParam String userName, 
+            @RequestParam String postType, @RequestParam String keywordList, Model model) {
         List<PostDTO> posts = null;
+               
         switch (filterType){
-            case "all":
-                posts = postFacade.getAllPosts();
+            case "5":            
+                    posts = postFacade.getAllPosts();
                 break;
-            case "user":
-                posts = postFacade.getPostsByUser(Long.valueOf(value));
+            case "4":
+                List<String> keywords = new ArrayList<>();
+                String[] tmpKeywords = keywordList.split("\\r?\\n");
+                for (int i=0; i < tmpKeywords.length; i++)
+                {
+                    keywords.add(tmpKeywords[i]);
+                } 
+                //model.addAttribute("alert_warning", keywords.get(1));
+                posts = postFacade.getPostsByKeywords(keywords);
+                
+                if (posts.isEmpty()) {
+                    model.addAttribute("alert_warning", "There is not post with specified keywords");
+                    posts = postFacade.getAllPosts();
+                }
                 break;
-            case "location":
-                posts = postFacade.getPostsByLocation(value);
+            case "2":
+                UserDTO user = userFacade.findUserByName(userName);
+                if (user == null) {
+                    model.addAttribute("alert_warning", "There is not user with specified name");
+                    posts = postFacade.getAllPosts();
+                }
+                else posts = postFacade.getPostsByUser(user.getId());
                 break;
-            case "postType":
-                if (value.equals("lost")) posts = postFacade.getPostsByType(PostType.LOST);
-                if (value.equals("found")) posts = postFacade.getPostsByType(PostType.FOUND);
+            case "1":
+                posts = postFacade.getPostsByLocation(location);
+                if (posts.isEmpty()) {                  
+                    model.addAttribute("alert_warning", "There is not post with specified location");
+                    posts = postFacade.getAllPosts();
+                }
                 break;
-            case "postState":
-                if (value.equals("opened")) posts = postFacade.getPostsByState(PostState.OPENED);
-                if (value.equals("done")) posts = postFacade.getPostsByState(PostState.DONE);
+            case "0":
+                if (postType.equals("0")) posts = postFacade.getPostsByType(PostType.LOST);
+                if (postType.equals("1")) posts = postFacade.getPostsByType(PostType.FOUND);
                 break;
-
         }
        
         model.addAttribute("posts", posts);
         return "post/list";
     }
     
+       
     /**
     * Shows specific post details
     *

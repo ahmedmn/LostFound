@@ -10,6 +10,7 @@ import com.LostFound.entity.Item;
 import com.LostFound.entity.Post;
 import com.LostFound.enums.PostState;
 import com.LostFound.enums.PostType;
+import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.InvalidDataAccessApiUsageException;
 import org.springframework.test.context.ContextConfiguration;
@@ -23,6 +24,7 @@ import org.testng.annotations.Test;
 
 import javax.validation.ConstraintViolationException;
 import java.util.Calendar;
+import java.util.List;
 
 /**
  * PostDaoTest class is used to test functionalities of each Post.
@@ -45,11 +47,31 @@ public class PostDaoTest extends AbstractTestNGSpringContextTests   {
     private Post post1;
     private Post post2;
     private Post post3;
+    
+    private Item item;
         
     @BeforeMethod
     public void createPosts(){      
         Calendar cal = Calendar.getInstance();
         cal.set(2016,11,20);
+        
+        item = new Item();
+
+        item.setName("Labtop");
+        item.setDescription("Apple laptop Macbook pro");
+        item.setKeywords("Apple, Laptop, Macbook");
+        
+        Item item2 = new Item();
+
+        item2.setName("Mouse");
+        item2.setDescription("Apple laptop Macbook pro");
+        item2.setKeywords("Apple, Laptop, Macbook");
+        
+        itemDao.create(item);
+        itemDao.create(item2);
+        
+        List<Item> itemList = new ArrayList<>();
+        itemList.add(item);
         
         post1 = new Post();
         post2 = new Post();
@@ -59,6 +81,7 @@ public class PostDaoTest extends AbstractTestNGSpringContextTests   {
         post1.setType(PostType.LOST);
         post1.setLocation("Brno");
         post1.setCreationDate(cal.getTime());
+        post1.setPostItems(itemList);
         
         post2.setState(PostState.OPENED);
         post2.setType(PostType.FOUND);
@@ -122,6 +145,11 @@ public class PostDaoTest extends AbstractTestNGSpringContextTests   {
         Assert.assertEquals(postDao.findByType(PostType.LOST).size(), 1);
         Assert.assertEquals(postDao.findByType(PostType.FOUND).size(), 1);
     }
+    
+    @Test
+    public void findByItem() {
+        Assert.assertEquals(postDao.findByItem(item),post1);
+    }
        
     @Test
     public void findCreatedBetweenTest() {
@@ -155,16 +183,16 @@ public class PostDaoTest extends AbstractTestNGSpringContextTests   {
       
     @Test
     public void addItemToPost(){  
-        Assert.assertEquals(postDao.findById(post1.getId()).getPostItems().size(), 0);
+        Assert.assertEquals(postDao.findById(post1.getId()).getPostItems().size(), 1);
         //creation of item to be added
-        Item item = new Item();
-        item.setName("ABC");
-        itemDao.create(item);
+        Item item2 = new Item();
+        item2.setName("ABC");
+        itemDao.create(item2);
         
-        post1.addPostItem(item);       
+        post1.addPostItem(item2);       
         postDao.update(post1);
                 
-        Assert.assertEquals(postDao.findById(post1.getId()).getPostItems().size(), 1);       
+        Assert.assertEquals(postDao.findById(post1.getId()).getPostItems().size(), 2);       
     }
     
     @Test(expectedExceptions=IllegalArgumentException.class)

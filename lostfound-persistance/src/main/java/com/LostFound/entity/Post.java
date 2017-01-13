@@ -144,4 +144,11 @@ public class Post {
         result = 31 * result + ((getLocation() == null) ? 0 : getLocation().hashCode());
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "Post{" + "id=" + id + ", user=" + user + ", postItems=" + postItems + ", creationDate=" + creationDate + ", location=" + location + ", state=" + state + ", type=" + type + '}';
+    }
+    
+    
 }

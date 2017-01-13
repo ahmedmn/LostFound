@@ -62,8 +62,7 @@ public class UserServiceImpl implements UserService {
             return userDao.findByName(name);
         } catch (Exception e)
         {
-            log.error("user does not exist.");
-            throw new LostFoundServiceException("user does not exist.");
+            throw new LostFoundServiceException("Wrong user name");
         }
     }
 

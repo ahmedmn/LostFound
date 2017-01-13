@@ -70,14 +70,23 @@ public class SampleDataLoadingFacadeImpl implements SampleDataLoadingFacade {
         Item watchItem = postItem("CASIO watch", "Silver Watch of brand CASIO", "watch.jpg", "watch:CASIO", technologyCategory);
 
 //      LOST POSTS
-        post(petr, "Brno", toDate(2016, 1, 13), PostState.OPENED, PostType.LOST, walletItem, isicCardItem);
-        post(bokos, "New York", toDate(2016, 5, 5), PostState.OPENED, PostType.LOST, mobileItem);
-        post(savco, "Brno", toDate(2016, 6, 20), PostState.OPENED, PostType.LOST, dogItem);
-        post(petr, "Dubai", toDate(2016, 7, 10), PostState.OPENED, PostType.LOST, keysItem);
+        Post post1 = post(petr, "Brno", toDate(2016, 1, 13), PostState.OPENED, PostType.LOST, walletItem, isicCardItem);
+        Post post2 = post(bokos, "New York", toDate(2016, 5, 5), PostState.OPENED, PostType.LOST, mobileItem);
+        Post post3 = post(savco, "Brno", toDate(2016, 6, 20), PostState.OPENED, PostType.LOST, dogItem);
+        Post post4 = post(petr, "Dubai", toDate(2016, 7, 10), PostState.OPENED, PostType.LOST, keysItem);
+        
+        isicCardItem.setPost(post1);
+        walletItem.setPost(post1);
+        mobileItem.setPost(post2);
+        dogItem.setPost(post3);
+        keysItem.setPost(post4);
 
 //      FOUND POSTS
-        post(petr, "Brno", toDate(2016, 8, 25), PostState.OPENED, PostType.FOUND, watchItem);
-        post(savco, "Bratislava", toDate(2016, 5, 2), PostState.OPENED, PostType.FOUND, stuffedToyItem);
+        Post post5 = post(petr, "Brno", toDate(2016, 8, 25), PostState.OPENED, PostType.FOUND, watchItem);
+        Post post6 = post(savco, "Bratislava", toDate(2016, 5, 2), PostState.OPENED, PostType.FOUND, stuffedToyItem);
+        
+        watchItem.setPost(post5);
+        stuffedToyItem.setPost(post6);
     }
 
 

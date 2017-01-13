@@ -23,7 +23,7 @@ public class ProtectNewPostFilter implements Filter {
         HttpSession session = request.getSession(false);
         boolean loggedIn = session != null && session.getAttribute("authenticatedUser") != null;
         if (!loggedIn) {
-            response.sendRedirect(request.getContextPath() + "/post/all/0");
+            response.sendRedirect(request.getContextPath() + "/post/list");
             return;
         }
         chain.doFilter(request, response);

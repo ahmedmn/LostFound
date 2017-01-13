@@ -159,7 +159,7 @@ public class UserController {
             request.getSession().setAttribute("authenticatedUser", loginUser);
             redirectAttributes.addFlashAttribute("alert_success", "You have been successfuly logged in.");
             log.info("User logged in");
-            return "redirect:" + uriBuilder.path("/post/all/0").toUriString();
+            return "redirect:" + uriBuilder.path("/post/list").toUriString();
         } else {
             model.addAttribute("alert_warning", "Incorrect username or password ");
             log.warn("User failed login");
@@ -187,6 +187,6 @@ public class UserController {
         log.info("User logged out");
         session.removeAttribute("authenticatedUser");
         redirectAttributes.addFlashAttribute("alert_success", "You have been succesfully logged out.");
-        return "redirect:" + uriBuilder.path("/post/all/0").toUriString();
+        return "redirect:" + uriBuilder.path("/post/list").toUriString();
     }
 }

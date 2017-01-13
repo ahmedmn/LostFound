@@ -26,7 +26,7 @@ public class ProtectAdminFilter implements Filter {
         UserDTO authenticated = (UserDTO) session.getAttribute("authenticatedUser");
         boolean loggedIn = session != null && authenticated != null && authenticated.isAdmin();
         if (!loggedIn) {
-            response.sendRedirect(request.getContextPath() + "/post/all/0");
+            response.sendRedirect(request.getContextPath() + "/post/list");
             return;
         }
         chain.doFilter(request, response);

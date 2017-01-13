@@ -12,6 +12,7 @@ import com.LostFound.enums.PostType;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 /**
  *
@@ -31,6 +32,8 @@ public interface PostFacade {
     public List<PostDTO> getPostsByUser(Long userId);
     
     public List<PostDTO> getPostsByState(PostState state);
+    
+    public List<PostDTO> getPostsByKeywords(List<String> keywords);
 
     public List<PostDTO> getPostsByType(PostType type);
     

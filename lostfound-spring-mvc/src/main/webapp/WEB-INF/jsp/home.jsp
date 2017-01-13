@@ -3,7 +3,7 @@
 
 <head>		
           <script type="text/javascript">
-                window.location.href = "${pageContext.request.contextPath}/post/all/0"
+                window.location.href = "${pageContext.request.contextPath}/post/list"
            </script>
 
 

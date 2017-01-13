@@ -7,7 +7,10 @@ package com.LostFound.service;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.dozer.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,8 +27,9 @@ public class BeanMappingServiceImpl implements BeanMappingService {
 	@Autowired
     private Mapper dozer;
 
-    public  <T> List<T> mapTo(Collection<?> objects, Class<T> mapToClass) {
+    public  <T> List<T> mapTo(Collection<?> objects, Class<T> mapToClass) {        
         List<T> mappedCollection = new ArrayList<T>();
+       
         for (Object object : objects) {
             mappedCollection.add(dozer.map(object, mapToClass));
         }
@@ -34,10 +38,12 @@ public class BeanMappingServiceImpl implements BeanMappingService {
 
     public  <T> T mapTo(Object u, Class<T> mapToClass)
     {
+        if (u == null || mapToClass == null) return null;
         return dozer.map(u,mapToClass);
     }
-    
+          
     public Mapper getMapper(){
     	return dozer;
     }
+
 }

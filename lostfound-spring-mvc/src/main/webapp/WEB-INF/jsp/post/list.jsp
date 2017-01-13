@@ -46,7 +46,7 @@
 					switch (value)
 					{
 						case "0":
-							$('#item-type').show();
+							$('#item-type').show();                                                      
 							break;
 						case "1":
 							$('#item-location').show();
@@ -62,13 +62,25 @@
 							break;
 					}
 				}
-			});
+
+			});                                        
 		</script>
+                <script>
+                    function run() {
+                    document.getElementById("pType").value = document.getElementById("PostTypeSelect").value;
+                    }
+                    </script>
+                <script>
+                    function run1() {
+                    document.getElementById("postTypeSelect").value = document.getElementById("PostType").value;
+                    }
+                    </script>
+
 	</jsp:attribute>
 
 	<jsp:attribute name="body">
 
-		<form method="GET" action="/">
+		<form:form method="get" action="${pageContext.request.contextPath}/post/find/${value}">
 		<div class="box box-default">
 			<div class="box-header with-border">
 				<h3 class="box-title">Find post</h3>
@@ -85,15 +97,17 @@
 					<div class="col-md-12">
 						<div class="form-group">
 							<label>Select filter</label>
-							<select class="form-control select2" style="width: 100%;">
-								<option value="0">Type</option>
-								<option value="1">Location</option>
-								<option value="2">Username</option>
-								<option value="3">Date</option>
-								<option value="4" selected="selected">Keywords</option>
-							</select>
+							<select id="PostTypeSelect" class="form-control select2"  onchange="run()" style="width: 100%;">
+                                                            <option value="0" >Type</option>
+                                                            <option value="1" >Location</option>
+                                                            <option value="2">Username</option>
+                                                            <option value="3">Date</option>
+                                                            <option value="4">Keywords</option>
+                                                            <option value="5" selected="selected">None</option>
+                                                        </select>                                                    
 						</div>
 						<!-- /.form-group -->
+                                                <input type="hidden" id="pType" name="filterType"> 
 					</div>
 				</div>
 				<div class="row">
@@ -102,7 +116,7 @@
 							<label>Keywords</label>
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-file-text-o"></i></span>
-								<textarea class="form-control" rows="3" name="search-value" placeholder="Keyword per line"></textarea>
+								<textarea class="form-control" rows="3" name="keywordList" placeholder="Keyword per line"></textarea>
 							</div>
 						</div>
 
@@ -110,7 +124,7 @@
 							<label>Location</label>
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-location-arrow"></i></span>
-								<input type="text" class="form-control" name="search-value" value="Brno" placeholder="">
+                                                                <input type="text" class="form-control" name="location"  placeholder="Brno">                                                                                                                         
 							</div>
 						</div>
 
@@ -118,7 +132,7 @@
 							<label>User name</label>
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-user"></i></span>
-								<input type="text" class="form-control" name="search-value" value="" placeholder="">
+								<input type="text" class="form-control" name="userName"  placeholder="username">
 							</div>
 						</div>
 
@@ -126,10 +140,11 @@
 							<label>Type</label>
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-chevron-circle-down"></i></span>
-								<select class="form-control select2" name="search-value" style="width: 100%;">
+								<select id="postTypeSelect" class="form-control select2" name="postType" onchange="run1()" style="width: 100%;">
 									<option selected="selected" value="0">Lost</option>
 									<option value="1">Found</option>
 								</select>
+                                                                <input type="hidden" id="postType" name="PostType">
 							</div>
 						</div>
 
@@ -139,7 +154,7 @@
 								<div class="input-group-addon">
 									<i class="fa fa-calendar"></i>
 								</div>
-								<input type="text" name="search-value" class="form-control pull-right" id="dateRange">
+								<input type="text" name="value"  class="form-control pull-right" id="dateRange" disabled>
 							</div>
 						</div>
 					</div>
@@ -150,7 +165,7 @@
 
 			</div>
 		</div>
-		</form>
+                </form:form>
 
 		<div class="row">
 			<div class="col-xs-12">

@@ -1,5 +1,6 @@
 package com.LostFound.dao;
 
+import com.LostFound.entity.Item;
 import com.LostFound.entity.Post;
 import com.LostFound.entity.User;
 import com.LostFound.enums.PostState;
@@ -66,6 +67,14 @@ public interface PostDAO {
      * @return list of posts with given location
      */
     public List<Post> findByLocation(String location);
+    
+    /**
+     * Returns post corresponding to given item.
+     *
+     * @param item location of posts to be found
+     * @return post with given item
+     */
+    public Post findByItem(Item item);
 
     /**
      * Returns posts created in date range (fromDate, toDate).
