@@ -11,18 +11,18 @@ import javax.validation.constraints.Size;
 public class UserRegisterDTO {
 
     @NotNull
-    @Size(min = 4, max = 30)
+    @Size(min = 4, max = 30, message ="Password size should be between 4 and 30 characters!")
     private String password;
 
-    @Pattern(regexp=".+@.+\\....?")
+    @Pattern(regexp=".+@.+\\....?", message = "Wrong email format. Email address should look like user@gmail.com!")
     @NotNull
     private String email;
 
     @NotNull
-    @Size(min = 4, max = 30)
+    @Size(min = 4, max = 30, message ="Username size should be between 4 and 30 characters!")
     private String username;
 
-    @Pattern(regexp="(^$|[0-9]{10})")
+    @Pattern(regexp="(^$|[0-9]{10})", message = "Phone number must be exactly 9 digits long!")
     private String phoneNumber;
 
 

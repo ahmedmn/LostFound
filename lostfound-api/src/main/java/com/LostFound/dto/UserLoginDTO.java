@@ -10,11 +10,11 @@ import javax.validation.constraints.Size;
 public class UserLoginDTO
 {
     @NotNull
-    @Size(min = 4, max = 30)
+    @Size(min = 4, max = 30, message ="Username size should be between 4 and 30 characters!")
     private String username;
 
     @NotNull
-    @Size(min = 4, max = 30)
+    @Size(min = 4, max = 30, message ="Password size should be between 4 and 30 characters!")
     private String password;
 
     public String getUsername() {

@@ -19,17 +19,17 @@ public class PostCreateDTO {
 
 
     @NotNull
-    @Size(min = 3, max = 100)
+    @Size(min = 3, max = 100, message="Location size should be between 3 and 100 characters")
     private String location;
 
     @NotNull
     private PostType type;
 
     @NotNull
-    @Size(min = 3, max = 50)
+    @Size(min = 3, max = 50, message="Location size should be between 3 and 50 characters")
     private String name;
 
-    @Size(min = 3, max = 500)
+    @Size(min = 3, max = 500, message="Description size should be between 3 and 500 characters")
     private String description;
 
     private byte[] image;
