@@ -1,5 +1,7 @@
 package com.lostfound.mvc.security;
 
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
@@ -12,7 +14,7 @@ import java.io.IOException;
  *
  * Filter protects system from creating new posts by guests
  */
-@WebFilter(urlPatterns = {"/post/new"})
+@WebFilter(urlPatterns = {"/post/new", "/post/create"})
 public class ProtectNewPostFilter implements Filter {
 
 

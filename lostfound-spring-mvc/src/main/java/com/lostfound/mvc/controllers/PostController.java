@@ -80,7 +80,7 @@ public class PostController {
                
         switch (filterType){
             case "5":            
-                    posts = postFacade.getAllPosts();
+                posts = postFacade.getAllPosts();
                 break;
             case "4":
                 List<String> keywords = new ArrayList<>();

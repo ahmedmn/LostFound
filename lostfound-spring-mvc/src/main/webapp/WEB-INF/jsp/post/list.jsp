@@ -106,11 +106,11 @@
                                                             <option value="2">Username</option>
                                                             <option value="3">Date</option>
                                                             <option value="4">Keywords</option>
-                                                            <option value="5" selected="selected">None</option>
+                                                            <option value="5" selected="selected">All</option>
                                                         </select>                                                    
 						</div>
 						<!-- /.form-group -->
-                                                <input type="hidden" id="pType" name="filterType"> 
+                                                <input type="hidden" value="5" id="pType" name="filterType">
 					</div>
 				</div>
 				<div class="row">
