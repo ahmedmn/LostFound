@@ -5,17 +5,17 @@
  */
 package com.LostFound.service.facade;
 
+import com.LostFound.dto.ItemDTO;
 import com.LostFound.dto.PostCreateDTO;
 import com.LostFound.dto.PostDTO;
+import com.LostFound.entity.Item;
 import com.LostFound.entity.Post;
 import com.LostFound.entity.User;
 import com.LostFound.enums.PostState;
 import com.LostFound.enums.PostType;
 import com.LostFound.facade.PostFacade;
-import com.LostFound.service.BeanMappingService;
-import com.LostFound.service.ItemService;
-import com.LostFound.service.PostService;
-import com.LostFound.service.UserService;
+import com.LostFound.service.*;
+
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
@@ -44,16 +44,23 @@ public class PostFacadeImpl implements PostFacade{
     
     @Inject 
     private ItemService itemService;
+
+    @Inject
+    private CategoryService categoryService;
     
     @Autowired
     private BeanMappingService beanMappingService;
     
     public Long createPost(PostCreateDTO p) {
+        Item mappedItem = beanMappingService.mapTo(p, Item.class);
+        mappedItem.addCategory(categoryService.findById(p.getCategoryId()));
+        Item newItem = itemService.createItem(mappedItem);
         Post mappedPost = beanMappingService.mapTo(p, Post.class);
+        mappedPost.addPostItem(newItem);
+        mappedPost.setCreationDate(new Date());
+        mappedPost.setState(PostState.OPENED);
+        mappedPost.setUser(beanMappingService.mapTo(p.getUserDTO(), User.class));
         Post newPost = postService.createPost(mappedPost);
-        newPost.setCreationDate(new Date());
-        newPost.setState(PostState.OPENED);
-        newPost.setUser(new User());
         return newPost.getId();
     }
 

@@ -5,63 +5,41 @@
  */
 package com.LostFound.dto;
 
-import com.LostFound.enums.PostState;
+
 import com.LostFound.enums.PostType;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Date;
-import java.util.List;
-import static javax.swing.text.StyleConstants.Size;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 /**
  *
- * @author Michal
+ * @author Michal, Peter
  */
 public class PostCreateDTO {
-    
-    @NotNull
-    private UserDTO user;
 
-    @NotNull
-    private List<ItemDTO> postItems = new ArrayList<ItemDTO>();
-    
-    @NotNull
-    private Date creationDate;
 
     @NotNull
     @Size(min = 3, max = 100)
     private String location;
 
-    private PostState state;
-
+    @NotNull
     private PostType type;
 
-    public UserDTO getUser() {
-        return user;
-    }
+    @NotNull
+    @Size(min = 3, max = 50)
+    private String name;
 
-    public void setUser(UserDTO user) {
-        this.user = user;
-    }
+    @Size(min = 3, max = 500)
+    private String description;
 
-    public List<ItemDTO> getPostItems() {
-        return Collections.unmodifiableList(postItems);
-    }
+    private byte[] image;
 
-    public void addPostItem(ItemDTO item) {
-        postItems.add(item);
-    }
+    private String keywords;
 
-    public Date getCreationDate() {
-        return creationDate;
-    }
+    private Long categoryId;
 
-    public void setCreationDate(Date creationDate) {
-        this.creationDate = creationDate;
-    }
+    private UserDTO userDTO;
+
 
     public String getLocation() {
         return location;
@@ -69,14 +47,6 @@ public class PostCreateDTO {
 
     public void setLocation(String location) {
         this.location = location;
-    }
-
-    public PostState getState() {
-        return state;
-    }
-
-    public void setState(PostState state) {
-        this.state = state;
     }
 
     public PostType getType() {
@@ -87,26 +57,70 @@ public class PostCreateDTO {
         this.type = type;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public byte[] getImage() {
+        return image;
+    }
+
+    public void setImage(byte[] image) {
+        this.image = image;
+    }
+
+    public String getKeywords() {
+        return keywords;
+    }
+
+    public void setKeywords(String keywords) {
+        this.keywords = keywords;
+    }
+
+    public Long getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(Long categoryId) {
+        this.categoryId = categoryId;
+    }
+
+    public UserDTO getUserDTO() {
+        return userDTO;
+    }
+
+    public void setUserDTO(UserDTO userDTO) {
+        this.userDTO = userDTO;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof PostDTO)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
 
-        PostDTO post = (PostDTO) o;
+        PostCreateDTO that = (PostCreateDTO) o;
 
-        if (getUser() != null ? !getUser().equals(post.getUser()) : post.getUser() != null) return false;
-        if (!getPostItems().equals(post.getPostItems())) return false;
-        if (!getCreationDate().equals(post.getCreationDate())) return false;
-        return getLocation().equals(post.getLocation());
+        if (!location.equals(that.location)) return false;
+        return (type != that.type);
 
     }
 
     @Override
     public int hashCode() {
-        int result = user != null ? user.hashCode() : 0;
-        result = 31 * result + getPostItems().hashCode();
-        result = 31 * result + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
-        result = 31 * result + ((getLocation() == null) ? 0 : getLocation().hashCode());
+        int result = location.hashCode();
+        result = 31 * result + type.hashCode();
         return result;
     }
 }

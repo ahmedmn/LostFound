@@ -33,6 +33,10 @@ public class ItemDTO {
 		this.categories = categories;
 	}
 
+	public void addCategory(CategoryDTO category) {
+		this.categories.add(category);
+	}
+
 	public Long getId() {
 		return id;
 	}

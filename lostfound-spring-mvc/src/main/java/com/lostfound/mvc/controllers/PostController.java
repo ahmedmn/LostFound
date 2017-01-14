@@ -1,11 +1,10 @@
 package com.lostfound.mvc.controllers;
 
-import com.LostFound.dto.PostCreateDTO;
-import com.LostFound.dto.PostDTO;
-import com.LostFound.dto.UserDTO;
-import com.LostFound.dto.UserRegisterDTO;
+import com.LostFound.dto.*;
+import com.LostFound.entity.Category;
 import com.LostFound.enums.PostState;
 import com.LostFound.enums.PostType;
+import com.LostFound.facade.CategoryFacade;
 import com.LostFound.facade.PostFacade;
 import com.LostFound.facade.UserFacade;
 import static com.lostfound.mvc.controllers.UserController.log;
@@ -15,6 +14,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Optional;
+import javax.servlet.ServletRequest;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import static org.apache.taglibs.standard.resources.Resources.getMessage;
 import org.slf4j.Logger;
@@ -52,6 +54,9 @@ public class PostController {
     
     @Autowired
     private UserFacade userFacade;
+
+    @Autowired
+    private CategoryFacade categoryFacade;
     
     
     @RequestMapping(value = "/list", method = RequestMethod.GET)
@@ -145,7 +150,7 @@ public class PostController {
     * @param model data to display
     * @return JSP page post detail
     */
-    @RequestMapping(value = "/postDetail/{id}", method = RequestMethod.POST)
+    @RequestMapping(value = "/postDetail/{id}", method = RequestMethod.GET)
     public String view(@PathVariable long id, Model model) {
         log.debug("view({})", id);
         model.addAttribute("post", postFacade.getPostById(id));
@@ -168,17 +173,18 @@ public class PostController {
     /**
      * Function for creating post.
      *
-     * @param formBean              DTO containing filled post information
+     * @param postForm              DTO containing filled post information
      * @param bindingResult         form validation
      * @param model                 data to display
      * @param redirectAttributes    redirect attributes
      * @return                      diplayed JSP page name
      */
-    @RequestMapping(value = "/new", method = RequestMethod.POST)
-    public String create(@Valid @ModelAttribute("postCreate") PostCreateDTO formBean, BindingResult bindingResult,
-                         Model model, RedirectAttributes redirectAttributes){
+    @RequestMapping(value = "/create", method = RequestMethod.POST)
+    public String create(@Valid @ModelAttribute("postCreate") PostCreateDTO postForm,
+                         BindingResult bindingResult, ServletRequest r, Model model,
+                         RedirectAttributes redirectAttributes, UriComponentsBuilder uriBuilder){
         
-        log.debug("postCreate(formBean={})", formBean);
+        log.debug("postCreate(formBean={})", postForm);
         //in case of validation error forward back to the the form
         if (bindingResult.hasErrors()) {
             for (ObjectError ge : bindingResult.getGlobalErrors()) {
@@ -190,10 +196,11 @@ public class PostController {
             }
             return "post/new";
         }
-        
-        Long id = postFacade.createPost(formBean);
+        HttpSession session = ((HttpServletRequest) r).getSession();
+        postForm.setUserDTO((UserDTO) session.getAttribute("authenticatedUser"));
+        Long id = postFacade.createPost(postForm);
         redirectAttributes.addFlashAttribute("alert_success", "Post was successfully created");
-        return "post/list";
+        return "redirect:" + uriBuilder.path("/post/postDetail/{id}").buildAndExpand(id).encode().toUriString();
     }
 
 
@@ -202,5 +209,12 @@ public class PostController {
         log.debug("postType()");
         return PostType.values();
     }
+
+    @ModelAttribute("categories")
+    public List<CategoryDTO> categories() {
+        log.debug("categories()");
+        return categoryFacade.getAllCategories();
+    }
+
 
 }

@@ -37,7 +37,7 @@
                       <i class="fa fa-info-circle bg-blue"></i>
 
                       <div class="timeline-item">
-                          <h3 class="timeline-header">${post.user.username}</h3>
+                          <h3 class="timeline-header">${post.user.username} (${post.user.email})</h3>
                       </div>
                   </li>
                   <li>
@@ -59,7 +59,7 @@
                                       height="350"
                                       frameborder="0" style="border:0"
                                       src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBgMECpwmnrjMLds0IsiO93isB2YInxev0
-                      &q=Brno" allowfullscreen>
+                      &q=${post.location}" allowfullscreen>
                               </iframe>
                           </div>
                       </div>
@@ -96,21 +96,7 @@
                       </div>                  
                   </li>
                    </c:forEach>
-                  <li>
-                      <i class="fa fa-camera bg-purple"></i>
 
-                      <div class="timeline-item">
-
-                          <h3 class="timeline-header">Photos</h3>
-
-                          <div class="timeline-body">
-                              <img src="http://placehold.it/150x100" alt="..." class="margin">
-                              <img src="http://placehold.it/150x100" alt="..." class="margin">
-                              <img src="http://placehold.it/150x100" alt="..." class="margin">
-                              <img src="http://placehold.it/150x100" alt="..." class="margin">
-                          </div>
-                      </div>
-                  </li>
                   <!-- End ITEM 0 -->                 
               </ul>
           </div>
