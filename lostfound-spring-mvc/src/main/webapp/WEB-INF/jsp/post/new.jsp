@@ -89,7 +89,7 @@
                                         <div class="input-group">
                                             <form:select path="categoryId" cssClass="form-control">
                                                 <c:forEach items="${categories}" var="c">
-                                                    <form:option value="${c.id}">${c.name}</form:option>
+                                                    <form:option value="${c.id}"><c:out value="${c.name}"/></form:option>
                                                 </c:forEach>
                                             </form:select>
                                         </div>

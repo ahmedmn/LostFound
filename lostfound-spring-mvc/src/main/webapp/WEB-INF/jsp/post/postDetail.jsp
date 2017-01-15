@@ -37,13 +37,13 @@
                       <i class="fa fa-info-circle bg-blue"></i>
 
                       <div class="timeline-item">
-                          <h3 class="timeline-header">${post.user.username} (${post.user.email})</h3>
+                          <h3 class="timeline-header"><c:out value="${post.user.username}"/><c:out value="(${post.user.email})"/></h3>
                       </div>
                   </li>
                   <li>
                       <i class="fa fa-calendar" aria-hidden="true"></i>
                       <div class="timeline-item">
-                          <h3 class="timeline-header">${post.creationDate}</h3>
+                          <h3 class="timeline-header"><c:out value="${post.creationDate}"/></h3>
                       </div>
                   </li>
                   <li>

@@ -80,7 +80,7 @@ public class CategoryController {
         // create category
         Long id = categoryFacade.createCategory(formBean);
         // report success
-        redirectAttributes.addFlashAttribute("alert_success", "Category " + id + " was created");
+        redirectAttributes.addFlashAttribute("alert_success", "Category " + formBean.getName() + " was created");
         return "redirect:" + uriBuilder.path("/category/list").buildAndExpand(id).encode().toUriString();
     }
 
