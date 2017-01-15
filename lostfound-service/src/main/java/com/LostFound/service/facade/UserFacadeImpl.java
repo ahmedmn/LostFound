@@ -14,6 +14,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -33,11 +34,21 @@ public class UserFacadeImpl implements UserFacade {
     @Autowired
     private BeanMappingService beanMappingService;
 
-    public boolean registerUser(UserRegisterDTO user, String unencryptedPassword) {
+    public boolean registerUser(UserRegisterDTO userForm, String unencryptedPassword) {
 
-        User userEntity = beanMappingService.mapTo(user, User.class);
+        if (userService.findUserByName(userForm.getUsername()) != null) return false;
+        if (userService.findUserByEmail(userForm.getEmail()) != null) return false;
+
+        User userEntity = beanMappingService.mapTo(userForm, User.class);
         userEntity.setJoinedDate(new Date());
-        return userService.registerUser(userEntity, unencryptedPassword);
+        try {
+            userService.registerUser(userEntity, unencryptedPassword);
+        } catch (LostFoundServiceException ex)
+        {
+            log.error("User cannot be registered.", ex);
+            return false;
+        }
+        return true;
     }
 
     public List<UserDTO> getAllUsers() {
@@ -50,7 +61,7 @@ public class UserFacadeImpl implements UserFacade {
                     userService.findUserByName(user.getUsername()), user.getPassword());
         } catch (LostFoundServiceException e)
         {
-            log.error("User " + user + " does not exist.");
+            log.error("User " + user + " does not exist.", e);
             return false;
         }
     }

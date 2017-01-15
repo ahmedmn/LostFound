@@ -13,7 +13,7 @@ import java.util.List;
 @Service
 public interface UserService {
 
-    boolean registerUser(User user, String unencryptedPassword);
+    void registerUser(User user, String unencryptedPassword);
 
     List<User> getAllUsers();
 

@@ -22,31 +22,37 @@ public class ItemDAOImpl implements ItemDAO {
 	@PersistenceContext
 	private EntityManager entityManager;
 
+	@Override
 	@Transactional
 	public void create(Item item) {
 		entityManager.persist(item);
 	}
 
+	@Override
 	@Transactional
 	public Item update(Item t) {
 		return entityManager.merge(t);
 	}
 
+	@Override
 	@Transactional
 	public void delete(Item t) {// throws IllegalArgumentException {
 
 		entityManager.remove(findById(t.getId()));
 	}
 
+	@Override
 	public Item findById(Long id) {
 		return entityManager.find(Item.class, id);
 	}
 
+	@Override
 	public List<Item> findAll() {
 		return entityManager.createQuery("select t from Item t", Item.class)
 				.getResultList();
 	}
 
+	@Override
 	public List<Item> findByName(String name) {
 		return entityManager
 				.createQuery("SELECT t FROM Item t WHERE t.name like :name ",

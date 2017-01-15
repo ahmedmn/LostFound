@@ -4,6 +4,7 @@ import com.LostFound.entity.User;
 import com.LostFound.exceptions.LostFoundServiceException;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
@@ -24,8 +25,9 @@ public class UserDAOImpl implements UserDAO {
     private EntityManager em;
 
     @Override
+    @Transactional(noRollbackFor = Exception.class)
     public void create(User user) {
-            em.persist(user);
+        em.persist(user);
     }
 
     @Override

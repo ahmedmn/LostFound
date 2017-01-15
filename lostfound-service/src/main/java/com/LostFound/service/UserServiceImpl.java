@@ -6,6 +6,8 @@ import com.LostFound.exceptions.LostFoundServiceException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
@@ -25,20 +27,25 @@ public class UserServiceImpl implements UserService {
     @Inject
     private UserDAO userDao;
 
-
-    public boolean registerUser(User user, String unencryptedPassword) {
+    public void registerUser(User user, String unencryptedPassword) {
         try {
             user.setPasswordHash(createHash(unencryptedPassword));
             userDao.create(user);
-        } catch (Exception e) {
-            log.error("Error while creating user -> " + user, e);
-            return false;
+        } catch (Exception ex) {
+            log.error("User cannot be registered. [" + user + "]", ex);
+            throw new LostFoundServiceException("User cannot be registered. [" + user + "]", ex);
         }
-        return true;
     }
 
     public List<User> getAllUsers() {
-        return userDao.findAll();
+        try {
+            return userDao.findAll();
+        } catch (Exception ex)
+        {
+            log.warn("Getting all users failed.", ex);
+            return null;
+        }
+
     }
 
     public boolean login(User user, String password) {
@@ -50,19 +57,32 @@ public class UserServiceImpl implements UserService {
     }
 
     public User findUserById(Long userId) {
-        return userDao.findById(userId);
+        try {
+            return userDao.findById(userId);
+        } catch (Exception ex)
+        {
+            log.warn("User with id [" + userId + "] does not exists.", ex);
+            return null;
+        }
     }
 
     public User findUserByEmail(String email) {
-        return userDao.findByEmail(email);
+        try {
+            return userDao.findByEmail(email);
+        } catch (Exception ex)
+        {
+            log.warn("User with email [" + email + "] does not exists.", ex);
+            return null;
+        }
     }
 
     public User findUserByName(String name) {
         try {
             return userDao.findByName(name);
-        } catch (Exception e)
+        } catch (Exception ex)
         {
-            throw new LostFoundServiceException("Wrong user name");
+            log.warn("User with name [" + name + "] does not exists.", ex);
+            return null;
         }
     }
 

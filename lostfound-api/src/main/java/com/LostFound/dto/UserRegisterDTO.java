@@ -22,7 +22,7 @@ public class UserRegisterDTO {
     @Size(min = 4, max = 30, message ="Username size should be between 4 and 30 characters!")
     private String username;
 
-    @Pattern(regexp="(^$|[0-9]{10})", message = "Phone number must be exactly 9 digits long!")
+    @Pattern(regexp="(^$|[0-9]{10})", message = "Phone number must be exactly 10 digits long!")
     private String phoneNumber;
 
 

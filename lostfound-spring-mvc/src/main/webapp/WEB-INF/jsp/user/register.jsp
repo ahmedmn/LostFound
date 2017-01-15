@@ -37,7 +37,7 @@
                 <div class="form-group ${username_error?'has-error':''}">
                     <div class="form-group has-feedback">
                         <span class="glyphicon glyphicon-user form-control-feedback"></span>
-                        <form:input type="text" path="username" class="form-control" placeholder="Username"/>
+                        <form:input type="text" path="username" class="form-control" placeholder="Username (required)"/>
                         <form:errors path="username" cssClass="help-block"/>
                     </div>
                 </div>
@@ -45,7 +45,7 @@
                 <div class="form-group ${email_error?'has-error':''}">
                     <div class="form-group has-feedback">
                         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-                        <form:input type="text" path="email" class="form-control" placeholder="Email"/>
+                        <form:input type="text" path="email" class="form-control" placeholder="Email (required)"/>
                         <form:errors path="email" cssClass="help-block"/>
                     </div>
                 </div>
@@ -61,7 +61,7 @@
                 <div class="form-group ${password_error?'has-error':''}">
                     <div class="form-group has-feedback">
                         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-                        <form:input type="password" path="password" class="form-control" placeholder="Password"/>
+                        <form:input type="password" path="password" class="form-control" placeholder="Password (required)"/>
                         <form:errors path="password" cssClass="help-block"/>
                     </div>
                 </div>

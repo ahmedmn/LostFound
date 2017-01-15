@@ -103,8 +103,8 @@ public class UserController {
             return "redirect:" + uriBuilder.path("/user/login").toUriString();
         } else {
             //report success
-            redirectAttributes.addFlashAttribute("alert_danger", "User is already existing.");
-            return "user/register";
+            redirectAttributes.addFlashAttribute("alert_danger", "Username or email have been already used.");
+            return "redirect:" + uriBuilder.path("/user/register").toUriString();
         }
 
 

@@ -37,8 +37,7 @@ public class User {
     @Column(nullable=false,unique=true)
     private String username;
 
-    @Pattern(regexp="\\+?\\d+")
-    @Column(nullable=true)
+    @Pattern(regexp="(^$|[0-9]{10})")
     private String phoneNumber;
 
     @NotNull
